@@ -2,14 +2,14 @@ import { Languages, Minus, Ban, Search, RefreshCw, SunMoon, Globe2, Database } f
 import { SectionLabel } from "./HowItWorks";
 
 const FEATURES = [
-  { icon: Languages, title: "Accent-insensitive matching", body: "Catches \"café\" even if you only filter \"cafe\". Diacritics never slip through." },
-  { icon: Minus, title: "Hyphen & underscore matching", body: "\"holy-mole\" matches \"holy mole\". Punctuation variants are treated as one." },
-  { icon: Ban, title: "Per-site exclusion", body: "Turn off filtering on specific websites with a single click in the popup." },
-  { icon: Search, title: "Search bar & text box censoring", body: "Filtered words are caught in inputs and search boxes too, not just page text." },
-  { icon: RefreshCw, title: "Auto re-filtering on dynamic pages", body: "SPAs, infinite scroll, and lazy-loaded content are re-scanned automatically." },
-  { icon: SunMoon, title: "Light & dark mode support", body: "Censor bars and blur adapt to the site's theme for seamless reading." },
-  { icon: Globe2, title: "Works on every website", body: "From news sites to forums — if it renders text, Word Shield can filter it." },
-  { icon: Database, title: "No account, no signup, no cloud", body: "Everything is stored locally. No login, no sync server, nothing to leak." },
+  { icon: Languages, title: "Accent-insensitive matching", body: "No dodging the filter with diacritics — block \"spam\" and \"späm\" is caught too. Accented variants never slip through." },
+  { icon: Minus, title: "Hyphen & underscore matching", body: "\"get-rich\" and \"get_rich\" are caught as one. Hyphens, underscores, and dashes are treated as spaces." },
+  { icon: Ban, title: "Per-site exclusion", body: "Need the raw word on one site? Disable filtering per domain with one toggle in the popup." },
+  { icon: Search, title: "Search bar & text box censoring", body: "Filtered words are masked inside inputs, comment boxes, and search fields — not just body text." },
+  { icon: RefreshCw, title: "Auto re-filtering on dynamic pages", body: "Infinite scroll, lazy-loaded comments, and SPA navigation are re-scanned the instant new content appears." },
+  { icon: SunMoon, title: "Light & dark mode support", body: "Censor bars and blur adapt to each site's theme, so redaction reads seamlessly day or night." },
+  { icon: Globe2, title: "Works on every website", body: "News, forums, social feeds — if a page renders text, Word Shield filters it the moment it loads." },
+  { icon: Database, title: "No account, no signup, no cloud", body: "Your word list lives only in Chrome's local storage. No login, no sync server, nothing to leak." },
 ];
 
 export default function KeyFeatures() {

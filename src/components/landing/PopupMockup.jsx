@@ -50,8 +50,8 @@ export default function PopupMockup() {
         {/* Filtering enabled toggle */}
         <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 12, padding: "12px 14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <span style={{ fontSize: 13, fontWeight: 500 }}>Filtering enabled</span>
-          {/* toggle ON — dark track, white knob */}
-          <span style={{ width: 42, height: 24, borderRadius: 999, background: "#12142280", border: `1px solid ${BORDER}`, position: "relative", display: "inline-block" }}>
+          {/* toggle ON — accent track, white knob */}
+          <span style={{ width: 42, height: 24, borderRadius: 999, background: ACCENT, position: "relative", display: "inline-block" }}>
             <span style={{ position: "absolute", top: 2, right: 2, width: 18, height: 18, borderRadius: "50%", background: "#fff", boxShadow: "0 1px 2px rgba(0,0,0,0.3)" }} />
           </span>
         </div>

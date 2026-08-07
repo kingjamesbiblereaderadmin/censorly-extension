@@ -1,9 +1,12 @@
-import { Download } from "lucide-react";
+import { Download, ArrowRight } from "lucide-react";
+import { Image } from "@/components/ui/image";
 import PopupMockup from "./PopupMockup";
 import ExtensionIcon from "./ExtensionIcon";
 import ComingSoonBadge from "./ComingSoonBadge";
 import DesktopOnlyBadge from "./DesktopOnlyBadge";
 
+const HERO_AMBIENT =
+  "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/d166ec2eb_generated_image.png";
 const BADGES = ["100% Local", "Zero API Calls", "No Tracking"];
 
 // Words filtered in the demo article (matching the real extension's word list)
@@ -45,7 +48,7 @@ function Article({ filtered }) {
 function BeforeAfter() {
   return (
     <div className="grid sm:grid-cols-2 gap-4">
-      <div className="rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white overflow-hidden">
+      <div className="rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white overflow-hidden shadow-sm">
         <div className="px-4 h-9 border-b border-[hsl(var(--wsp-navy)/0.06)] flex items-center justify-between">
           <span className="text-[11px] font-mono font-semibold text-[hsl(var(--wsp-navy)/0.5)]">BEFORE</span>
           <span className="w-2 h-2 rounded-full bg-[hsl(var(--wsp-navy)/0.2)]" />
@@ -55,7 +58,7 @@ function BeforeAfter() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-[hsl(var(--wsp-accent)/0.35)] bg-[hsl(var(--wsp-accent)/0.04)] overflow-hidden">
+      <div className="rounded-2xl border border-[hsl(var(--wsp-accent)/0.35)] bg-[hsl(var(--wsp-accent)/0.04)] overflow-hidden shadow-sm">
         <div className="px-4 h-9 border-b border-[hsl(var(--wsp-accent)/0.2)] flex items-center justify-between">
           <span className="text-[11px] font-mono font-semibold text-[hsl(var(--wsp-accent))]">AFTER · CENSOR</span>
           <span className="w-2 h-2 rounded-full bg-[hsl(var(--wsp-accent))]" />
@@ -71,12 +74,23 @@ function BeforeAfter() {
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden wsp-grid-lines">
+      {/* Ambient generated artwork, faint behind everything */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src={HERO_AMBIENT}
+          alt=""
+          fittingType="fill"
+          className="w-full h-full opacity-50 object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--background))]/40 via-[hsl(var(--background))]/70 to-[hsl(var(--background))]" />
+      </div>
       <div className="absolute -top-24 right-0 w-[40rem] h-[40rem] bg-[hsl(var(--wsp-accent)/0.10)] rounded-full blur-3xl pointer-events-none" />
+
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-24 lg:pt-28 lg:pb-32">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-14 items-center">
           {/* Left: copy */}
           <div className="wsp-reveal">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--wsp-accent)/0.06)] px-3 py-1 text-xs font-mono font-medium text-[hsl(var(--wsp-accent))]">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--background))]/60 backdrop-blur px-3 py-1 text-xs font-mono font-medium text-[hsl(var(--wsp-accent))]">
               <span className="wsp-live-dot inline-block w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
               Chrome Extension · v3.7
             </span>
@@ -115,10 +129,11 @@ export default function Hero() {
               </a>
               <a
                 href="#modes"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[hsl(var(--wsp-navy)/0.15)] bg-white px-7 py-4 text-base font-semibold text-[hsl(var(--wsp-navy))] hover:border-[hsl(var(--wsp-accent))] transition-colors"
+                className="group inline-flex items-center justify-center gap-2 rounded-2xl border border-[hsl(var(--wsp-navy)/0.15)] bg-white/70 backdrop-blur px-7 py-4 text-base font-semibold text-[hsl(var(--wsp-navy))] hover:border-[hsl(var(--wsp-accent))] transition-colors"
               >
                 <ExtensionIcon className="w-4 h-4" />
                 See the demo
+                <ArrowRight className="w-4 h-4 opacity-0 -ml-1 group-hover:opacity-100 group-hover:ml-0 transition-all" />
               </a>
             </div>
 
@@ -142,7 +157,9 @@ export default function Hero() {
 
           {/* Right: real popup mockup + before/after demo */}
           <div className="wsp-reveal relative" style={{ animationDelay: "0.15s" }}>
-            <div className="flex flex-col items-center gap-8">
+            {/* soft platform under the popup */}
+            <div className="absolute -inset-6 bg-gradient-to-tr from-[hsl(var(--wsp-accent)/0.15)] to-transparent rounded-[2rem] blur-2xl pointer-events-none" />
+            <div className="relative flex flex-col items-center gap-8">
               <div className="flex justify-center scale-[0.92] sm:scale-100 origin-top">
                 <PopupMockup />
               </div>

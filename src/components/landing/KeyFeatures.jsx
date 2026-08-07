@@ -26,19 +26,34 @@ export default function KeyFeatures() {
           </p>
         </div>
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {FEATURES.map((f) => (
-            <div
-              key={f.title}
-              className="group rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-6 hover:border-[hsl(var(--wsp-accent)/0.4)] transition-colors"
-            >
-              <div className="w-11 h-11 rounded-xl bg-[hsl(var(--wsp-accent)/0.08)] flex items-center justify-center text-[hsl(var(--wsp-accent))] group-hover:bg-[hsl(var(--wsp-accent))] group-hover:text-white transition-colors">
-                <f.icon className="w-5 h-5" strokeWidth={1.8} />
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {FEATURES.map((f, i) => {
+            const featured = i === 0;
+            return (
+              <div
+                key={f.title}
+                className={`group relative overflow-hidden rounded-3xl border p-7 transition-all duration-300 hover:-translate-y-1 ${
+                  featured
+                    ? "sm:col-span-2 lg:col-span-2 bg-[hsl(var(--wsp-navy))] text-white border-transparent hover:shadow-2xl hover:shadow-[hsl(var(--wsp-accent)/0.25)]"
+                    : "bg-white border-[hsl(var(--wsp-navy)/0.08)] hover:border-[hsl(var(--wsp-accent)/0.4)] hover:shadow-lg"
+                }`}
+              >
+                {featured && (
+                  <>
+                    <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "linear-gradient(hsl(var(--wsp-accent)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--wsp-accent)) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+                    <div className="absolute -top-16 -right-16 w-48 h-48 bg-[hsl(var(--wsp-accent)/0.3)] rounded-full blur-3xl pointer-events-none" />
+                  </>
+                )}
+                <div className="relative flex flex-col h-full">
+                  <div className={`rounded-2xl flex items-center justify-center transition-colors ${featured ? "w-14 h-14 bg-[hsl(var(--wsp-accent))] text-white" : "w-11 h-11 bg-[hsl(var(--wsp-accent)/0.08)] text-[hsl(var(--wsp-accent))] group-hover:bg-[hsl(var(--wsp-accent))] group-hover:text-white"}`}>
+                    <f.icon className={featured ? "w-7 h-7" : "w-5 h-5"} strokeWidth={1.8} />
+                  </div>
+                  <h3 className={`mt-5 font-heading font-semibold ${featured ? "text-2xl text-white" : "text-base text-[hsl(var(--wsp-navy))]"}`}>{f.title}</h3>
+                  <p className={`mt-2 leading-relaxed ${featured ? "text-base text-white/70 max-w-md" : "text-sm text-[hsl(var(--wsp-navy)/0.6)]"}`}>{f.body}</p>
+                </div>
               </div>
-              <h3 className="mt-5 font-heading font-semibold text-base text-[hsl(var(--wsp-navy))]">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[hsl(var(--wsp-navy)/0.6)]">{f.body}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

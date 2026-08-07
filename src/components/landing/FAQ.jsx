@@ -34,39 +34,44 @@ export default function FAQ() {
   const [open, setOpen] = useState(0);
   return (
     <section id="faq" className="py-24 lg:py-32 bg-[hsl(var(--wsp-navy)/0.02)]">
-      <div className="max-w-3xl mx-auto px-6 lg:px-10">
-        <div className="text-center">
-          <div className="flex justify-center"><SectionLabel>FAQ</SectionLabel></div>
-          <h2 className="mt-4 font-heading font-bold text-[hsl(var(--wsp-navy))] tracking-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            Questions, answered
-          </h2>
-          <div className="mt-5 flex justify-center">
-            <DesktopOnlyBadge />
+      <div className="max-w-5xl mx-auto px-6 lg:px-10">
+        <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-10 lg:gap-16 items-start">
+          {/* Left: heading */}
+          <div className="lg:sticky lg:top-24">
+            <SectionLabel>FAQ</SectionLabel>
+            <h2 className="mt-4 font-heading font-bold text-[hsl(var(--wsp-navy))] tracking-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+              Questions, answered
+            </h2>
+            <div className="mt-5">
+              <DesktopOnlyBadge />
+            </div>
           </div>
-        </div>
 
-        <div className="mt-12 divide-y divide-[hsl(var(--wsp-navy)/0.08)] border-y border-[hsl(var(--wsp-navy)/0.08)]">
-          {FAQS.map((item, i) => {
-            const isOpen = open === i;
-            return (
-              <div key={item.q}>
-                <button
-                  onClick={() => setOpen(isOpen ? -1 : i)}
-                  className="w-full flex items-center justify-between gap-4 py-5 text-left"
-                >
-                  <span className="font-heading font-semibold text-lg text-[hsl(var(--wsp-navy))]">{item.q}</span>
-                  <span className={`shrink-0 w-7 h-7 rounded-full border border-[hsl(var(--wsp-accent)/0.3)] flex items-center justify-center text-[hsl(var(--wsp-accent))] transition-transform ${isOpen ? "rotate-45" : ""}`}>
-                    <Plus className="w-4 h-4" />
-                  </span>
-                </button>
-                <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 pb-5" : "grid-rows-[0fr] opacity-0"}`}>
-                  <div className="overflow-hidden">
-                    <p className="text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.65)] pr-10">{item.a}</p>
+          {/* Right: accordion */}
+          <div className="divide-y divide-[hsl(var(--wsp-navy)/0.08)] border-y border-[hsl(var(--wsp-navy)/0.08)]">
+            {FAQS.map((item, i) => {
+              const isOpen = open === i;
+              return (
+                <div key={item.q}>
+                  <button
+                    onClick={() => setOpen(isOpen ? -1 : i)}
+                    aria-expanded={isOpen}
+                    className="w-full flex items-center justify-between gap-4 py-5 text-left group"
+                  >
+                    <span className="font-heading font-semibold text-lg text-[hsl(var(--wsp-navy))] group-hover:text-[hsl(var(--wsp-accent))] transition-colors">{item.q}</span>
+                    <span className={`shrink-0 w-7 h-7 rounded-full border border-[hsl(var(--wsp-accent)/0.3)] flex items-center justify-center text-[hsl(var(--wsp-accent))] transition-transform ${isOpen ? "rotate-45 bg-[hsl(var(--wsp-accent)/0.1)]" : ""}`}>
+                      <Plus className="w-4 h-4" />
+                    </span>
+                  </button>
+                  <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 pb-5" : "grid-rows-[0fr] opacity-0"}`}>
+                    <div className="overflow-hidden">
+                      <p className="text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.65)] pr-10">{item.a}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

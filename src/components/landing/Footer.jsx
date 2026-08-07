@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import ExtensionIcon from "./ExtensionIcon";
 
 export default function Footer() {
@@ -35,20 +36,28 @@ export default function Footer() {
         </div>
 
         <div className="w-full border-t border-[hsl(var(--wsp-navy)/0.06)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[hsl(var(--wsp-navy)/0.5)]">
-          <a
-            href="https://base44.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 hover:text-[hsl(var(--wsp-accent))] transition-colors"
-          >
-            Made with
-            <img
-              src="https://base44.com/logo_v2.svg"
-              alt="Base44"
-              className="h-3.5 w-auto inline-block"
-            />
-            Base44
-          </a>
+          <div className="flex items-center gap-5">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-[hsl(var(--wsp-accent))] transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <a
+              href="https://base44.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-[hsl(var(--wsp-accent))] transition-colors"
+            >
+              Made with
+              <img
+                src="https://base44.com/logo_v2.svg"
+                alt="Base44"
+                className="h-3.5 w-auto inline-block"
+              />
+              Base44
+            </a>
+          </div>
           <span className="font-mono">© {new Date().getFullYear()} Word Shield Pro</span>
         </div>
       </div>

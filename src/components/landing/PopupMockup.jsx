@@ -96,7 +96,7 @@ export default function PopupMockup() {
         {/* Word list */}
         <div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-            <span style={{ color: "#fff", fontWeight: 700, fontSize: 13 }}>28 words in filter</span>
+            <span style={{ color: "#fff", fontWeight: 700, fontSize: 13 }}>3 words in filter</span>
           </div>
           <div
             style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 10, maxHeight: 132, overflowY: "auto", paddingRight: 4 }}

@@ -1,16 +1,13 @@
-// Real Word Shield Pro Chrome extension toolbar icon.
-const ICON_128 =
-  "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/51c6ae80a_icon128.png";
-
-export const EXTENSION_ICON_URL = ICON_128;
-
-export default function ExtensionIcon({ className = "w-7 h-7" }) {
+// Word Shield Pro brand logo — shield emoji.
+export default function ExtensionIcon({ className = "" }) {
   return (
-    <img
-      src={ICON_128}
-      alt="Word Shield Pro extension icon"
+    <span
       className={className}
-      draggable={false}
-    />
+      role="img"
+      aria-label="Word Shield Pro logo"
+      style={{ fontSize: "1.4rem", lineHeight: 1, display: "inline-flex", alignItems: "center" }}
+    >
+      🛡️
+    </span>
   );
 }

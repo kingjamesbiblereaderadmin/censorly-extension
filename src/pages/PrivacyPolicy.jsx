@@ -99,7 +99,7 @@ const SECTIONS = [
         {[
           ["storage", "Saves your filter word list, filter mode, and site exclusions locally on your device."],
           ["activeTab", "Allows the Extension to scan and filter text on the page you are currently viewing."],
-          ["Host permission (<all_urls>)", "Required so the Extension can filter words on any website you visit. No page content is transmitted anywhere."],
+          ["Host permission (all URLs)", "Required so the Extension can filter words on any website you visit. No page content is transmitted anywhere."],
         ].map(([perm, desc]) => (
           <li key={perm} className="flex gap-3 items-start">
             <ShieldIcon className="w-4 h-4 mt-1 text-[hsl(var(--wsp-accent))] shrink-0" strokeWidth={2} />

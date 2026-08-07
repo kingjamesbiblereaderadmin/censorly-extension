@@ -1,6 +1,6 @@
 // Real Word Shield Pro Chrome extension toolbar icon.
 const ICON_128 =
-  "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/a30cad416_icon128.png";
+  "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/51c6ae80a_icon128.png";
 
 export const EXTENSION_ICON_URL = ICON_128;
 

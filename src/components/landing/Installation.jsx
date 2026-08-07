@@ -62,7 +62,7 @@ export default function Installation() {
             Download ZIP — Free
           </a>
           <span className="inline-flex items-center text-sm text-[hsl(var(--wsp-navy)/0.5)] font-mono">
-            v2.4.0 · ~48KB · open source
+            v3.5 · ~48KB · open source
           </span>
         </div>
       </div>

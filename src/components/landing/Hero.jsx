@@ -1,7 +1,69 @@
 import { Shield as ShieldIcon, Download } from "lucide-react";
-import ShieldLogo from "./ShieldIcon";
+import PopupMockup from "./PopupMockup";
 
 const BADGES = ["100% Local", "Zero API Calls", "No Tracking"];
+
+// Words filtered in the demo article (matching the real extension's word list)
+const FILTERED = ["spam", "scam", "damn"];
+
+function Article({ filtered }) {
+  const CENSOR = { bg: "#1a1a1a", outline: "rgba(255,255,255,0.08)" };
+  const render = (w) => {
+    if (!filtered) {
+      return <span className="font-semibold text-[hsl(var(--wsp-navy))]">{w}</span>;
+    }
+    // Censor mode: solid dark redaction bar over the word
+    return (
+      <span
+        className="inline-block align-middle rounded-[2px]"
+        style={{
+          background: CENSOR.bg,
+          outline: `1px solid ${CENSOR.outline}`,
+          width: `${w.length * 0.62}rem`,
+          height: "1.05rem",
+          margin: "0 1px",
+        }}
+      />
+    );
+  };
+  return (
+    <p className="text-[14.5px] leading-[1.85] text-[hsl(var(--wsp-navy)/0.78)]">
+      Beware of new{" "}
+      {render("spam")}{" "}
+      messages promising easy money — many are{" "}
+      {render("scam")}{" "}
+      operations designed to steal your data. If you fall for one, you might exclaim{" "}
+      {render("damn")}{" "}
+      when you realize what happened. Stay alert and verify every link.
+    </p>
+  );
+}
+
+function BeforeAfter() {
+  return (
+    <div className="grid sm:grid-cols-2 gap-4">
+      <div className="rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white overflow-hidden">
+        <div className="px-4 h-9 border-b border-[hsl(var(--wsp-navy)/0.06)] flex items-center justify-between">
+          <span className="text-[11px] font-mono font-semibold text-[hsl(var(--wsp-navy)/0.5)]">BEFORE</span>
+          <span className="w-2 h-2 rounded-full bg-[hsl(var(--wsp-navy)/0.2)]" />
+        </div>
+        <div className="p-5">
+          <Article filtered={false} />
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-[hsl(var(--wsp-accent)/0.35)] bg-[hsl(var(--wsp-accent)/0.04)] overflow-hidden">
+        <div className="px-4 h-9 border-b border-[hsl(var(--wsp-accent)/0.2)] flex items-center justify-between">
+          <span className="text-[11px] font-mono font-semibold text-[hsl(var(--wsp-accent))]">AFTER · CENSOR</span>
+          <span className="w-2 h-2 rounded-full bg-[hsl(var(--wsp-accent))]" />
+        </div>
+        <div className="p-5">
+          <Article filtered={true} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
@@ -13,7 +75,7 @@ export default function Hero() {
           <div className="wsp-reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--wsp-accent)/0.06)] px-3 py-1 text-xs font-mono font-medium text-[hsl(var(--wsp-accent))]">
               <span className="wsp-live-dot inline-block w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
-              Chrome Extension · v2.4.0
+              Chrome Extension · v3.5
             </span>
 
             <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.02]" style={{ fontSize: "clamp(2.75rem, 6vw, 4.75rem)" }}>
@@ -62,69 +124,22 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: live demo card */}
-          <DemoCard />
+          {/* Right: real popup mockup + before/after demo */}
+          <div className="wsp-reveal relative" style={{ animationDelay: "0.15s" }}>
+            <div className="flex flex-col items-center gap-8">
+              <div className="flex justify-center scale-[0.92] sm:scale-100 origin-top">
+                <PopupMockup />
+              </div>
+              <div className="w-full">
+                <div className="text-center text-xs font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-navy)/0.45)] mb-4">
+                  Censor mode · before / after
+                </div>
+                <BeforeAfter />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function DemoCard() {
-  return (
-    <div className="wsp-reveal relative" style={{ animationDelay: "0.15s" }}>
-      <div className="absolute inset-0 bg-[hsl(var(--wsp-accent)/0.18)] blur-2xl rounded-3xl" />
-      <div className="relative rounded-3xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white shadow-2xl shadow-[hsl(var(--wsp-accent)/0.15)] overflow-hidden">
-        {/* browser chrome */}
-        <div className="flex items-center gap-2 px-4 h-10 border-b border-[hsl(var(--wsp-navy)/0.06)] bg-[hsl(var(--wsp-navy)/0.02)]">
-          <span className="w-3 h-3 rounded-full bg-[hsl(var(--wsp-navy)/0.15)]" />
-          <span className="w-3 h-3 rounded-full bg-[hsl(var(--wsp-navy)/0.15)]" />
-          <span className="w-3 h-3 rounded-full bg-[hsl(var(--wsp-navy)/0.15)]" />
-          <div className="ml-3 flex-1 h-6 rounded-md bg-white border border-[hsl(var(--wsp-navy)/0.08)] flex items-center px-2.5 text-[11px] font-mono text-[hsl(var(--wsp-navy)/0.45)]">
-            https://example.com/feed
-          </div>
-          <span className="text-[hsl(var(--wsp-accent))]">
-            <ShieldLogo className="w-4 h-4" />
-          </span>
-        </div>
-
-        {/* page content */}
-        <div className="p-6 lg:p-8">
-          <div className="flex items-center gap-2 mb-5">
-            <span className="w-8 h-8 rounded-full bg-[hsl(var(--wsp-accent)/0.15)]" />
-            <div>
-              <div className="h-2.5 w-24 rounded bg-[hsl(var(--wsp-navy)/0.12)]" />
-              <div className="h-2 w-16 rounded bg-[hsl(var(--wsp-navy)/0.08)] mt-1.5" />
-            </div>
-          </div>
-
-          <p className="text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.8)]">
-            The latest <span className="font-semibold underline decoration-[hsl(var(--wsp-accent))] decoration-2 underline-offset-2">toxic</span> trends online are
-            becoming a real <span className="font-semibold underline decoration-[hsl(var(--wsp-accent))] decoration-2 underline-offset-2">distraction</span> for many
-            readers who just want a cleaner, calmer feed free of <span className="font-semibold underline decoration-[hsl(var(--wsp-accent))] decoration-2 underline-offset-2">clutter</span>.
-          </p>
-
-          <div className="my-5 rounded-xl border border-[hsl(var(--wsp-accent)/0.2)] bg-[hsl(var(--wsp-accent)/0.05)] p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <ShieldLogo className="w-4 h-4 text-[hsl(var(--wsp-accent))]" />
-              <span className="text-xs font-mono font-semibold text-[hsl(var(--wsp-accent))]">WORD SHIELD · ACTIVE</span>
-            </div>
-            <p className="text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.8)]">
-              The latest{" "}
-              <span className="inline-block w-14 h-3 align-middle rounded bg-[hsl(var(--wsp-navy)/0.08)]" />{" "}
-              trends online are becoming a real{" "}
-              <span className="inline-block w-20 h-3 align-middle rounded bg-[hsl(var(--wsp-navy)/0.08)]" />{" "}
-              for many readers who just want a cleaner, calmer feed free of{" "}
-              <span className="inline-block w-16 h-3 align-middle rounded bg-[hsl(var(--wsp-navy)/0.08)]" />.
-            </p>
-          </div>
-
-          <div className="flex items-center justify-between text-[11px] font-mono text-[hsl(var(--wsp-navy)/0.45)]">
-            <span>3 words filtered</span>
-            <span>mode: hide · local only</span>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }

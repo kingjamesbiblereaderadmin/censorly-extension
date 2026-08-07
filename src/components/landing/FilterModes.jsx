@@ -1,51 +1,71 @@
 import { EyeOff, Lock, CloudFog } from "lucide-react";
 import { SectionLabel } from "./HowItWorks";
 
+// Real extension's filter-word list, shown consistently across all three modes.
+const WORDS = ["spam", "scam", "damn"];
+
+function Sentence({ children }) {
+  return <p className="text-[15px] leading-loose text-[hsl(var(--wsp-navy)/0.8)]">{children}</p>;
+}
+
+// Renders a filtered word per the active mode.
+function Filtered({ word, mode }) {
+  if (mode === "hide") {
+    // Completely invisible — transparent text, leaving blank space behind.
+    return <span style={{ color: "transparent", userSelect: "none" }}>{word}</span>;
+  }
+  if (mode === "censor") {
+    // Solid dark redaction bars with a subtle outline, like a blacked-out document.
+    return (
+      <span
+        className="inline-block align-middle rounded-[2px]"
+        style={{
+          background: "#1a1a1a",
+          outline: "1px solid rgba(0,0,0,0.25)",
+          width: `${word.length * 0.62}rem`,
+          height: "1.05rem",
+          margin: "0 1px",
+        }}
+      />
+    );
+  }
+  // blur: CSS filter blur(5px), pixelated & unreadable until hovered
+  return (
+    <span className="wsp-blur-text font-semibold text-[hsl(var(--wsp-accent))]">{word}</span>
+  );
+}
+
+function DemoText({ mode }) {
+  return (
+    <Sentence>
+      Beware of new <Filtered word="spam" mode={mode} /> messages promising easy money —
+      many are <Filtered word="scam" mode={mode} /> operations. If you fall for one, you
+      might exclaim <Filtered word="damn" mode={mode} /> when you realize what happened.
+    </Sentence>
+  );
+}
+
 const MODES = [
   {
     icon: EyeOff,
     name: "Hide",
     tag: "Completely invisible",
-    body: "Words become completely invisible — blank space, nothing to see. The cleanest possible read.",
-    render: () => (
-      <p className="text-[15px] leading-loose text-[hsl(var(--wsp-navy)/0.8)]">
-        The feed stayed{" "}
-        <span className="inline-block w-12 h-3 align-middle rounded bg-[hsl(var(--wsp-navy)/0.08)]" />{" "}
-        all morning, with zero{" "}
-        <span className="inline-block w-20 h-3 align-middle rounded bg-[hsl(var(--wsp-navy)/0.08)]" />{" "}
-        to distract the reader.
-      </p>
-    ),
+    body: "Words become completely invisible — transparent text leaves blank space behind, nothing to see.",
+    mode: "hide",
   },
   {
     icon: Lock,
     name: "Censor",
     tag: "Classic redaction bars",
-    body: "Classic redaction bars over each letter, like a blacked-out government document.",
-    render: () => (
-      <p className="text-[15px] leading-loose text-[hsl(var(--wsp-navy)/0.8)]">
-        The feed stayed{" "}
-        <span className="inline-block h-4 align-middle rounded-[2px] bg-[hsl(var(--wsp-navy))]" style={{ width: "3.2rem" }} />{" "}
-        all morning, with zero{" "}
-        <span className="inline-block h-4 align-middle rounded-[2px] bg-[hsl(var(--wsp-navy))]" style={{ width: "4.6rem" }} />{" "}
-        to distract the reader.
-      </p>
-    ),
+    body: "Solid dark redaction bars over each letter, like a blacked-out government document.",
+    mode: "censor",
   },
   {
     icon: CloudFog,
     name: "Blur",
     tag: "Pixelated · hover to reveal",
-    body: "Words are blurred and pixelated — hover to reveal if you want to. Beautiful bokeh by default.",
-    render: () => (
-      <p className="text-[15px] leading-loose text-[hsl(var(--wsp-navy)/0.8)]">
-        The feed stayed{" "}
-        <span className="wsp-blur-text font-semibold text-[hsl(var(--wsp-accent))]">toxic</span>{" "}
-        all morning, with zero{" "}
-        <span className="wsp-blur-text font-semibold text-[hsl(var(--wsp-accent))]">distraction</span>{" "}
-        to distract the reader.
-      </p>
-    ),
+    body: "Words are blurred with CSS blur and pixelated — unreadable until you hover to reveal.",
+    mode: "blur",
   },
 ];
 
@@ -78,8 +98,8 @@ export default function FilterModes() {
               <h3 className="mt-6 font-heading font-bold text-2xl text-[hsl(var(--wsp-navy))]">{m.name}</h3>
               <p className="mt-2 text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.6)]">{m.body}</p>
 
-              <div className="mt-6 rounded-2xl bg-[hsl(var(--wsp-navy)/0.03)] border border-[hsl(var(--wsp-navy)/0.06)] p-5">
-                {m.render()}
+              <div className="mt-6 rounded-2xl bg-white border border-[hsl(var(--wsp-navy)/0.06)] p-5">
+                <DemoText mode={m.mode} />
               </div>
             </div>
           ))}

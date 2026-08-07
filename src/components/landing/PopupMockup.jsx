@@ -33,7 +33,7 @@ export default function PopupMockup() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <img
-            src="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/79f81ae78_icon128.png"
+            src="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/3f1097e67_icon128.png"
             alt="Word Shield Pro"
             style={{ width: 22, height: 22, borderRadius: 5, objectFit: "contain" }}
           />

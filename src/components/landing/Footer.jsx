@@ -15,13 +15,16 @@ export default function Footer() {
             </span>
           </div>
 
-          <a
-            href="mailto:wordshieldpro@outlook.sg"
-            className="inline-flex items-center gap-2 text-sm text-[hsl(var(--wsp-navy)/0.6)] hover:text-[hsl(var(--wsp-accent))] transition-colors"
-          >
-            <Mail className="w-4 h-4" />
-            wordshieldpro@outlook.sg
-          </a>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-[hsl(var(--wsp-navy)/0.4)]">Support · Contact us</span>
+            <a
+              href="mailto:wordshieldpro@outlook.sg"
+              className="inline-flex items-center gap-2 text-sm text-[hsl(var(--wsp-navy)/0.6)] hover:text-[hsl(var(--wsp-accent))] transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+              wordshieldpro@outlook.sg
+            </a>
+          </div>
 
           <p className="text-sm text-[hsl(var(--wsp-navy)/0.6)] order-last md:order-none">
             Word Shield Pro · Made with <span className="text-[hsl(var(--wsp-accent))]">❤️</span> for a cleaner web

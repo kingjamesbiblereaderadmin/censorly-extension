@@ -1,6 +1,6 @@
 // Word Shield Pro brand logo — custom-drawn shield icon.
 const ICON_URL =
-  "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/3f1097e67_icon128.png";
+  "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/a6889ee8f_icon128.png";
 
 export default function ExtensionIcon({ className = "" }) {
   return (

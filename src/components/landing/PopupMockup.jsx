@@ -126,7 +126,7 @@ export default function PopupMockup() {
 
         {/* Footer */}
         <div style={{ textAlign: "center", fontSize: 11, color: "#6a6a88", paddingBottom: 2 }}>
-          Word Shield Pro v3.6
+          Word Shield Pro v3.7
         </div>
       </div>
     </div>

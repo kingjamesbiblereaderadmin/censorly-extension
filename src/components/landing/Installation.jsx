@@ -63,7 +63,7 @@ export default function Installation() {
             Download Word Shield Pro (.zip)
           </a>
           <span className="inline-flex items-center text-sm text-[hsl(var(--wsp-navy)/0.5)] font-mono">
-            v3.6 · ~48KB · open source · load unpacked in chrome://extensions
+            v3.7 · ~48KB · open source · load unpacked in chrome://extensions
           </span>
         </div>
       </div>

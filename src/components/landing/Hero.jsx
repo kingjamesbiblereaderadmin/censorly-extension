@@ -1,6 +1,7 @@
 import { Download } from "lucide-react";
 import PopupMockup from "./PopupMockup";
 import ExtensionIcon from "./ExtensionIcon";
+import ComingSoonBadge from "./ComingSoonBadge";
 
 const BADGES = ["100% Local", "Zero API Calls", "No Tracking"];
 
@@ -111,6 +112,7 @@ export default function Hero() {
                 <span className="text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
                   Download, unzip, and load unpacked in chrome://extensions · v3.6 · ~48KB
                 </span>
+                <ComingSoonBadge className="mt-1 self-start" />
               </div>
               <a
                 href="#modes"

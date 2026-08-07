@@ -1,5 +1,6 @@
 import { Shield as ShieldIcon } from "lucide-react";
 import ExtensionIcon from "./ExtensionIcon";
+import ComingSoonBadge from "./ComingSoonBadge";
 
 export default function Navbar() {
   return (
@@ -11,6 +12,8 @@ export default function Navbar() {
             Word Shield<span className="text-[hsl(var(--wsp-accent))]"> Pro</span>
           </span>
         </a>
+
+        <ComingSoonBadge className="hidden lg:inline-flex" />
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[hsl(var(--wsp-navy)/0.7)]">
           <a href="#how" className="hover:text-[hsl(var(--wsp-accent))] transition-colors">How it works</a>

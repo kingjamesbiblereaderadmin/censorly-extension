@@ -7,6 +7,7 @@ import PrivacySection from "@/components/landing/PrivacySection";
 import Installation from "@/components/landing/Installation";
 import FAQ from "@/components/landing/FAQ";
 import Footer from "@/components/landing/Footer";
+import ScrollReveal from "@/components/landing/ScrollReveal";
 
 export default function Home() {
   return (
@@ -14,12 +15,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <HowItWorks />
-        <FilterModes />
-        <KeyFeatures />
-        <PrivacySection />
-        <Installation />
-        <FAQ />
+        <ScrollReveal><HowItWorks /></ScrollReveal>
+        <ScrollReveal delay={0.05}><FilterModes /></ScrollReveal>
+        <ScrollReveal><KeyFeatures /></ScrollReveal>
+        <ScrollReveal delay={0.05}><PrivacySection /></ScrollReveal>
+        <ScrollReveal><Installation /></ScrollReveal>
+        <ScrollReveal delay={0.05}><FAQ /></ScrollReveal>
       </main>
       <Footer />
     </div>

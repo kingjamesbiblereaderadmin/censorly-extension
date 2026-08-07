@@ -4,8 +4,10 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: 252 100% 99%;
+    --foreground: 236 43% 12%;
+    --wsp-accent: 109 100% 69%;
+    --wsp-navy: 240 43% 12%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
@@ -29,10 +31,10 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --font-heading: ui-sans-serif, system-ui, sans-serif;
-    --font-body: ui-sans-serif, system-ui, sans-serif;
-    --font-display: ui-sans-serif, system-ui, sans-serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-heading: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -88,5 +90,43 @@
 
   body {
     @apply bg-background text-foreground font-body;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wsp-glow:hover {
+    box-shadow: 0 0 0 1px hsl(var(--wsp-accent) / 0.4), 0 12px 40px -8px hsl(var(--wsp-accent) / 0.55);
+  }
+
+  @keyframes wsp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+  .wsp-live-dot {
+    animation: wsp-pulse 2.2s ease-in-out infinite;
+  }
+
+  @keyframes wsp-reveal {
+    from { opacity: 0; filter: blur(8px); transform: translateY(10px); }
+    to { opacity: 1; filter: blur(0); transform: translateY(0); }
+  }
+  .wsp-reveal {
+    animation: wsp-reveal 0.7s ease-out both;
+  }
+
+  .wsp-blur-text {
+    filter: blur(7px);
+    transition: filter 0.45s ease;
+    cursor: pointer;
+  }
+  .wsp-blur-text:hover {
+    filter: blur(0);
+  }
+
+  .wsp-grid-lines {
+    background-image:
+      linear-gradient(hsl(var(--wsp-accent) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--wsp-accent) / 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
   }
 }

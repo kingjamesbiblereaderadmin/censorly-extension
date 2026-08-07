@@ -1,13 +1,14 @@
-// Word Shield Pro brand logo — shield emoji.
+// Word Shield Pro brand logo — custom-drawn shield icon.
+const ICON_URL =
+  "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/6571bdade_icon128.png";
+
 export default function ExtensionIcon({ className = "" }) {
   return (
-    <span
+    <img
+      src={ICON_URL}
+      alt="Word Shield Pro logo"
       className={className}
-      role="img"
-      aria-label="Word Shield Pro logo"
-      style={{ fontSize: "1.4rem", lineHeight: 1, display: "inline-flex", alignItems: "center" }}
-    >
-      🛡️
-    </span>
+      style={{ objectFit: "contain", display: "inline-block" }}
+    />
   );
 }

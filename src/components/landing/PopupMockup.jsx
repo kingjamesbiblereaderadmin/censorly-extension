@@ -32,7 +32,11 @@ export default function PopupMockup() {
         style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 16px", background: "linear-gradient(135deg, #9088ff, #4a47a3)" }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <span style={{ fontSize: 18, lineHeight: 1 }}>🛡️</span>
+          <img
+            src="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/6571bdade_icon128.png"
+            alt="Word Shield Pro"
+            style={{ width: 22, height: 22, borderRadius: 5, objectFit: "contain" }}
+          />
           <span style={{ fontWeight: 700, fontSize: 15, color: "#fff" }}>Word Shield Pro</span>
         </div>
         <span style={{ background: "rgba(255,255,255,0.22)", color: "#fff", fontSize: 11, fontWeight: 700, padding: "2px 9px", borderRadius: 999 }}>
@@ -122,7 +126,7 @@ export default function PopupMockup() {
 
         {/* Footer */}
         <div style={{ textAlign: "center", fontSize: 11, color: "#6a6a88", paddingBottom: 2 }}>
-          Word Shield Pro v3.5
+          Word Shield Pro v3.6
         </div>
       </div>
     </div>

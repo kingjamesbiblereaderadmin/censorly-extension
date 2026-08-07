@@ -99,21 +99,15 @@ export default function Hero() {
               total privacy.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <div className="flex flex-col gap-2.5">
-                <a
-                  href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/438934684_word-shield-pro-v36.zip"
-                  download
-                  className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
-                >
-                  <Download className="w-5 h-5" />
-                  Download Word Shield Pro (.zip)
-                </a>
-                <span className="text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
-                  Download, unzip, and load unpacked in chrome://extensions · v3.7 · ~48KB
-                </span>
-                <ComingSoonBadge className="mt-1 self-start" />
-              </div>
+            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
+              <a
+                href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/438934684_word-shield-pro-v36.zip"
+                download
+                className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
+              >
+                <Download className="w-5 h-5" />
+                Download Word Shield Pro (.zip)
+              </a>
               <a
                 href="#modes"
                 className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[hsl(var(--wsp-navy)/0.15)] bg-white px-7 py-4 text-base font-semibold text-[hsl(var(--wsp-navy))] hover:border-[hsl(var(--wsp-accent))] transition-colors"
@@ -121,6 +115,14 @@ export default function Hero() {
                 <ExtensionIcon className="w-4 h-4" />
                 See the demo
               </a>
+            </div>
+
+            <p className="mt-3 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
+              Download, unzip, and load unpacked in chrome://extensions · v3.7 · ~48KB
+            </p>
+
+            <div className="mt-3">
+              <ComingSoonBadge className="self-start" />
             </div>
 
             <div className="mt-7 flex flex-wrap gap-2.5">

@@ -100,6 +100,10 @@ export default function Hero() {
               total privacy.
             </p>
 
+            <div className="mt-5">
+              <DesktopOnlyBadge />
+            </div>
+
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
               <a
                 href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/438934684_word-shield-pro-v36.zip"
@@ -122,9 +126,8 @@ export default function Hero() {
               Download, unzip, and load unpacked in chrome://extensions · v3.7 · ~48KB
             </p>
 
-            <div className="mt-3 flex flex-wrap items-center gap-2.5">
+            <div className="mt-3">
               <ComingSoonBadge />
-              <DesktopOnlyBadge />
             </div>
 
             <div className="mt-7 flex flex-wrap gap-2.5">

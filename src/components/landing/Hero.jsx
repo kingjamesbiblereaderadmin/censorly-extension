@@ -76,7 +76,7 @@ export default function Hero() {
           <div className="wsp-reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--wsp-accent)/0.06)] px-3 py-1 text-xs font-mono font-medium text-[hsl(var(--wsp-accent))]">
               <span className="wsp-live-dot inline-block w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
-              Chrome Extension · v3.5
+              Chrome Extension · v3.6
             </span>
 
             <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.02]" style={{ fontSize: "clamp(2.75rem, 6vw, 4.75rem)" }}>
@@ -101,7 +101,7 @@ export default function Hero() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <div className="flex flex-col gap-2.5">
                 <a
-                  href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/ce765f153_word-shield-pro-v35.zip"
+                  href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/c1fadcb6b_word-shield-pro-v36.zip"
                   download
                   className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
                 >
@@ -109,7 +109,7 @@ export default function Hero() {
                   Download Word Shield Pro (.zip)
                 </a>
                 <span className="text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
-                  Download, unzip, and load unpacked in chrome://extensions · v3.5 · ~48KB
+                  Download, unzip, and load unpacked in chrome://extensions · v3.6 · ~48KB
                 </span>
               </div>
               <a

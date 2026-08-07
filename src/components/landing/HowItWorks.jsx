@@ -1,6 +1,8 @@
 import { ListPlus, SlidersHorizontal, Globe } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import DesktopOnlyBadge from "./DesktopOnlyBadge";
+import ScrollReveal from "./ScrollReveal";
+import { StaggerGroup, RevealItem } from "./Reveal";
 
 const SCAN_IMG =
   "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/680726614_generated_image.png";
@@ -33,34 +35,36 @@ export default function HowItWorks() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left: sticky visual */}
           <div className="lg:sticky lg:top-24">
-            <SectionLabel>How it works</SectionLabel>
-            <h2 className="mt-4 font-heading font-bold text-[hsl(var(--wsp-navy))] tracking-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              Three steps to a cleaner web
-            </h2>
-            <p className="mt-4 text-lg text-[hsl(var(--wsp-navy)/0.65)] max-w-xl">
-              No account, no setup wizard. Define your words, pick a mode, and the shield does the rest — instantly, on every site.
-            </p>
-            <div className="mt-5">
-              <DesktopOnlyBadge />
-            </div>
+            <ScrollReveal>
+              <SectionLabel>How it works</SectionLabel>
+              <h2 className="mt-4 font-heading font-bold text-[hsl(var(--wsp-navy))] tracking-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+                Three steps to a cleaner web
+              </h2>
+              <p className="mt-4 text-lg text-[hsl(var(--wsp-navy)/0.65)] max-w-xl">
+                No account, no setup wizard. Define your words, pick a mode, and the shield does the rest — instantly, on every site.
+              </p>
+              <div className="mt-5">
+                <DesktopOnlyBadge />
+              </div>
 
-            <div className="mt-8 relative rounded-3xl overflow-hidden border border-[hsl(var(--wsp-navy)/0.08)] shadow-xl shadow-[hsl(var(--wsp-accent)/0.1)]">
-              <Image
-                src={SCAN_IMG}
-                alt="Illustration of Word Shield Pro scanning a web page and redacting matched words"
-                fittingType="fill"
-                className="w-full aspect-[4/3] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--wsp-navy)/0.25)] to-transparent" />
-            </div>
+              <div className="mt-8 relative rounded-3xl overflow-hidden border border-[hsl(var(--wsp-navy)/0.08)] shadow-xl shadow-[hsl(var(--wsp-accent)/0.1)]">
+                <Image
+                  src={SCAN_IMG}
+                  alt="Illustration of Word Shield Pro scanning a web page and redacting matched words"
+                  fittingType="fill"
+                  className="w-full aspect-[4/3] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--wsp-navy)/0.25)] to-transparent" />
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Right: steps timeline */}
           <div className="relative">
             <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-[hsl(var(--wsp-accent)/0.5)] via-[hsl(var(--wsp-navy)/0.1)] to-transparent" />
-            <div className="flex flex-col gap-6">
+            <StaggerGroup className="flex flex-col gap-6">
               {STEPS.map((s) => (
-                <div key={s.n} className="relative flex gap-5">
+                <RevealItem key={s.n} className="relative flex gap-5">
                   <div className="relative shrink-0">
                     <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--wsp-navy))] text-white flex items-center justify-center shadow-lg shadow-[hsl(var(--wsp-accent)/0.25)]">
                       <s.icon className="w-6 h-6" strokeWidth={1.8} />
@@ -73,9 +77,9 @@ export default function HowItWorks() {
                     <h3 className="font-heading font-semibold text-xl text-[hsl(var(--wsp-navy))]">{s.title}</h3>
                     <p className="mt-3 text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.65)]">{s.body}</p>
                   </div>
-                </div>
+                </RevealItem>
               ))}
-            </div>
+            </StaggerGroup>
           </div>
         </div>
       </div>

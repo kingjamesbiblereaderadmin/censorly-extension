@@ -1,6 +1,8 @@
 import { EyeOff, Lock, CloudFog } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { SectionLabel } from "./HowItWorks";
+import ScrollReveal from "./ScrollReveal";
+import { StaggerGroup, RevealItem } from "./Reveal";
 
 const MODES_IMG =
   "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/51358f41b_generated_image.png";
@@ -78,46 +80,47 @@ export default function FilterModes() {
     <section id="modes" className="py-24 lg:py-32 bg-[hsl(var(--wsp-navy)/0.02)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Immersive banner */}
-        <div className="relative rounded-[2rem] overflow-hidden border border-[hsl(var(--wsp-navy)/0.08)] shadow-xl shadow-[hsl(var(--wsp-accent)/0.1)]">
-          <Image
-            src={MODES_IMG}
-            alt="Three glass panels representing the Hide, Censor, and Blur filter modes"
-            fittingType="fill"
-            className="w-full h-56 sm:h-72 object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--wsp-navy)/0.55)] via-[hsl(var(--wsp-navy)/0.2)] to-transparent" />
-          <div className="absolute inset-0 flex flex-col justify-center px-8 lg:px-14">
-            <div className="flex"><SectionLabel>Three filter modes</SectionLabel></div>
-            <h2 className="mt-3 font-heading font-bold text-white tracking-tight max-w-lg" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              Choose how words disappear
-            </h2>
-            <p className="mt-3 text-lg text-white/80 max-w-lg">
-              One filter list, three distinct looks. Switch modes anytime — every matched word updates instantly.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-12 grid md:grid-cols-3 gap-6">
-          {MODES.map((m) => (
-            <div
-              key={m.name}
-              className="group rounded-3xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-8 shadow-sm hover:shadow-xl hover:shadow-[hsl(var(--wsp-accent)/0.12)] hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-[hsl(var(--wsp-accent)/0.08)] flex items-center justify-center text-[hsl(var(--wsp-accent))] group-hover:bg-[hsl(var(--wsp-accent))] group-hover:text-white transition-colors">
-                  <m.icon className="w-6 h-6" strokeWidth={1.8} />
-                </div>
-                <span className="font-mono text-[11px] uppercase tracking-wider text-[hsl(var(--wsp-navy)/0.4)]">{m.tag}</span>
-              </div>
-              <h3 className="mt-6 font-heading font-bold text-2xl text-[hsl(var(--wsp-navy))]">{m.name}</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.6)]">{m.body}</p>
-
-              <div className="mt-6 rounded-2xl bg-[hsl(var(--wsp-navy)/0.02)] border border-[hsl(var(--wsp-navy)/0.06)] p-5">
-                <DemoText mode={m.mode} />
-              </div>
+        <ScrollReveal>
+          <div className="relative rounded-[2rem] overflow-hidden border border-[hsl(var(--wsp-navy)/0.08)] shadow-xl shadow-[hsl(var(--wsp-accent)/0.1)]">
+            <Image
+              src={MODES_IMG}
+              alt="Three glass panels representing the Hide, Censor, and Blur filter modes"
+              fittingType="fill"
+              className="w-full h-56 sm:h-72 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--wsp-navy)/0.55)] via-[hsl(var(--wsp-navy)/0.2)] to-transparent" />
+            <div className="absolute inset-0 flex flex-col justify-center px-8 lg:px-14">
+              <div className="flex"><SectionLabel>Three filter modes</SectionLabel></div>
+              <h2 className="mt-3 font-heading font-bold text-white tracking-tight max-w-lg" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+                Choose how words disappear
+              </h2>
+              <p className="mt-3 text-lg text-white/80 max-w-lg">
+                One filter list, three distinct looks. Switch modes anytime — every matched word updates instantly.
+              </p>
             </div>
+          </div>
+        </ScrollReveal>
+
+        <StaggerGroup className="mt-12 grid md:grid-cols-3 gap-6">
+          {MODES.map((m) => (
+            <RevealItem key={m.name}>
+              <div className="group rounded-3xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-8 shadow-sm hover:shadow-xl hover:shadow-[hsl(var(--wsp-accent)/0.12)] hover:-translate-y-1 transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-xl bg-[hsl(var(--wsp-accent)/0.08)] flex items-center justify-center text-[hsl(var(--wsp-accent))] group-hover:bg-[hsl(var(--wsp-accent))] group-hover:text-white transition-colors">
+                    <m.icon className="w-6 h-6" strokeWidth={1.8} />
+                  </div>
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-[hsl(var(--wsp-navy)/0.4)]">{m.tag}</span>
+                </div>
+                <h3 className="mt-6 font-heading font-bold text-2xl text-[hsl(var(--wsp-navy))]">{m.name}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.6)]">{m.body}</p>
+
+                <div className="mt-6 rounded-2xl bg-[hsl(var(--wsp-navy)/0.02)] border border-[hsl(var(--wsp-navy)/0.06)] p-5">
+                  <DemoText mode={m.mode} />
+                </div>
+              </div>
+            </RevealItem>
           ))}
-        </div>
+        </StaggerGroup>
       </div>
     </section>
   );

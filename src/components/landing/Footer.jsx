@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Heart, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import ExtensionIcon from "./ExtensionIcon";
 
@@ -61,18 +61,32 @@ export default function Footer() {
           <span className="font-mono">© {new Date().getFullYear()} Word Shield Pro</span>
         </div>
 
-        <p className="text-center text-xs text-[hsl(var(--wsp-navy)/0.55)] mt-1">
-          Special thanks to{" "}
-          <a
-            href="https://www.reddit.com/r/Base44/comments/1vdkfn8/free_base44_prompt_turn_a_generic_aibuilt_page/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-[hsl(var(--wsp-accent))] hover:underline"
-          >
-            Will Kode
-          </a>{" "}
-          for the script that helped make this website amazing.
-        </p>
+        <a
+          href="https://www.reddit.com/r/Base44/comments/1vdkfn8/free_base44_prompt_turn_a_generic_aibuilt_page/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group w-full mt-2 relative overflow-hidden rounded-2xl border border-[hsl(var(--wsp-accent)/0.25)] bg-gradient-to-br from-[hsl(var(--wsp-accent)/0.06)] to-white p-5 sm:p-6 transition-all hover:border-[hsl(var(--wsp-accent)/0.5)] hover:shadow-lg hover:shadow-[hsl(var(--wsp-accent)/0.15)]"
+        >
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[hsl(var(--wsp-accent)/0.15)] rounded-full blur-2xl pointer-events-none" />
+          <div className="relative flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
+            <span className="shrink-0 w-12 h-12 rounded-2xl bg-[hsl(var(--wsp-accent))] text-white flex items-center justify-center shadow-md shadow-[hsl(var(--wsp-accent)/0.3)]">
+              <Heart className="w-5 h-5" fill="currentColor" />
+            </span>
+            <div className="flex-1">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-accent))]">
+                <Sparkles className="w-3 h-3" />
+                Special Thanks
+              </span>
+              <p className="mt-2 text-sm sm:text-base text-[hsl(var(--wsp-navy)/0.8)] leading-relaxed">
+                A shoutout to{" "}
+                <span className="font-heading font-bold text-[hsl(var(--wsp-navy))] underline decoration-[hsl(var(--wsp-accent)/0.4)] decoration-2 underline-offset-2 group-hover:decoration-[hsl(var(--wsp-accent))] transition-colors">
+                  Will Kode
+                </span>{" "}
+                — the free Base44 prompt that helped shape this website is brilliant, and we're grateful.
+              </p>
+            </div>
+          </div>
+        </a>
       </div>
     </footer>
   );

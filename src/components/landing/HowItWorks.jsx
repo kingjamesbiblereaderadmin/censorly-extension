@@ -1,4 +1,5 @@
 import { ListPlus, SlidersHorizontal, Globe } from "lucide-react";
+import DesktopOnlyBadge from "./DesktopOnlyBadge";
 
 const STEPS = [
   {
@@ -32,6 +33,9 @@ export default function HowItWorks() {
         <p className="mt-4 text-lg text-[hsl(var(--wsp-navy)/0.65)] max-w-2xl">
           No account, no setup wizard. Define your words, pick a mode, and the shield does the rest — instantly, on every site.
         </p>
+        <div className="mt-5">
+          <DesktopOnlyBadge />
+        </div>
 
         <div className="mt-16 grid md:grid-cols-3 gap-px bg-[hsl(var(--wsp-navy)/0.08)] rounded-3xl overflow-hidden border border-[hsl(var(--wsp-navy)/0.08)]">
           {STEPS.map((s) => (

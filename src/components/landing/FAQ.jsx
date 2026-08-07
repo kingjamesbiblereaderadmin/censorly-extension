@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import { SectionLabel } from "./HowItWorks";
+import DesktopOnlyBadge from "./DesktopOnlyBadge";
 
 const FAQS = [
   {
@@ -23,6 +24,10 @@ const FAQS = [
     q: "Is it free?",
     a: "Yes — open source, no subscriptions, no premium tier.",
   },
+  {
+    q: "Does it work on mobile?",
+    a: "No — browser extensions don't run on mobile browsers. Word Shield Pro is desktop only and works in Chrome, Edge, and Brave on Windows, Mac, and Linux.",
+  },
 ];
 
 export default function FAQ() {
@@ -35,6 +40,9 @@ export default function FAQ() {
           <h2 className="mt-4 font-heading font-bold text-[hsl(var(--wsp-navy))] tracking-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Questions, answered
           </h2>
+          <div className="mt-5 flex justify-center">
+            <DesktopOnlyBadge />
+          </div>
         </div>
 
         <div className="mt-12 divide-y divide-[hsl(var(--wsp-navy)/0.08)] border-y border-[hsl(var(--wsp-navy)/0.08)]">

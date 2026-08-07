@@ -2,6 +2,7 @@ import { Download } from "lucide-react";
 import PopupMockup from "./PopupMockup";
 import ExtensionIcon from "./ExtensionIcon";
 import ComingSoonBadge from "./ComingSoonBadge";
+import DesktopOnlyBadge from "./DesktopOnlyBadge";
 
 const BADGES = ["100% Local", "Zero API Calls", "No Tracking"];
 
@@ -121,8 +122,9 @@ export default function Hero() {
               Download, unzip, and load unpacked in chrome://extensions · v3.7 · ~48KB
             </p>
 
-            <div className="mt-3">
-              <ComingSoonBadge className="self-start" />
+            <div className="mt-3 flex flex-wrap items-center gap-2.5">
+              <ComingSoonBadge />
+              <DesktopOnlyBadge />
             </div>
 
             <div className="mt-7 flex flex-wrap gap-2.5">

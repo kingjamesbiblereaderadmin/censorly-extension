@@ -99,18 +99,24 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a
-                href="#install"
-                className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
-              >
-                <ExtensionIcon className="w-5 h-5" />
-                Add to Chrome — Free
-              </a>
+              <div className="flex flex-col gap-2.5">
+                <a
+                  href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/ce765f153_word-shield-pro-v35.zip"
+                  download
+                  className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
+                >
+                  <Download className="w-5 h-5" />
+                  Download Word Shield Pro (.zip)
+                </a>
+                <span className="text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
+                  Download, unzip, and load unpacked in chrome://extensions · v3.5 · ~48KB
+                </span>
+              </div>
               <a
                 href="#modes"
                 className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[hsl(var(--wsp-navy)/0.15)] bg-white px-7 py-4 text-base font-semibold text-[hsl(var(--wsp-navy))] hover:border-[hsl(var(--wsp-accent))] transition-colors"
               >
-                <Download className="w-4 h-4" />
+                <ExtensionIcon className="w-4 h-4" />
                 See the demo
               </a>
             </div>

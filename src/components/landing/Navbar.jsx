@@ -1,14 +1,12 @@
 import { Shield as ShieldIcon } from "lucide-react";
-import ShieldLogo from "./ShieldIcon";
+import ExtensionIcon from "./ExtensionIcon";
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-[hsl(var(--wsp-accent)/0.08)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="text-[hsl(var(--wsp-accent))]">
-            <ShieldLogo className="w-7 h-7" />
-          </span>
+          <ExtensionIcon className="w-7 h-7" />
           <span className="font-heading font-bold text-lg tracking-tight text-[hsl(var(--wsp-navy))]">
             Word Shield<span className="text-[hsl(var(--wsp-accent))]"> Pro</span>
           </span>

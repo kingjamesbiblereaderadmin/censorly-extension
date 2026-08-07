@@ -1,5 +1,5 @@
 import { ShieldOff, WifiOff, BarChart3, CloudOff } from "lucide-react";
-import ShieldLogo from "./ShieldIcon";
+import ExtensionIcon from "./ExtensionIcon";
 
 const PILLARS = [
   { icon: WifiOff, label: "Zero network requests", body: "The extension literally cannot reach the internet." },
@@ -43,7 +43,7 @@ export default function PrivacySection() {
         </div>
 
         <div className="mt-16 inline-flex items-center gap-3 text-white/60 text-sm font-mono">
-          <ShieldLogo className="w-5 h-5 text-[hsl(var(--wsp-accent))]" />
+          <ExtensionIcon className="w-5 h-5" />
           100% client-side · source available · auditable
         </div>
       </div>

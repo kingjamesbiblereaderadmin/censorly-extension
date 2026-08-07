@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import ShieldLogo from "./ShieldIcon";
+import ExtensionIcon from "./ExtensionIcon";
 
 export default function Footer() {
   return (
@@ -7,9 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12 flex flex-col items-center gap-7">
         <div className="flex flex-col md:flex-row items-center justify-between w-full gap-6">
           <div className="flex items-center gap-2.5">
-            <span className="text-[hsl(var(--wsp-accent))]">
-              <ShieldLogo className="w-6 h-6" />
-            </span>
+            <ExtensionIcon className="w-6 h-6" />
             <span className="font-heading font-bold text-[hsl(var(--wsp-navy))]">
               Word Shield<span className="text-[hsl(var(--wsp-accent))]"> Pro</span>
             </span>

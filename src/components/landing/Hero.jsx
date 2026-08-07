@@ -1,5 +1,6 @@
-import { Shield as ShieldIcon, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import PopupMockup from "./PopupMockup";
+import ExtensionIcon from "./ExtensionIcon";
 
 const BADGES = ["100% Local", "Zero API Calls", "No Tracking"];
 
@@ -102,7 +103,7 @@ export default function Hero() {
                 href="#install"
                 className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
               >
-                <ShieldIcon className="w-5 h-5" />
+                <ExtensionIcon className="w-5 h-5" />
                 Add to Chrome — Free
               </a>
               <a

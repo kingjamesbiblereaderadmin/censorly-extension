@@ -60,6 +60,19 @@ export default function Footer() {
           </div>
           <span className="font-mono">© {new Date().getFullYear()} Word Shield Pro</span>
         </div>
+
+        <p className="text-center text-xs text-[hsl(var(--wsp-navy)/0.55)] mt-1">
+          Special thanks to{" "}
+          <a
+            href="https://www.youtube.com/@WillKode"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-[hsl(var(--wsp-accent))] hover:underline"
+          >
+            Will Kode
+          </a>{" "}
+          for the script that helped make this website amazing.
+        </p>
       </div>
     </footer>
   );

@@ -64,7 +64,7 @@ export default function Footer() {
         <p className="text-center text-xs text-[hsl(var(--wsp-navy)/0.55)] mt-1">
           Special thanks to{" "}
           <a
-            href="https://www.youtube.com/@WillKode"
+            href="https://www.reddit.com/r/Base44/comments/1vdkfn8/free_base44_prompt_turn_a_generic_aibuilt_page/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-[hsl(var(--wsp-accent))] hover:underline"

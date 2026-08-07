@@ -72,7 +72,7 @@ export default function Hero() {
     <section id="top" className="relative overflow-hidden wsp-grid-lines">
       <div className="absolute -top-24 right-0 w-[40rem] h-[40rem] bg-[hsl(var(--wsp-accent)/0.10)] rounded-full blur-3xl pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-24 lg:pt-28 lg:pb-32">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-14 items-center">
           {/* Left: copy */}
           <div className="wsp-reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--wsp-accent)/0.06)] px-3 py-1 text-xs font-mono font-medium text-[hsl(var(--wsp-accent))]">

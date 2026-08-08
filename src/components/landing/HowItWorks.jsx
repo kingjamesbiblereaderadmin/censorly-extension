@@ -65,11 +65,11 @@ export default function HowItWorks() {
             <StaggerGroup className="flex flex-col gap-3">
               {STEPS.map((s) => (
                 <RevealItem key={s.n} className="relative flex items-start gap-5">
-                  <div className="relative shrink-0 w-14 h-14 rounded-2xl bg-[hsl(var(--wsp-navy))] flex items-center justify-center shadow-lg shadow-[hsl(var(--wsp-accent)/0.25)]">
-                    <s.icon className="w-5 h-5 text-white" strokeWidth={1.8} />
-                    <span className="absolute top-1 left-1.5 font-mono text-[9px] font-bold text-[hsl(var(--wsp-accent))]">
+                  <div className="relative shrink-0 w-14 h-14 rounded-2xl bg-[hsl(var(--wsp-navy))] flex flex-col items-center justify-center shadow-lg shadow-[hsl(var(--wsp-accent)/0.25)]">
+                    <span className="font-mono text-[10px] font-bold text-[hsl(var(--wsp-accent))] leading-none mb-1.5">
                       {s.n}
                     </span>
+                    <s.icon className="w-5 h-5 text-white" strokeWidth={1.8} />
                   </div>
                   <div className="flex-1 rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-5 hover:border-[hsl(var(--wsp-accent)/0.35)] hover:shadow-md transition-all">
                     <h3 className="font-heading font-semibold text-xl text-[hsl(var(--wsp-navy))]">{s.title}</h3>

@@ -1,4 +1,4 @@
-import { Mail, Heart, Sparkles } from "lucide-react";
+import { Mail, Heart, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import ExtensionIcon from "./ExtensionIcon";
 
@@ -65,26 +65,32 @@ export default function Footer() {
           href="https://www.reddit.com/r/Base44/comments/1vdkfn8/free_base44_prompt_turn_a_generic_aibuilt_page/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group w-full mt-2 relative overflow-hidden rounded-2xl border border-[hsl(var(--wsp-accent)/0.25)] bg-gradient-to-br from-[hsl(var(--wsp-accent)/0.06)] to-white p-5 sm:p-6 transition-all hover:border-[hsl(var(--wsp-accent)/0.5)] hover:shadow-lg hover:shadow-[hsl(var(--wsp-accent)/0.15)]"
+          className="group w-full mt-3 relative overflow-hidden rounded-2xl bg-[hsl(var(--wsp-navy))] px-6 py-5 sm:px-8 sm:py-6 transition-all hover:shadow-xl hover:shadow-[hsl(var(--wsp-accent)/0.2)]"
         >
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[hsl(var(--wsp-accent)/0.15)] rounded-full blur-2xl pointer-events-none" />
-          <div className="relative flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
-            <span className="shrink-0 w-12 h-12 rounded-2xl bg-[hsl(var(--wsp-accent))] text-white flex items-center justify-center shadow-md shadow-[hsl(var(--wsp-accent)/0.3)]">
+          <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "linear-gradient(hsl(var(--wsp-accent)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--wsp-accent)) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
+          <div className="absolute -top-16 -right-16 w-44 h-44 bg-[hsl(var(--wsp-accent)/0.25)] rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative flex items-center gap-4 sm:gap-5">
+            <span className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[hsl(var(--wsp-accent))] text-white flex items-center justify-center shadow-lg shadow-[hsl(var(--wsp-accent)/0.35)]">
               <Heart className="w-5 h-5" fill="currentColor" />
             </span>
-            <div className="flex-1">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-accent))]">
-                <Sparkles className="w-3 h-3" />
+
+            <div className="flex-1 min-w-0">
+              <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-[hsl(var(--wsp-accent))]">
                 Special Thanks
               </span>
-              <p className="mt-2 text-sm sm:text-base text-[hsl(var(--wsp-navy)/0.8)] leading-relaxed">
-                A shoutout to{" "}
-                <span className="font-heading font-bold text-[hsl(var(--wsp-navy))] underline decoration-[hsl(var(--wsp-accent)/0.4)] decoration-2 underline-offset-2 group-hover:decoration-[hsl(var(--wsp-accent))] transition-colors">
+              <p className="mt-1 text-sm sm:text-[15px] text-white/85 leading-snug">
+                Built with the brilliant free Base44 prompt by{" "}
+                <span className="font-heading font-bold text-white group-hover:text-[hsl(var(--wsp-accent))] transition-colors">
                   Will Kode
-                </span>{" "}
-                — the free Base44 prompt that helped shape this website is brilliant, and we're grateful.
+                </span>
               </p>
             </div>
+
+            <span className="shrink-0 hidden sm:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70 group-hover:border-[hsl(var(--wsp-accent)/0.5)] group-hover:text-white transition-colors">
+              View prompt
+              <ExternalLink className="w-3.5 h-3.5" />
+            </span>
           </div>
         </a>
       </div>

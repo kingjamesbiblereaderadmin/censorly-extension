@@ -28,13 +28,13 @@ export default function KeyFeatures() {
           </p>
         </ScrollReveal>
 
-        <StaggerGroup className="mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerGroup className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {FEATURES.map((f, i) => {
             const featured = i === 0;
             return (
               <RevealItem key={f.title} className={featured ? "sm:col-span-2 lg:col-span-2" : ""}>
                 <div
-                  className={`group relative overflow-hidden rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-1 ${
+                  className={`group relative overflow-hidden rounded-3xl border p-6 transition-all duration-300 hover:-translate-y-1 ${
                     featured
                       ? "bg-[hsl(var(--wsp-navy))] text-white border-transparent hover:shadow-2xl hover:shadow-[hsl(var(--wsp-accent)/0.25)]"
                       : "bg-white border-[hsl(var(--wsp-navy)/0.08)] hover:border-[hsl(var(--wsp-accent)/0.4)] hover:shadow-lg"

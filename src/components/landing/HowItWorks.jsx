@@ -64,12 +64,12 @@ export default function HowItWorks() {
             <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-[hsl(var(--wsp-accent)/0.5)] via-[hsl(var(--wsp-navy)/0.1)] to-transparent" />
             <StaggerGroup className="flex flex-col gap-3">
               {STEPS.map((s) => (
-                <RevealItem key={s.n} className="relative flex gap-5">
+                <RevealItem key={s.n} className="relative flex items-start gap-5">
                   <div className="relative shrink-0">
                     <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--wsp-navy))] text-white flex items-center justify-center shadow-lg shadow-[hsl(var(--wsp-accent)/0.25)]">
                       <s.icon className="w-6 h-6" strokeWidth={1.8} />
                     </div>
-                    <span className="absolute -top-2 -left-2 font-mono text-[10px] font-bold text-[hsl(var(--wsp-accent))] bg-[hsl(var(--wsp-accent)/0.1)] border border-[hsl(var(--wsp-accent)/0.3)] rounded-full px-1.5 py-0.5">
+                    <span className="absolute -top-1.5 -left-1.5 w-6 h-6 flex items-center justify-center font-mono text-[10px] font-bold text-[hsl(var(--wsp-navy))] bg-[hsl(var(--wsp-accent))] rounded-full ring-2 ring-white shadow-sm">
                       {s.n}
                     </span>
                   </div>

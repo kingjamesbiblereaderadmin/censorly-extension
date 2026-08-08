@@ -62,7 +62,7 @@ export default function HowItWorks() {
           {/* Right: steps timeline */}
           <div className="relative">
             <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-[hsl(var(--wsp-accent)/0.5)] via-[hsl(var(--wsp-navy)/0.1)] to-transparent" />
-            <StaggerGroup className="flex flex-col gap-6">
+            <StaggerGroup className="flex flex-col gap-3">
               {STEPS.map((s) => (
                 <RevealItem key={s.n} className="relative flex gap-5">
                   <div className="relative shrink-0">
@@ -73,7 +73,7 @@ export default function HowItWorks() {
                       {s.n}
                     </span>
                   </div>
-                  <div className="flex-1 rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-6 hover:border-[hsl(var(--wsp-accent)/0.35)] hover:shadow-md transition-all">
+                  <div className="flex-1 rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-5 hover:border-[hsl(var(--wsp-accent)/0.35)] hover:shadow-md transition-all">
                     <h3 className="font-heading font-semibold text-xl text-[hsl(var(--wsp-navy))]">{s.title}</h3>
                     <p className="mt-3 text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.65)]">{s.body}</p>
                   </div>

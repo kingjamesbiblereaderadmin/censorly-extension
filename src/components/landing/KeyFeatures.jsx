@@ -28,7 +28,7 @@ export default function KeyFeatures() {
           </p>
         </ScrollReveal>
 
-        <StaggerGroup className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <StaggerGroup className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {FEATURES.map((f, i) => {
             const featured = i === 0;
             return (

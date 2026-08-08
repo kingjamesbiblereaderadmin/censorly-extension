@@ -61,15 +61,19 @@ export default function HowItWorks() {
 
           {/* Right: steps timeline */}
           <div className="relative">
-            <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-[hsl(var(--wsp-accent)/0.5)] via-[hsl(var(--wsp-navy)/0.1)] to-transparent" />
+            <div className="absolute left-10 top-2 bottom-2 w-px bg-gradient-to-b from-[hsl(var(--wsp-accent)/0.5)] via-[hsl(var(--wsp-navy)/0.1)] to-transparent" />
             <StaggerGroup className="flex flex-col gap-3">
               {STEPS.map((s) => (
                 <RevealItem key={s.n} className="relative flex items-start gap-5">
-                  <div className="relative shrink-0 w-14 h-14 rounded-2xl bg-[hsl(var(--wsp-navy))] flex flex-col items-center justify-center shadow-lg shadow-[hsl(var(--wsp-accent)/0.25)]">
-                    <span className="font-mono text-[10px] font-bold text-[hsl(var(--wsp-accent))] leading-none mb-1.5">
-                      {s.n}
-                    </span>
-                    <s.icon className="w-5 h-5 text-white" strokeWidth={1.8} />
+                  <div className="relative shrink-0 flex h-14 rounded-2xl overflow-hidden shadow-lg shadow-[hsl(var(--wsp-accent)/0.25)]">
+                    <div className="w-10 h-full bg-[hsl(var(--wsp-accent))] flex items-center justify-center">
+                      <span className="font-mono text-lg font-bold text-white">
+                        {s.n}
+                      </span>
+                    </div>
+                    <div className="w-10 h-full bg-[hsl(var(--wsp-navy))] flex items-center justify-center">
+                      <s.icon className="w-5 h-5 text-white" strokeWidth={1.8} />
+                    </div>
                   </div>
                   <div className="flex-1 rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-5 hover:border-[hsl(var(--wsp-accent)/0.35)] hover:shadow-md transition-all">
                     <h3 className="font-heading font-semibold text-xl text-[hsl(var(--wsp-navy))]">{s.title}</h3>

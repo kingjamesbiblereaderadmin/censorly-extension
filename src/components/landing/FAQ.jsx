@@ -37,7 +37,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-24 lg:py-32 bg-[hsl(var(--wsp-navy)/0.02)]">
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-12 lg:gap-20 items-start">
           {/* Left: heading */}
           <div className="lg:sticky lg:top-24">
             <ScrollReveal>
@@ -61,14 +61,14 @@ export default function FAQ() {
                     <button
                       onClick={() => setOpen(isOpen ? -1 : i)}
                       aria-expanded={isOpen}
-                      className="w-full flex items-center justify-between gap-4 py-5 text-left group"
+                      className="w-full flex items-center justify-between gap-4 py-6 text-left group"
                     >
                       <span className="font-heading font-semibold text-lg text-[hsl(var(--wsp-navy))] group-hover:text-[hsl(var(--wsp-accent))] transition-colors">{item.q}</span>
                       <span className={`shrink-0 w-7 h-7 rounded-full border border-[hsl(var(--wsp-accent)/0.3)] flex items-center justify-center text-[hsl(var(--wsp-accent))] transition-transform ${isOpen ? "rotate-45 bg-[hsl(var(--wsp-accent)/0.1)]" : ""}`}>
                         <Plus className="w-4 h-4" />
                       </span>
                     </button>
-                    <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 pb-5" : "grid-rows-[0fr] opacity-0"}`}>
+                    <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`}>
                       <div className="overflow-hidden">
                         <p className="text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.65)] pr-10">{item.a}</p>
                       </div>

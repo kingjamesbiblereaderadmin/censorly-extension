@@ -8,7 +8,7 @@ import DesktopOnlyBadge from "./DesktopOnlyBadge";
 const HERO_AMBIENT =
   "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/d166ec2eb_generated_image.png";
 const POPUP_IMG =
-  "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/8f4606eee_generated_image.png";
+  "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/3055f07f9_popup-static.png";
 const BADGES = ["100% Local", "Zero API Calls", "No Tracking"];
 
 // Words filtered in the demo article (matching the real extension's word list)
@@ -122,7 +122,7 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
               <a
-                href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/f54232594_word-shield-pro-v38.zip"
+                href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/bc9caf5bf_word-shield-pro-v38.zip"
                 download
                 className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
               >

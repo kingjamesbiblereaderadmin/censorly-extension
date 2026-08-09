@@ -1,12 +1,14 @@
 import { Download, ArrowRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
-import PopupMockup from "./PopupMockup";
+
 import ExtensionIcon from "./ExtensionIcon";
 import ComingSoonBadge from "./ComingSoonBadge";
 import DesktopOnlyBadge from "./DesktopOnlyBadge";
 
 const HERO_AMBIENT =
   "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/d166ec2eb_generated_image.png";
+const POPUP_IMG =
+  "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/8f4606eee_generated_image.png";
 const BADGES = ["100% Local", "Zero API Calls", "No Tracking"];
 
 // Words filtered in the demo article (matching the real extension's word list)
@@ -161,7 +163,12 @@ export default function Hero() {
             <div className="absolute -inset-6 bg-gradient-to-tr from-[hsl(var(--wsp-accent)/0.15)] to-transparent rounded-[2rem] blur-2xl pointer-events-none" />
             <div className="relative flex flex-col items-center gap-8">
               <div className="flex justify-center scale-[0.92] sm:scale-100 origin-top">
-                <PopupMockup />
+                <Image
+                  src={POPUP_IMG}
+                  alt="Word Shield Pro extension popup"
+                  fittingType="fit"
+                  className="w-full max-w-[340px] rounded-2xl shadow-2xl shadow-[hsl(var(--wsp-accent)/0.3)]"
+                />
               </div>
               <div className="w-full">
                 <div className="text-center text-xs font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-navy)/0.45)] mb-4">

@@ -63,7 +63,7 @@ export default function Installation() {
 
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
             <a
-              href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/d9cd22b55_word-shield-pro-v38.zip"
+              href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/d7a4c4a59_word-shield-pro-v39.zip"
               download
               className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
             >
@@ -72,7 +72,7 @@ export default function Installation() {
             </a>
             <span className="inline-flex items-center gap-2 text-sm text-[hsl(var(--wsp-navy)/0.5)] font-mono">
               <ExtensionIcon className="w-4 h-4" />
-              v3.8 · ~48KB · open source · load unpacked in chrome://extensions
+              v3.9 · ~48KB · open source · load unpacked in chrome://extensions
             </span>
           </div>
         </ScrollReveal>

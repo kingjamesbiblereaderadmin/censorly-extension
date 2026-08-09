@@ -184,19 +184,6 @@ const SECTIONS = [
       </p>
     ),
   },
-  {
-    n: "12",
-    title: "AI Disclaimer",
-    body: (
-      <p>
-        This privacy policy was generated with the assistance of AI tools and
-        reviewed by the developer. The extension itself was also developed with
-        the assistance of AI tools for code generation only. The extension
-        contains no AI features and does not use any AI at runtime. All code and
-        policy content was reviewed by the developer before publication.
-      </p>
-    ),
-  },
 ];
 
 export default function PrivacyPolicy() {
@@ -223,6 +210,23 @@ export default function PrivacyPolicy() {
             Extension") handles user data. By installing and using the Extension,
             you agree to the practices described below.
           </p>
+
+          {/* AI Disclaimer */}
+          <div className="mt-8 rounded-2xl border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--wsp-accent)/0.05)] p-6">
+            <div className="flex items-baseline gap-3">
+              <span className="font-mono text-sm font-semibold text-[hsl(var(--wsp-accent))]">
+                AI Disclaimer
+              </span>
+            </div>
+            <p className="mt-3 text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.75)]">
+              This privacy policy was generated with the assistance of AI tools and
+              reviewed by the developer. The extension itself was also developed
+              with the assistance of AI tools for code generation only. The
+              extension contains no AI features and does not use any AI at runtime.
+              All code and policy content was reviewed by the developer before
+              publication.
+            </p>
+          </div>
 
           {/* Sections */}
           <div className="mt-12 space-y-12">

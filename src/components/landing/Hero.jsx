@@ -1,9 +1,10 @@
-import { Download, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
 
 import ExtensionIcon from "./ExtensionIcon";
 import ComingSoonBadge from "./ComingSoonBadge";
 import DesktopOnlyBadge from "./DesktopOnlyBadge";
+import DownloadButtons from "./DownloadButtons";
 
 const HERO_AMBIENT =
   "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/d166ec2eb_generated_image.png";
@@ -120,15 +121,8 @@ export default function Hero() {
               <DesktopOnlyBadge />
             </div>
 
-            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-              <a
-                href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/d7a4c4a59_word-shield-pro-v39.zip"
-                download
-                className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
-              >
-                <Download className="w-5 h-5" />
-                Download Word Shield Pro (.zip)
-              </a>
+            <div className="mt-8 flex flex-col gap-4">
+              <DownloadButtons />
               <a
                 href="#modes"
                 className="group inline-flex items-center justify-center gap-2 rounded-2xl border border-[hsl(var(--wsp-navy)/0.15)] bg-white/70 backdrop-blur px-7 py-4 text-base font-semibold text-[hsl(var(--wsp-navy))] hover:border-[hsl(var(--wsp-accent))] transition-colors"

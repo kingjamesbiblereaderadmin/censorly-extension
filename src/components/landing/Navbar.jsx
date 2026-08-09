@@ -1,4 +1,5 @@
 import { Shield as ShieldIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 import ExtensionIcon from "./ExtensionIcon";
 import ComingSoonBadge from "./ComingSoonBadge";
 
@@ -33,6 +34,12 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
+            <Link
+              to="/privacy-policy"
+              className="relative hover:text-[hsl(var(--wsp-navy))] transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-[hsl(var(--wsp-accent))] after:transition-all"
+            >
+              Policy
+            </Link>
           </nav>
 
           <a

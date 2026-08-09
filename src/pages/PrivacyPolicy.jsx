@@ -129,7 +129,10 @@ const SECTIONS = [
       <p>
         The Extension does not integrate with, send data to, or communicate
         with any third-party service, API, or analytics platform. There are no
-        trackers, no analytics, and no telemetry.
+        trackers, no analytics, and no telemetry within the Extension. This
+        policy covers the Extension only; this website is hosted on the Base44
+        platform, which collects basic, aggregate visit analytics for the site
+        itself — separate from the Extension, which collects nothing.
       </p>
     ),
   },

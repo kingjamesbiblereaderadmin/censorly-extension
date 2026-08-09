@@ -1,0 +1,51 @@
+{
+  "name": "DownloadLink",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Stable identifier, e.g. chrome / firefox / opera"
+    },
+    "label": {
+      "type": "string",
+      "description": "Button label shown on the landing page"
+    },
+    "href": {
+      "type": "string",
+      "description": "Download URL the button points to"
+    },
+    "primary": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this is the primary (highlighted) button"
+    },
+    "order": {
+      "type": "number",
+      "default": 0,
+      "description": "Display order (ascending)"
+    }
+  },
+  "required": [
+    "key",
+    "label",
+    "href"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

@@ -95,7 +95,7 @@ export default function Hero() {
           <div className="wsp-reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--background))]/60 backdrop-blur px-3 py-1 text-xs font-mono font-medium text-[hsl(var(--wsp-accent))]">
               <span className="wsp-live-dot inline-block w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
-              Chrome Extension · v3.9
+              Chrome Extension · v3.10
             </span>
 
             <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.02]" style={{ fontSize: "clamp(2.75rem, 6vw, 4.75rem)" }}>
@@ -134,7 +134,7 @@ export default function Hero() {
             </div>
 
             <p className="mt-3 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
-              Download, unzip, and load unpacked in chrome://extensions · v3.9 · ~48KB
+              Download, unzip, and load unpacked in chrome://extensions · v3.10 · ~48KB
             </p>
 
             <div className="mt-3">

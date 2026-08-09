@@ -122,7 +122,7 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
               <a
-                href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/199e7094b_word-shield-pro-v38.zip"
+                href="https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/f54232594_word-shield-pro-v38.zip"
                 download
                 className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-accent))] px-7 py-4 text-base font-semibold text-white transition-shadow"
               >

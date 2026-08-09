@@ -41,7 +41,7 @@ export default function Footer() {
               to="/privacy-policy"
               className="hover:text-[hsl(var(--wsp-accent))] transition-colors"
             >
-              Privacy Policy
+              Policy
             </Link>
             <a
               href="https://base44.com"

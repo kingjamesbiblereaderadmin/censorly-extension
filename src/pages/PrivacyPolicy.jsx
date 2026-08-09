@@ -174,13 +174,26 @@ const SECTIONS = [
     title: "Contact",
     body: (
       <p>
-        If you have questions about this privacy policy, contact us at:{" "}
+        If you have questions about this policy, contact us at:{" "}
         <a
           href="mailto:wordshieldpro@outlook.sg"
           className="text-[hsl(var(--wsp-accent))] font-medium hover:underline"
         >
           wordshieldpro@outlook.sg
         </a>
+      </p>
+    ),
+  },
+  {
+    n: "12",
+    title: "AI Disclaimer",
+    body: (
+      <p>
+        This extension was built with the assistance of AI development tools. All
+        code has been reviewed and tested by the developer. The AI tools were used
+        for development purposes only and do not collect, process, or transmit any
+        data. The extension itself is 100% client-side and contains no AI
+        functionality.
       </p>
     ),
   },
@@ -200,15 +213,15 @@ export default function PrivacyPolicy() {
             </span>
           </div>
           <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.05]" style={{ fontSize: "clamp(2.25rem, 5vw, 3.25rem)" }}>
-            Privacy Policy
+            Policy
           </h1>
           <p className="mt-4 text-sm font-mono text-[hsl(var(--wsp-navy)/0.5)]">
             Last updated: August 7, 2026
           </p>
           <p className="mt-6 text-base text-[hsl(var(--wsp-navy)/0.7)] leading-relaxed">
-            This privacy policy describes how the Word Shield Pro browser
-            extension ("the Extension") handles user data. By installing and
-            using the Extension, you agree to the practices described below.
+            This policy describes how the Word Shield Pro browser extension ("the
+            Extension") handles user data. By installing and using the Extension,
+            you agree to the practices described below.
           </p>
 
           {/* Sections */}

@@ -30,9 +30,13 @@ export default function Navbar() {
 
           <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[hsl(var(--wsp-navy)/0.65)]">
             {LINKS.map((l) => (
-              <a key={l.href} href={l.href} className="relative hover:text-[hsl(var(--wsp-navy))] transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-[hsl(var(--wsp-accent))] after:transition-all">
+              <Link
+                key={l.href}
+                to={`/${l.href}`}
+                className="relative hover:text-[hsl(var(--wsp-navy))] transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-[hsl(var(--wsp-accent))] after:transition-all"
+              >
                 {l.label}
-              </a>
+              </Link>
             ))}
             <Link
               to="/privacy-policy"

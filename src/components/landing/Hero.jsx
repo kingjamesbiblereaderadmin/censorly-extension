@@ -8,7 +8,7 @@ import DesktopOnlyBadge from "./DesktopOnlyBadge";
 const HERO_AMBIENT =
   "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/d166ec2eb_generated_image.png";
 const POPUP_IMG =
-  "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/3055f07f9_popup-static.png";
+  "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/487174318_popup-static.png";
 const BADGES = ["100% Local", "Zero API Calls", "No Tracking"];
 
 // Words filtered in the demo article (matching the real extension's word list)

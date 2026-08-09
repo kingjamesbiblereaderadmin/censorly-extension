@@ -189,10 +189,11 @@ const SECTIONS = [
     title: "AI Disclaimer",
     body: (
       <p>
-        This extension was developed with the assistance of AI tools. The AI was
-        used only during development and code generation. The extension itself
-        contains no AI features and does not use any AI at runtime. All code was
-        reviewed and tested by the developer before publication.
+        This privacy policy was generated with the assistance of AI tools and
+        reviewed by the developer. The extension itself was also developed with
+        the assistance of AI tools for code generation only. The extension
+        contains no AI features and does not use any AI at runtime. All code and
+        policy content was reviewed by the developer before publication.
       </p>
     ),
   },

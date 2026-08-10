@@ -176,10 +176,10 @@ const SECTIONS = [
       <p>
         If you have questions about this policy, contact us at:{" "}
         <a
-          href="mailto:textveil@outlook.sg"
+          href="mailto:wordshieldpro@outlook.sg"
           className="text-[hsl(var(--wsp-accent))] font-medium hover:underline"
         >
-          textveil@outlook.sg
+          wordshieldpro@outlook.sg
         </a>
       </p>
     ),

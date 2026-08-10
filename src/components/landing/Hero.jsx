@@ -112,7 +112,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-7 text-lg text-[hsl(var(--wsp-navy)/0.7)] max-w-xl leading-relaxed">
-              Word Shield Pro filters, hides, censors, or blurs unwanted words on any
+              TextVeil filters, hides, censors, or blurs unwanted words on any
               web page. Everything runs locally in your browser — zero network requests,
               total privacy.
             </p>
@@ -159,7 +159,7 @@ export default function Hero() {
               <div className="flex justify-center scale-[0.92] sm:scale-100 origin-top">
                 <Image
                   src={POPUP_IMG}
-                  alt="Word Shield Pro extension popup"
+                  alt="TextVeil extension popup"
                   fittingType="fit"
                   className="w-full max-w-[340px] rounded-2xl shadow-2xl shadow-[hsl(var(--wsp-accent)/0.3)]"
                 />

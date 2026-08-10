@@ -1,115 +1,154 @@
-import { RefreshCw, Search, X } from "lucide-react";
-import ExtensionIcon from "./ExtensionIcon";
+import { RefreshCw } from "lucide-react";
 
-// Simulated TextVeil extension popup — a pure CSS/JSX mockup (not a screenshot),
-// dark navy background with teal (#14b8a6) accents. Spacious, real-popup layout:
-// header (logo + refresh + toggle), add-word row, filter-mode buttons, search
-// bar, and a vertical filtered-words list. Shown on the right side of the hero.
+// Pixel-accurate mockup of the real TextVeil v4.0 extension popup (340px wide).
+// Static only — no interactivity. Rendered in the hero section.
 const WORDS = ["spam", "scam", "damn"];
 const MODES = ["Hide", "Censor", "Blur"];
 
+const c = {
+  bg: "#0f1c1e",
+  input: "#142628",
+  section: "#0a1517",
+  border: "#1e3a3d",
+  borderSoft: "#1a3336",
+  text: "#e8f4f4",
+  dim: "#b0d4d4",
+  muted: "#8aaeae",
+  accent: "#14b8a6",
+  accentHover: "#0d9488",
+  danger: "#f87171",
+};
+
+function Logo() {
+  return (
+    <span className="shrink-0 rounded-lg flex items-center justify-center" style={{ width: 28, height: 28, background: "rgba(255,255,255,0.15)" }}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 6h16M4 11h16M4 16h16" stroke="white" strokeOpacity="0.4" strokeWidth="2" strokeLinecap="round" />
+        <path d="M3 13 Q 8 7 12 12 T 21 11" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
+      </svg>
+    </span>
+  );
+}
+
 export default function PopupMockup() {
   return (
-    <div className="w-full max-w-[360px] rounded-2xl overflow-hidden shadow-2xl shadow-[hsl(var(--wsp-accent)/0.3)] border border-white/5 bg-[#1a1a2e] text-white">
-      {/* Header: wave/veil logo + name + refresh + enabled toggle */}
-      <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
-        <div className="flex items-center gap-2.5">
-          <ExtensionIcon className="w-6 h-6" />
-          <span className="font-heading font-bold text-[15px] tracking-tight">
-            Text<span className="text-[#14b8a6]">Veil</span>
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <span
-            className="w-7 h-7 rounded-full flex items-center justify-center border border-white/10 text-white/55 transition-colors hover:bg-[#14b8a6] hover:text-white hover:border-[#14b8a6]"
-            title="Re-render page"
-          >
-            <RefreshCw className="w-3.5 h-3.5" strokeWidth={2} />
-          </span>
-          <div className="flex items-center gap-2">
-            <span className="text-[11px] font-mono text-white/50">On</span>
-            <span className="relative w-9 h-5 rounded-full bg-[#14b8a6]">
-              <span className="absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-white shadow" />
-            </span>
+    <div className="w-full max-w-[340px] rounded-2xl overflow-hidden shadow-2xl shadow-[hsl(var(--wsp-accent)/0.3)] border border-white/5 font-body text-white">
+      {/* HEADER — teal gradient, rounded bottom */}
+      <div style={{ background: "linear-gradient(135deg, #0d9488, #0f766e)", padding: "18px 20px 22px", borderBottomLeftRadius: 8, borderBottomRightRadius: 8 }}>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <Logo />
+            <h1 className="font-bold text-white" style={{ fontSize: 17 }}>TextVeil</h1>
           </div>
+          <span className="rounded-full px-2.5 py-1 text-white/80 font-medium" style={{ fontSize: 10, background: "rgba(255,255,255,0.2)" }}>ON</span>
         </div>
       </div>
 
-      {/* Body */}
-      <div className="px-5 py-5 space-y-5">
-        {/* Add a word */}
-        <div>
-          <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white/40 mb-2.5">Add a word</div>
-          <div className="flex gap-2">
-            <div className="flex-1 rounded-lg bg-white/[0.05] border border-white/10 px-3 py-2 text-[12px] text-white/40">
-              Type a word…
-            </div>
-            <span className="rounded-lg bg-[#14b8a6] px-3.5 py-2 text-[12px] font-semibold text-white">Add</span>
-          </div>
+      {/* CONTENT */}
+      <div style={{ background: c.bg, padding: "16px 18px" }} className="space-y-3.5">
+        {/* Desktop note */}
+        <div className="rounded-[10px] flex items-center gap-1.5" style={{ background: "rgba(20,184,166,0.15)", border: `1px solid ${c.borderSoft}`, padding: "8px 12px", fontSize: 11, color: c.dim }}>
+          <span className="font-bold" style={{ color: c.accent }}>💻 Desktop only</span>
+          <span>— Chrome, Edge &amp; Brave on Windows, Mac &amp; Linux</span>
         </div>
 
-        {/* Filter mode */}
-        <div>
-          <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white/40 mb-2.5">Filter mode</div>
-          <div className="grid grid-cols-3 gap-2">
-            {MODES.map((m) => {
-              const active = m === "Censor";
-              return (
-                <div
-                  key={m}
-                  className={
-                    active
-                      ? "rounded-xl bg-[#14b8a6] text-white text-xs font-semibold py-2.5 text-center"
-                      : "rounded-xl bg-white/[0.04] text-white/70 text-xs font-medium py-2.5 text-center border border-white/10"
-                  }
-                >
-                  {m}
-                </div>
-              );
-            })}
-          </div>
+        {/* Toggle row */}
+        <div className="flex items-center justify-between rounded-[12px]" style={{ background: c.input, border: `1px solid ${c.border}`, padding: "12px 14px" }}>
+          <span className="font-medium" style={{ fontSize: 14, color: c.text }}>Filtering enabled</span>
+          <span className="relative rounded-full" style={{ width: 44, height: 24, background: c.accent }}>
+            <span className="absolute rounded-full bg-white" style={{ top: 3, right: 3, width: 18, height: 18, boxShadow: "0 1px 3px rgba(0,0,0,0.3)" }} />
+          </span>
         </div>
 
-        {/* Search bar */}
-        <div>
-          <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white/40 mb-2.5">Filtered words</div>
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/35" strokeWidth={2} />
-            <div className="w-full rounded-lg bg-white/[0.05] border border-white/10 pl-9 pr-3 py-2 text-[12px] text-white/35">
-              Search words…
-            </div>
-          </div>
-        </div>
+        {/* Filter mode title */}
+        <div className="font-bold uppercase" style={{ fontSize: 11, color: c.dim, letterSpacing: "0.8px" }}>Filter mode</div>
 
-        {/* Word list — vertical rows */}
-        <div className="rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden">
-          {WORDS.map((w, i) => (
-            <div
-              key={w}
-              className={
-                "flex items-center justify-between px-3 py-2.5 " +
-                (i !== 0 ? "border-t border-white/[0.06]" : "")
-              }
-            >
-              <div className="flex items-center gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#14b8a6]" />
-                <span className="text-[13px] font-mono text-white/80">{w}</span>
+        {/* Mode buttons */}
+        <div className="flex" style={{ gap: 8 }}>
+          {MODES.map((m) => {
+            const active = m === "Hide";
+            return (
+              <div
+                key={m}
+                className="flex-1 text-center rounded-[10px] font-medium"
+                style={{
+                  padding: "10px 8px",
+                  fontSize: 12,
+                  background: active ? c.accent : c.input,
+                  border: `1px solid ${active ? c.accent : c.border}`,
+                  color: active ? "#fff" : c.muted,
+                }}
+              >
+                {m}
               </div>
-              <span className="w-5 h-5 rounded-md flex items-center justify-center text-white/40 hover:bg-white/10 hover:text-white transition-colors">
-                <X className="w-3.5 h-3.5" strokeWidth={2} />
-              </span>
+            );
+          })}
+        </div>
+
+        {/* Mode hint */}
+        <p style={{ fontSize: 10, color: c.muted, lineHeight: 1.4 }}>Words are hidden — invisible but still selectable &amp; copyable.</p>
+
+        {/* Refresh button */}
+        <button
+          className="w-full rounded-[10px] flex items-center justify-center gap-2 transition-colors"
+          style={{ background: c.input, border: `1px solid ${c.border}`, padding: 10, fontSize: 12, color: c.text }}
+          onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent; e.currentTarget.style.color = c.accent; }}
+          onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border; e.currentTarget.style.color = c.text; }}
+        >
+          <RefreshCw className="w-3.5 h-3.5" strokeWidth={2} />
+          Refresh page to apply
+        </button>
+
+        {/* Add a word title */}
+        <div className="font-bold uppercase" style={{ fontSize: 11, color: c.dim, letterSpacing: "0.8px" }}>Add a word to filter</div>
+
+        {/* Input row */}
+        <div className="flex" style={{ gap: 8 }}>
+          <div className="flex-1 rounded-[10px]" style={{ background: c.input, border: `1px solid ${c.border}`, padding: "10px 14px", fontSize: 14, color: c.muted }}>
+            Type a word...
+          </div>
+          <span className="rounded-[10px] font-bold text-white" style={{ background: c.accent, padding: "10px 18px", fontSize: 14 }}>Add</span>
+        </div>
+
+        {/* Word count */}
+        <div style={{ fontSize: 12, color: c.dim }}>3 words filtered</div>
+
+        {/* Word list */}
+        <div className="space-y-2 overflow-hidden" style={{ maxHeight: 140 }}>
+          {WORDS.map((w) => (
+            <div key={w} className="flex items-center justify-between rounded-[10px]" style={{ background: c.input, border: `1px solid ${c.border}`, padding: "9px 14px", fontSize: 14, color: c.text }}>
+              <span>{w}</span>
+              <span style={{ color: c.danger, fontSize: 16, lineHeight: 1 }}>×</span>
             </div>
           ))}
         </div>
+
+        {/* Site section */}
+        <div className="rounded-[12px]" style={{ background: c.section, border: `1px solid ${c.borderSoft}`, padding: 14 }}>
+          <div className="font-bold uppercase" style={{ fontSize: 11, color: c.dim, letterSpacing: "0.8px" }}>This site</div>
+          <div className="flex items-center justify-between mt-2">
+            <span style={{ fontSize: 12, color: c.muted }}>example.com</span>
+            <span className="rounded-[10px] text-white font-medium" style={{ background: c.accent, padding: "7px 14px", fontSize: 12 }}>Exclude</span>
+          </div>
+          <div className="font-bold uppercase mt-2.5" style={{ fontSize: 11, color: c.dim, letterSpacing: "0.8px" }}>Excluded sites</div>
+          <div className="flex items-center justify-between rounded-[10px] mt-2" style={{ background: c.input, border: `1px solid ${c.border}`, padding: "9px 14px", fontSize: 13, color: c.text }}>
+            <span>reddit.com</span>
+            <span style={{ color: c.danger, fontSize: 16, lineHeight: 1 }}>×</span>
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="rounded-[12px]" style={{ background: c.section, border: `1px solid ${c.borderSoft}`, padding: 12 }}>
+          <div className="font-bold" style={{ fontSize: 12, color: c.accent }}>📋 Limitations</div>
+          <p className="mt-1.5" style={{ fontSize: 11, color: "#9ec0c0", lineHeight: 1.5 }}>
+            TextVeil filters text on web pages, search bars, and text boxes. It cannot read or filter text inside PDFs, Word documents, or other file downloads.
+          </p>
+        </div>
       </div>
 
-      {/* Footer */}
-      <div className="px-5 py-3.5 border-t border-white/10 flex items-center justify-between">
-        <span className="text-[10px] font-mono text-white/40">TextVeil v4.0</span>
-        <span className="flex items-center gap-1.5 text-[10px] font-mono text-white/40">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#14b8a6]" />
-          100% local
-        </span>
+      {/* FOOTER */}
+      <div className="text-center" style={{ background: c.bg, padding: "12px 18px", fontSize: 10, color: c.muted, borderTop: `1px solid ${c.borderSoft}` }}>
+        TextVeil v4.0 · Website · Contact
       </div>
     </div>
   );

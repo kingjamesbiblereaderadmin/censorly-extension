@@ -83,11 +83,11 @@ export default function Hero() {
           src={HERO_AMBIENT}
           alt=""
           fittingType="fill"
-          className="w-full h-full opacity-50 object-cover"
+          className="w-full h-full opacity-20 object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--background))]/40 via-[hsl(var(--background))]/70 to-[hsl(var(--background))]" />
       </div>
-      <div className="absolute -top-24 right-0 w-[40rem] h-[40rem] bg-[hsl(var(--wsp-accent)/0.10)] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 right-0 w-[40rem] h-[40rem] rounded-full blur-3xl pointer-events-none opacity-20" style={{ background: "linear-gradient(to bottom right, #0d9488, #115e59)" }} />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-24 lg:pt-28 lg:pb-32">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-14 items-center">
@@ -95,7 +95,7 @@ export default function Hero() {
           <div className="wsp-reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--background))]/60 backdrop-blur px-3 py-1 text-xs font-mono font-medium text-[hsl(var(--wsp-accent))]">
               <span className="wsp-live-dot inline-block w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
-              Chrome Extension · v3.10
+              Chrome Extension · v4.0
             </span>
 
             <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.02]" style={{ fontSize: "clamp(2.75rem, 6vw, 4.75rem)" }}>
@@ -134,7 +134,7 @@ export default function Hero() {
             </div>
 
             <p className="mt-3 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
-              Download, unzip, and load unpacked in chrome://extensions · v3.10 · ~48KB
+              Download, unzip, and load unpacked in chrome://extensions · v4.0 · ~48KB
             </p>
 
             <div className="mt-3">

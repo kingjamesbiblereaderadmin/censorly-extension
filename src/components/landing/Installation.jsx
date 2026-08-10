@@ -54,8 +54,8 @@ export default function Installation() {
               <span className="ml-2">terminal</span>
             </div>
             <code className="block">
-              <span className="text-[hsl(var(--wsp-accent))]">$</span> download word-shield-pro.zip<br />
-              <span className="text-[hsl(var(--wsp-accent))]">$</span> unzip word-shield-pro.zip<br />
+              <span className="text-[hsl(var(--wsp-accent))]">$</span> download textveil.zip<br />
+              <span className="text-[hsl(var(--wsp-accent))]">$</span> unzip textveil.zip<br />
               <span className="text-[hsl(var(--wsp-accent))]">$</span> open chrome://extensions <span className="text-white/40"># enable Developer mode</span><br />
               <span className="text-[hsl(var(--wsp-accent))]">$</span> click "Load unpacked" <span className="text-white/40"># select the folder</span><br />
               <span className="text-green-400">✓</span> shielded.
@@ -66,7 +66,7 @@ export default function Installation() {
             <DownloadButtons />
             <span className="inline-flex items-center gap-2 text-sm text-[hsl(var(--wsp-navy)/0.5)] font-mono">
               <ExtensionIcon className="w-4 h-4" />
-              v3.10 · ~48KB · open source · Chrome/Edge: chrome://extensions · Firefox: about:debugging · Opera: extensions page
+              v4.0 · ~48KB · open source · Chrome/Edge: chrome://extensions · Firefox: about:debugging · Opera: extensions page
             </span>
           </div>
         </ScrollReveal>

@@ -24,7 +24,7 @@ const STEPS = [
     n: "03",
     icon: Globe,
     title: "Browse freely — words are caught automatically",
-    body: "Word Shield scans every page as it loads and re-scans dynamic content, so filtered words never reach your eyes.",
+    body: "TextVeil scans every page as it loads and re-scans dynamic content, so filtered words never reach your eyes.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function HowItWorks() {
               <div className="mt-8 relative rounded-3xl overflow-hidden border border-[hsl(var(--wsp-navy)/0.08)] shadow-xl shadow-[hsl(var(--wsp-accent)/0.1)]">
                 <Image
                   src={SCAN_IMG}
-                  alt="Illustration of Word Shield Pro scanning a web page and redacting matched words"
+                  alt="Illustration of TextVeil scanning a web page and redacting matched words"
                   fittingType="fill"
                   className="w-full aspect-[4/3] object-cover"
                 />

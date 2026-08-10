@@ -77,7 +77,7 @@ const MODES = [
 
 export default function FilterModes() {
   return (
-    <section id="modes" className="py-24 lg:py-32 bg-[hsl(var(--wsp-navy)/0.02)]">
+    <section id="modes" className="py-24 lg:py-32 bg-[hsl(var(--wsp-bg-accent))]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Immersive banner */}
         <ScrollReveal>

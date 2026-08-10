@@ -37,7 +37,7 @@ export default function PrivacySection() {
               </h2>
 
               <p className="mt-7 text-lg lg:text-xl text-white/70 max-w-xl leading-relaxed">
-                The Word Shield Pro extension is a local-only fortress. It uses Chrome's local
+                The TextVeil extension is a local-only fortress. It uses Chrome's local
                 storage, makes zero network requests, and runs no analytics, tracking, or
                 telemetry — it <span className="text-white font-medium">literally cannot send your data anywhere</span>.
                 This marketing site is hosted on the Base44 platform, which logs basic, aggregate

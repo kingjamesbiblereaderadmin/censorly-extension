@@ -9,7 +9,7 @@ const SECTIONS = [
     title: "Overview",
     body: (
       <p>
-        Word Shield Pro is a client-side browser extension that filters, hides,
+        TextVeil is a client-side browser extension that filters, hides,
         censors, or blurs unwanted words on web pages. The Extension is designed
         with privacy as its core principle — all processing happens entirely on
         your device. We do not collect, store, or transmit any user data to any
@@ -176,10 +176,10 @@ const SECTIONS = [
       <p>
         If you have questions about this policy, contact us at:{" "}
         <a
-          href="mailto:wordshieldpro@outlook.sg"
+          href="mailto:textveil@outlook.sg"
           className="text-[hsl(var(--wsp-accent))] font-medium hover:underline"
         >
-          wordshieldpro@outlook.sg
+          textveil@outlook.sg
         </a>
       </p>
     ),
@@ -196,7 +196,7 @@ export default function PrivacyPolicy() {
           <div className="flex items-center gap-3">
             <ExtensionIcon className="w-10 h-10" />
             <span className="font-mono text-xs uppercase tracking-[0.16em] text-[hsl(var(--wsp-accent))]">
-              Word Shield Pro
+              TextVeil
             </span>
           </div>
           <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.05]" style={{ fontSize: "clamp(2.25rem, 5vw, 3.25rem)" }}>
@@ -206,7 +206,7 @@ export default function PrivacyPolicy() {
             Last updated: August 7, 2026
           </p>
           <p className="mt-6 text-base text-[hsl(var(--wsp-navy)/0.7)] leading-relaxed">
-            This policy describes how the Word Shield Pro browser extension ("the
+            This policy describes how the TextVeil browser extension ("the
             Extension") handles user data. By installing and using the Extension,
             you agree to the practices described below.
           </p>

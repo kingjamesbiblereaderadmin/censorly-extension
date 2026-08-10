@@ -5,9 +5,12 @@
 @layer base {
   :root {
     --background: 252 100% 99%;
-    --foreground: 236 43% 12%;
-    --wsp-accent: 244 100% 77%;
-    --wsp-navy: 240 43% 12%;
+    --foreground: 176 69% 22%;
+    --wsp-accent: 173 80% 40%;
+    --wsp-primary: 175 84% 32%;
+    --wsp-primary-hover: 175 77% 26%;
+    --wsp-bg-accent: 166 76% 97%;
+    --wsp-navy: 176 69% 22%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;

@@ -28,14 +28,14 @@ const FAQS = [
   },
   {
     q: "Does it work on mobile?",
-    a: "No — browser extensions don't run on mobile browsers. Word Shield Pro is desktop only and works in Chrome, Edge, and Brave on Windows, Mac, and Linux.",
+    a: "No — browser extensions don't run on mobile browsers. TextVeil is desktop only and works in Chrome, Edge, and Brave on Windows, Mac, and Linux.",
   },
 ];
 
 export default function FAQ() {
   const [open, setOpen] = useState(0);
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-[hsl(var(--wsp-navy)/0.02)]">
+    <section id="faq" className="py-24 lg:py-32 bg-[hsl(var(--wsp-bg-accent))]">
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-8 lg:gap-12 items-start">
           {/* Left: heading */}

@@ -22,7 +22,7 @@ export default function Navbar() {
               <ExtensionIcon className="relative w-7 h-7" />
             </span>
             <span className="font-heading font-bold text-lg tracking-tight text-[hsl(var(--wsp-navy))]">
-              Word Shield<span className="text-[hsl(var(--wsp-accent))]"> Pro</span>
+              Text<span className="text-[hsl(var(--wsp-accent))]">Veil</span>
             </span>
           </a>
 
@@ -48,7 +48,7 @@ export default function Navbar() {
 
           <a
             href="#install"
-            className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--wsp-navy))] px-4 py-2 text-sm font-semibold text-white hover:bg-[hsl(var(--wsp-accent))] transition-colors wsp-glow"
+            className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--wsp-primary))] px-4 py-2 text-sm font-semibold text-white hover:bg-[hsl(var(--wsp-primary-hover))] transition-colors wsp-glow"
           >
             <ShieldIcon className="w-4 h-4" />
             Add to Chrome

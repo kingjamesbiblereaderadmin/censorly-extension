@@ -10,28 +10,28 @@ export default function Footer() {
           <a href="#top" className="flex items-center gap-2.5 group">
             <ExtensionIcon className="w-6 h-6" />
             <span className="font-heading font-bold text-[hsl(var(--wsp-navy))]">
-              Word Shield<span className="text-[hsl(var(--wsp-accent))]"> Pro</span>
+              Text<span className="text-[hsl(var(--wsp-accent))]">Veil</span>
             </span>
           </a>
 
           <div className="flex flex-col items-center md:items-start gap-1">
             <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-[hsl(var(--wsp-navy)/0.4)]">Contact</span>
             <a
-              href="mailto:wordshieldpro@outlook.sg"
+              href="mailto:textveil@outlook.sg"
               className="inline-flex items-center gap-2 text-sm text-[hsl(var(--wsp-navy)/0.6)] hover:text-[hsl(var(--wsp-accent))] transition-colors"
             >
               <Mail className="w-4 h-4" />
-              wordshieldpro@outlook.sg
+              textveil@outlook.sg
             </a>
           </div>
 
           <p className="text-sm text-[hsl(var(--wsp-navy)/0.6)] order-last md:order-none">
-            Word Shield Pro · Made with <span className="text-[hsl(var(--wsp-accent))]">❤️</span> for a cleaner web
+            TextVeil · Made with <span className="text-[hsl(var(--wsp-accent))]">❤️</span> for a cleaner web
           </p>
 
           <div className="flex items-center gap-2 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
             <span className="wsp-live-dot w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
-            100% client-side · v3.10
+            100% client-side · v4.0
           </div>
         </div>
 
@@ -58,7 +58,7 @@ export default function Footer() {
               Base44
             </a>
           </div>
-          <span className="font-mono">© {new Date().getFullYear()} Word Shield Pro</span>
+          <span className="font-mono">© {new Date().getFullYear()} TextVeil</span>
         </div>
 
         <a

@@ -1,8 +1,12 @@
 import { RefreshCw } from "lucide-react";
 
-// Pixel-accurate mockup of the real Censorly v5.0 extension popup (340px wide).
+// Pixel-accurate mockup of the real Censorly v5.1 extension popup (340px wide).
 // Static only — no interactivity. Rendered in the hero section.
-const WORDS = ["spam", "scam", "damn"];
+const WORDS = [
+  { word: "spam", mode: "Wildcard" },
+  { word: "scam", mode: "Exact" },
+  { word: "damn", mode: "Exact" },
+];
 const MODES = ["Hide", "Censor", "Blur"];
 
 const c = {
@@ -114,15 +118,33 @@ export default function PopupMockup() {
 
         {/* Word count */}
         <div style={{ fontSize: 12, color: c.dim }}>3 words filtered</div>
+        <p style={{ fontSize: 10, color: c.muted, lineHeight: 1.45 }}>
+          Exact matches only that word. Wildcard also matches endings, e.g. spam → spamming.
+        </p>
 
         {/* Word list */}
-        <div className="space-y-2 overflow-hidden" style={{ maxHeight: 140 }}>
-          {WORDS.map((w) => (
-            <div key={w} className="flex items-center justify-between rounded-[10px]" style={{ background: c.input, border: `1px solid ${c.border}`, padding: "9px 14px", fontSize: 14, color: c.text }}>
-              <span>{w}</span>
-              <span style={{ color: c.danger, fontSize: 16, lineHeight: 1 }}>×</span>
-            </div>
-          ))}
+        <div className="space-y-2 overflow-hidden" style={{ maxHeight: 160 }}>
+          {WORDS.map((w) => {
+            const wild = w.mode === "Wildcard";
+            return (
+              <div key={w.word} className="flex items-center gap-2 rounded-[10px]" style={{ background: c.input, border: `1px solid ${c.border}`, padding: "9px 14px", fontSize: 14, color: c.text }}>
+                <span className="flex-1">{w.word}</span>
+                <span
+                  className="rounded-[8px] font-semibold"
+                  style={{
+                    padding: "3px 9px",
+                    fontSize: 11,
+                    background: wild ? c.accent : "transparent",
+                    border: `1px solid ${wild ? c.accent : c.border}`,
+                    color: wild ? "#0a1517" : c.muted,
+                  }}
+                >
+                  {w.mode}
+                </span>
+                <span style={{ color: c.danger, fontSize: 16, lineHeight: 1 }}>×</span>
+              </div>
+            );
+          })}
         </div>
 
         {/* Site section */}
@@ -150,7 +172,7 @@ export default function PopupMockup() {
 
       {/* FOOTER */}
       <div className="text-center" style={{ background: c.bg, padding: "12px 18px", fontSize: 10, color: c.muted, borderTop: `1px solid ${c.borderSoft}` }}>
-        Censorly v5.0 · Website · Contact
+        Censorly v5.1 · Website · Contact
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 import { StaggerGroup, RevealItem } from "./Reveal";
 
 const FEATURES = [
-  { icon: Languages, title: "Accent-insensitive matching", body: "No dodging the filter with diacritics — block \"spam\" and \"späm\" is caught too. Accented variants never slip through." },
+  { icon: Languages, title: "Accent-insensitive matching", body: "No dodging the filter with diacritics — block \"spam\" and \"späm\" is caught too. Each word can use Exact or Wildcard matching, and Wildcard catches endings too — spam also filters spamming, spammer, and spammed." },
   { icon: Minus, title: "Hyphen & underscore matching", body: "\"get-rich\" and \"get_rich\" are caught as one. Hyphens, underscores, and dashes are treated as spaces." },
   { icon: Ban, title: "Per-site exclusion", body: "Need the raw word on one site? Disable filtering per domain with one toggle in the popup." },
   { icon: Search, title: "Search bar & text box censoring", body: "Filtered words are masked inside inputs, comment boxes, and search fields — not just body text." },

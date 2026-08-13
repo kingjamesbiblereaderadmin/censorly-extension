@@ -1,4 +1,3 @@
-import { Shield as ShieldIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import ExtensionIcon from "./ExtensionIcon";
 import ComingSoonBadge from "./ComingSoonBadge";
@@ -9,6 +8,7 @@ const LINKS = [
   { href: "#features", label: "Features" },
   { href: "#privacy", label: "Privacy" },
   { href: "#faq", label: "FAQ" },
+  { href: "#install", label: "Download" },
 ];
 
 export default function Navbar() {
@@ -56,7 +56,7 @@ export default function Navbar() {
             href="#install"
             className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--wsp-primary))] px-4 py-2 text-sm font-semibold text-white hover:bg-[hsl(var(--wsp-primary-hover))] transition-colors wsp-glow"
           >
-            <ShieldIcon className="w-4 h-4" />
+            <ExtensionIcon className="w-4 h-4" />
             Add to Chrome
           </a>
         </div>

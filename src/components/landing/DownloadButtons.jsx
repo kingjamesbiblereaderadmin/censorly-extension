@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { base44 } from "@/api/base44Client";
-import ExtensionIcon from "./ExtensionIcon";
+import { Puzzle } from "lucide-react";
 
 const DEFAULT_LINKS = [
   {
@@ -69,7 +69,7 @@ export default function DownloadButtons({ className = "" }) {
               : "inline-flex items-center justify-center gap-2.5 rounded-2xl border border-[hsl(var(--wsp-navy)/0.15)] bg-white px-6 py-3.5 text-base font-semibold text-[hsl(var(--wsp-navy))] hover:border-[hsl(var(--wsp-accent))] hover:text-[hsl(var(--wsp-accent))] transition-colors w-full sm:w-auto"
           }
         >
-          <ExtensionIcon className="w-5 h-5" />
+          <Puzzle className="w-5 h-5" />
           {l.label}
         </a>
       ))}

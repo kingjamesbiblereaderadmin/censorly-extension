@@ -7,7 +7,7 @@ const DEFAULT_LINKS = [
     key: "chrome",
     label: "Download for Chrome/Brave",
     href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/6ee0a2af4_censorly-v50-chrome.zip",
+      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/bc74168ce_censorly-v50-chrome.zip",
     primary: true,
     order: 0,
   },
@@ -15,7 +15,7 @@ const DEFAULT_LINKS = [
     key: "firefox",
     label: "Download for Firefox",
     href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/d2747b7ac_censorly-v50-firefox.zip",
+      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/806f4b53c_censorly-v50-firefox.zip",
     primary: false,
     order: 1,
   },
@@ -23,7 +23,7 @@ const DEFAULT_LINKS = [
     key: "opera",
     label: "Download for Opera",
     href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/cf8810bef_censorly-v50-opera.zip",
+      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/d58dd0133_censorly-v50-opera.zip",
     primary: false,
     order: 2,
   },

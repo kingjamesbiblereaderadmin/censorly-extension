@@ -2,7 +2,6 @@ import { ArrowRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
 
 import ExtensionIcon from "./ExtensionIcon";
-import ComingSoonBadge from "./ComingSoonBadge";
 import DesktopOnlyBadge from "./DesktopOnlyBadge";
 import DownloadButtons from "./DownloadButtons";
 import PopupMockup from "./PopupMockup";
@@ -92,11 +91,6 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-14 items-center">
           {/* Left: copy */}
           <div className="wsp-reveal">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--background))]/60 backdrop-blur px-3 py-1 text-xs font-mono font-medium text-[hsl(var(--wsp-accent))]">
-              <span className="wsp-live-dot inline-block w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
-              Chrome Extension · v5.0
-            </span>
-
             <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.02]" style={{ fontSize: "clamp(2.75rem, 6vw, 4.75rem)" }}>
               Shield your eyes
               <br />
@@ -135,10 +129,6 @@ export default function Hero() {
             <p className="mt-3 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
               Download, unzip, and load unpacked in chrome://extensions · v5.0 · ~48KB
             </p>
-
-            <div className="mt-3">
-              <ComingSoonBadge />
-            </div>
 
             <div className="mt-7 flex flex-wrap gap-2.5">
               {BADGES.map((b) => (

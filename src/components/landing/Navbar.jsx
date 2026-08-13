@@ -1,7 +1,6 @@
 import { Puzzle } from "lucide-react";
 import { Link } from "react-router-dom";
 import ExtensionIcon from "./ExtensionIcon";
-import ComingSoonBadge from "./ComingSoonBadge";
 
 const LINKS = [
   { href: "#install", label: "Download" },
@@ -25,8 +24,6 @@ export default function Navbar() {
               Censorly
             </span>
           </Link>
-
-          <ComingSoonBadge className="hidden xl:inline-flex" />
 
           <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[hsl(var(--wsp-navy)/0.65)]">
             {LINKS.map((l) => (

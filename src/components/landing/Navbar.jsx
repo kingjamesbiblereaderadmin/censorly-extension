@@ -8,6 +8,7 @@ const LINKS = [
   { href: "#features", label: "Features" },
   { href: "#privacy", label: "Privacy" },
   { href: "#faq", label: "FAQ" },
+  { href: "#install", label: "Download" },
 ];
 
 export default function Navbar() {

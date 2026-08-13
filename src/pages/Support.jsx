@@ -44,7 +44,7 @@ export default function Support() {
           </h1>
           <p className="mt-4 text-base text-[hsl(var(--wsp-navy)/0.7)] leading-relaxed">
             Censorly is a free, local-only extension. Here’s how to install it,
-            troubleshoot common issues, and reach us — no account required.
+            troubleshoot common issues, and reach me — no account required.
           </p>
 
           <div className="mt-10 grid sm:grid-cols-2 gap-5">
@@ -81,7 +81,7 @@ export default function Support() {
                     Email the developer
                   </h2>
                   <p className="mt-2 text-white/70 text-sm max-w-md">
-                    Questions, bug reports, or feedback — write to us and we’ll
+                    Questions, bug reports, or feedback — write to me and I’ll
                     get back to you.
                   </p>
                   <a

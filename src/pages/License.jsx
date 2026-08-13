@@ -37,7 +37,7 @@ export default function License() {
             </span>
           </div>
           <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.05]" style={{ fontSize: "clamp(2.25rem, 5vw, 3.25rem)" }}>
-            License
+            Licence
           </h1>
           <p className="mt-4 text-sm font-mono text-[hsl(var(--wsp-navy)/0.5)]">
             MIT License

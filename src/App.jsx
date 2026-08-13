@@ -51,7 +51,7 @@ const AuthenticatedApp = () => {
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/support" element={<Support />} />
-      <Route path="/license" element={<License />} />
+      <Route path="/licence" element={<License />} />
       <Route element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login" replace />} />}>
         <Route path="/admin/tools" element={<AdminTools />} />
       </Route>

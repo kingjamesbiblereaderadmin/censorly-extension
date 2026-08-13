@@ -56,10 +56,10 @@ export default function Footer() {
               Support
             </Link>
             <Link
-              to="/license"
+              to="/licence"
               className="hover:text-[hsl(var(--wsp-accent))] transition-colors"
             >
-              License
+              Licence
             </Link>
             <a
               href="https://base44.com"

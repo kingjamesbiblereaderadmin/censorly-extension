@@ -17,11 +17,11 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start gap-1">
             <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-[hsl(var(--wsp-navy)/0.4)]">Contact</span>
             <a
-              href="mailto:wordshieldpro@outlook.sg"
+              href="mailto:censorlyextension@outlook.sg"
               className="inline-flex items-center gap-2 text-sm text-[hsl(var(--wsp-navy)/0.6)] hover:text-[hsl(var(--wsp-accent))] transition-colors"
             >
               <Mail className="w-4 h-4" />
-              wordshieldpro@outlook.sg
+              censorlyextension@outlook.sg
             </a>
           </div>
 

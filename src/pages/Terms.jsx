@@ -52,10 +52,10 @@ const SECTIONS = [
       <p>
         If you have questions about these terms, contact us at:{" "}
         <a
-          href="mailto:wordshieldpro@outlook.sg"
+          href="mailto:censorlyextension@outlook.sg"
           className="text-[hsl(var(--wsp-accent))] font-medium hover:underline"
         >
-          wordshieldpro@outlook.sg
+          censorlyextension@outlook.sg
         </a>
       </p>
     ),

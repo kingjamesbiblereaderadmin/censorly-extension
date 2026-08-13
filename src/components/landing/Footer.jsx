@@ -49,6 +49,12 @@ export default function Footer() {
             >
               Terms
             </Link>
+            <Link
+              to="/support"
+              className="hover:text-[hsl(var(--wsp-accent))] transition-colors"
+            >
+              Support
+            </Link>
             <a
               href="https://base44.com"
               target="_blank"

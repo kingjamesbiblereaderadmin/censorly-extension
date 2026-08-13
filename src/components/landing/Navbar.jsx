@@ -46,6 +46,12 @@ export default function Navbar() {
             >
               Terms
             </Link>
+            <Link
+              to="/support"
+              className="relative hover:text-[hsl(var(--wsp-navy))] transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-[hsl(var(--wsp-accent))] after:transition-all"
+            >
+              Support
+            </Link>
           </nav>
         </div>
       </div>

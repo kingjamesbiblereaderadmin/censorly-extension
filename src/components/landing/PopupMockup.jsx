@@ -1,6 +1,6 @@
 import { RefreshCw } from "lucide-react";
 
-// Pixel-accurate mockup of the real Censorly v5.1 extension popup (340px wide).
+// Pixel-accurate mockup of the real Censorly v5.2 extension popup (340px wide).
 // Static only — no interactivity. Rendered in the hero section.
 const WORDS = [
   { word: "spam", mode: "Wildcard" },
@@ -13,8 +13,8 @@ const c = {
   bg: "#0f1c1e",
   input: "#142628",
   section: "#0a1517",
-  border: "#1e3a3d",
-  borderSoft: "#1a3336",
+  border: "#387276",
+  borderSoft: "#3d7e82",
   text: "#e8f4f4",
   dim: "#b0d4d4",
   muted: "#8aaeae",
@@ -172,7 +172,7 @@ export default function PopupMockup() {
 
       {/* FOOTER */}
       <div className="text-center" style={{ background: c.bg, padding: "12px 18px", fontSize: 10, color: c.muted, borderTop: `1px solid ${c.borderSoft}` }}>
-        Censorly v5.1 · Website · Contact
+        Censorly v5.2 · Website · Contact
       </div>
     </div>
   );

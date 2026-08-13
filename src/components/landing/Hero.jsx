@@ -127,7 +127,7 @@ export default function Hero() {
             </div>
 
             <p className="mt-3 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
-              Download, unzip, and load unpacked in chrome://extensions · v5.1 · ~35KB
+              Download, unzip, and load unpacked in chrome://extensions · v5.2 · ~35KB
             </p>
 
             <div className="mt-7 flex flex-wrap gap-2.5">

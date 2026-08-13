@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "Does it work on mobile?",
-    a: "No — browser extensions don't run on mobile browsers. TextVeil is desktop only and works in Chrome, Edge, and Brave on Windows, Mac, and Linux.",
+    a: "No — browser extensions don't run on mobile browsers. Censorly is desktop only and works in Chrome, Edge, and Brave on Windows, Mac, and Linux.",
   },
 ];
 

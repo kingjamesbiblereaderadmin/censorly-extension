@@ -94,7 +94,7 @@ export default function Hero() {
           <div className="wsp-reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--wsp-accent)/0.25)] bg-[hsl(var(--background))]/60 backdrop-blur px-3 py-1 text-xs font-mono font-medium text-[hsl(var(--wsp-accent))]">
               <span className="wsp-live-dot inline-block w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
-              Chrome Extension · v4.0
+              Chrome Extension · v5.0
             </span>
 
             <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.02]" style={{ fontSize: "clamp(2.75rem, 6vw, 4.75rem)" }}>
@@ -111,7 +111,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-7 text-lg text-[hsl(var(--wsp-navy)/0.7)] max-w-xl leading-relaxed">
-              TextVeil filters, hides, censors, or blurs unwanted words on any
+              Censorly filters, hides, censors, or blurs unwanted words on any
               web page. Everything runs locally in your browser — zero network requests,
               total privacy.
             </p>
@@ -133,7 +133,7 @@ export default function Hero() {
             </div>
 
             <p className="mt-3 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
-              Download, unzip, and load unpacked in chrome://extensions · v4.0 · ~48KB
+              Download, unzip, and load unpacked in chrome://extensions · v5.0 · ~48KB
             </p>
 
             <div className="mt-3">

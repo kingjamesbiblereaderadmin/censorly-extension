@@ -7,7 +7,7 @@ const DEFAULT_LINKS = [
     key: "chrome",
     label: "Download for Chrome/Brave",
     href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/0dfb234a7_textveil-v40-chrome.zip",
+      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/9deeb85c7_censorly-v50-chrome.zip",
     primary: true,
     order: 0,
   },
@@ -15,7 +15,7 @@ const DEFAULT_LINKS = [
     key: "firefox",
     label: "Download for Firefox",
     href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/8f306f50b_textveil-v40-firefox.zip",
+      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/1f9c9dd9b_censorly-v50-firefox.zip",
     primary: false,
     order: 1,
   },
@@ -23,7 +23,7 @@ const DEFAULT_LINKS = [
     key: "opera",
     label: "Download for Opera",
     href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/626708d7e_textveil-v40-opera.zip",
+      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/df1b588c9_censorly-v50-opera.zip",
     primary: false,
     order: 2,
   },

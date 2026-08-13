@@ -10,7 +10,7 @@ export default function Footer() {
           <a href="#top" className="flex items-center gap-2.5 group">
             <ExtensionIcon className="w-6 h-6" />
             <span className="font-heading font-bold text-[hsl(var(--wsp-navy))]">
-              Text<span className="text-[hsl(var(--wsp-accent))]">Veil</span>
+              Censorly
             </span>
           </a>
 
@@ -26,12 +26,12 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-[hsl(var(--wsp-navy)/0.6)] order-last md:order-none">
-            TextVeil · Made with <span className="text-[hsl(var(--wsp-accent))]">❤️</span> for a cleaner web
+            Censorly · Made with <span className="text-[hsl(var(--wsp-accent))]">❤️</span> for a cleaner web
           </p>
 
           <div className="flex items-center gap-2 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
             <span className="wsp-live-dot w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
-            100% client-side · v4.0
+            100% client-side · v5.0
           </div>
         </div>
 
@@ -42,6 +42,12 @@ export default function Footer() {
               className="hover:text-[hsl(var(--wsp-accent))] transition-colors"
             >
               Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="hover:text-[hsl(var(--wsp-accent))] transition-colors"
+            >
+              Terms
             </Link>
             <a
               href="https://base44.com"
@@ -58,7 +64,7 @@ export default function Footer() {
               Base44
             </a>
           </div>
-          <span className="font-mono">© {new Date().getFullYear()} TextVeil</span>
+          <span className="font-mono">© {new Date().getFullYear()} Censorly</span>
         </div>
 
         <a

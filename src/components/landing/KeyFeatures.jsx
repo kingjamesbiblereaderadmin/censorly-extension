@@ -10,7 +10,7 @@ const FEATURES = [
   { icon: Search, title: "Search bar & text box censoring", body: "Filtered words are masked inside inputs, comment boxes, and search fields — not just body text." },
   { icon: RefreshCw, title: "Auto re-filtering on dynamic pages", body: "Infinite scroll, lazy-loaded comments, and SPA navigation are re-scanned the instant new content appears." },
   { icon: SunMoon, title: "Light & dark mode support", body: "Censor bars and blur adapt to each site's theme, so redaction reads seamlessly day or night." },
-  { icon: Globe2, title: "Works on every website", body: "News, forums, social feeds — if a page renders text, TextVeil filters it the moment it loads." },
+  { icon: Globe2, title: "Works on every website", body: "News, forums, social feeds — if a page renders text, Censorly filters it the moment it loads." },
   { icon: Database, title: "No account, no signup, no cloud", body: "Your word list lives only in Chrome's local storage. No login, no sync server, nothing to leak." },
 ];
 

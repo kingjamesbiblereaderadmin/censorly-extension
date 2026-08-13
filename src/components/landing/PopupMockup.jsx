@@ -1,6 +1,6 @@
 import { RefreshCw } from "lucide-react";
 
-// Pixel-accurate mockup of the real TextVeil v4.0 extension popup (340px wide).
+// Pixel-accurate mockup of the real Censorly v5.0 extension popup (340px wide).
 // Static only — no interactivity. Rendered in the hero section.
 const WORDS = ["spam", "scam", "damn"];
 const MODES = ["Hide", "Censor", "Blur"];
@@ -19,14 +19,16 @@ const c = {
   danger: "#f87171",
 };
 
+const ICON_URL = "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/085c83db8_censorly-icon-512.png";
+
 function Logo() {
   return (
-    <span className="shrink-0 rounded-lg flex items-center justify-center" style={{ width: 28, height: 28, background: "rgba(255,255,255,0.15)" }}>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 6h16M4 11h16M4 16h16" stroke="white" strokeOpacity="0.4" strokeWidth="2" strokeLinecap="round" />
-        <path d="M3 13 Q 8 7 12 12 T 21 11" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
-      </svg>
-    </span>
+    <img
+      src={ICON_URL}
+      alt="Censorly"
+      style={{ width: 28, height: 28, borderRadius: 8 }}
+      draggable={false}
+    />
   );
 }
 
@@ -38,7 +40,7 @@ export default function PopupMockup() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <Logo />
-            <h1 className="font-bold text-white" style={{ fontSize: 17 }}>TextVeil</h1>
+            <h1 className="font-bold text-white" style={{ fontSize: 17 }}>Censorly</h1>
           </div>
           <span className="rounded-full px-2.5 py-1 text-white/80 font-medium" style={{ fontSize: 10, background: "rgba(255,255,255,0.2)" }}>ON</span>
         </div>
@@ -141,14 +143,14 @@ export default function PopupMockup() {
         <div className="rounded-[12px]" style={{ background: c.section, border: `1px solid ${c.borderSoft}`, padding: 12 }}>
           <div className="font-bold" style={{ fontSize: 12, color: c.accent }}>📋 Limitations</div>
           <p className="mt-1.5" style={{ fontSize: 11, color: "#9ec0c0", lineHeight: 1.5 }}>
-            TextVeil filters text on web pages, search bars, and text boxes. It cannot read or filter text inside PDFs, Word documents, or other file downloads.
+            Censorly filters text on web pages, search bars, and text boxes. It cannot read or filter text inside PDFs, Word documents, or other file downloads.
           </p>
         </div>
       </div>
 
       {/* FOOTER */}
       <div className="text-center" style={{ background: c.bg, padding: "12px 18px", fontSize: 10, color: c.muted, borderTop: `1px solid ${c.borderSoft}` }}>
-        TextVeil v4.0 · Website · Contact
+        Censorly v5.0 · Website · Contact
       </div>
     </div>
   );

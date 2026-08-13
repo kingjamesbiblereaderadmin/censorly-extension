@@ -22,7 +22,7 @@ export default function Navbar() {
               <ExtensionIcon className="relative w-7 h-7" />
             </span>
             <span className="font-heading font-bold text-lg tracking-tight text-[hsl(var(--wsp-navy))]">
-              Text<span className="text-[hsl(var(--wsp-accent))]">Veil</span>
+              Censorly
             </span>
           </a>
 
@@ -43,6 +43,12 @@ export default function Navbar() {
               className="relative hover:text-[hsl(var(--wsp-navy))] transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-[hsl(var(--wsp-accent))] after:transition-all"
             >
               Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="relative hover:text-[hsl(var(--wsp-navy))] transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-[hsl(var(--wsp-accent))] after:transition-all"
+            >
+              Terms
             </Link>
           </nav>
 

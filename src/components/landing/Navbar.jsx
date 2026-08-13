@@ -4,11 +4,11 @@ import ExtensionIcon from "./ExtensionIcon";
 import ComingSoonBadge from "./ComingSoonBadge";
 
 const LINKS = [
+  { href: "#install", label: "Download" },
   { href: "#how", label: "How it works" },
   { href: "#features", label: "Features" },
   { href: "#privacy", label: "Privacy" },
   { href: "#faq", label: "FAQ" },
-  { href: "#install", label: "Download" },
 ];
 
 export default function Navbar() {

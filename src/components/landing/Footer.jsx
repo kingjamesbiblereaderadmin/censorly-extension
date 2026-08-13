@@ -31,7 +31,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-2 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
             <span className="wsp-live-dot w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]" />
-            100% client-side · v5.2
+            100% client-side · v5.3
           </div>
         </div>
 

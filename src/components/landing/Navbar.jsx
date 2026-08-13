@@ -16,7 +16,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50">
       <div className="backdrop-blur-xl bg-[hsl(var(--background))]/75 border-b border-[hsl(var(--wsp-accent)/0.12)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between gap-6">
-          <a href="#top" className="flex items-center gap-2.5 shrink-0 group">
+          <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
             <span className="relative">
               <span className="absolute inset-0 rounded-xl bg-[hsl(var(--wsp-accent)/0.25)] blur-md group-hover:bg-[hsl(var(--wsp-accent)/0.4)] transition-colors" />
               <ExtensionIcon className="relative w-7 h-7" />
@@ -24,7 +24,7 @@ export default function Navbar() {
             <span className="font-heading font-bold text-lg tracking-tight text-[hsl(var(--wsp-navy))]">
               Censorly
             </span>
-          </a>
+          </Link>
 
           <ComingSoonBadge className="hidden xl:inline-flex" />
 

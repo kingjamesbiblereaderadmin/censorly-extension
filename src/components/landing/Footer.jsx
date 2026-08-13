@@ -7,12 +7,12 @@ export default function Footer() {
     <footer className="border-t border-[hsl(var(--wsp-navy)/0.08)] bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14 flex flex-col items-center gap-7">
         <div className="flex flex-col md:flex-row items-center justify-between w-full gap-6">
-          <a href="#top" className="flex items-center gap-2.5 group">
+          <Link to="/" className="flex items-center gap-2.5 group">
             <ExtensionIcon className="w-6 h-6" />
             <span className="font-heading font-bold text-[hsl(var(--wsp-navy))]">
               Censorly
             </span>
-          </a>
+          </Link>
 
           <div className="flex flex-col items-center md:items-start gap-1">
             <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-[hsl(var(--wsp-navy)/0.4)]">Contact</span>

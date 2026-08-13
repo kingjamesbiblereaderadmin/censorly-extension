@@ -15,7 +15,7 @@ const DEFAULT_LINKS = [
     key: "firefox",
     label: "Download for Firefox",
     href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/66d1613b8_censorly-v55-firefox.zip",
+      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/f794a10f4_censorly-v55-firefox.zip",
     primary: false,
     order: 1,
   },

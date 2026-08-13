@@ -1,4 +1,4 @@
-import { ListPlus, SlidersHorizontal, Globe } from "lucide-react";
+import { ListPlus, SlidersHorizontal, Globe, Shuffle } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import DesktopOnlyBadge from "./DesktopOnlyBadge";
 import ScrollReveal from "./ScrollReveal";
@@ -82,6 +82,23 @@ export default function HowItWorks() {
                 </RevealItem>
               ))}
             </StaggerGroup>
+
+            {/* Per-word Exact / Wildcard matching — v5.1 usage instruction */}
+            <RevealItem className="relative mt-6">
+              <div className="rounded-2xl border border-[hsl(var(--wsp-accent)/0.4)] bg-[hsl(var(--wsp-accent)/0.05)] p-6">
+                <div className="flex items-center gap-3">
+                  <span className="shrink-0 w-10 h-10 rounded-xl bg-[hsl(var(--wsp-accent))] text-white flex items-center justify-center">
+                    <Shuffle className="w-5 h-5" strokeWidth={1.8} />
+                  </span>
+                  <h3 className="font-heading font-semibold text-xl text-[hsl(var(--wsp-navy))]">
+                    Choose Exact or Wildcard for each word
+                  </h3>
+                </div>
+                <p className="mt-3 text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.7)]">
+                  New words start in Exact mode. Click the <span className="font-semibold text-[hsl(var(--wsp-navy))]">Exact</span> button beside a word to switch it to <span className="font-semibold text-[hsl(var(--wsp-accent))]">Wildcard</span>; click <span className="font-semibold text-[hsl(var(--wsp-accent))]">Wildcard</span> to switch it back to <span className="font-semibold text-[hsl(var(--wsp-navy))]">Exact</span>. Exact filters only the saved word. Wildcard also filters contiguous word endings — for example, spam also matches spamming, spammer, and spammed. Your choice is saved automatically. Refresh the page after changing it.
+                </p>
+              </div>
+            </RevealItem>
           </div>
         </div>
       </div>

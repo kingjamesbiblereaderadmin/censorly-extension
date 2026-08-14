@@ -90,7 +90,7 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-24 lg:pt-28 lg:pb-32">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-14 items-center">
           {/* Left: copy */}
-          <div className="wsp-reveal">
+          <div className="wsp-reveal relative z-10">
             <h1 className="mt-6 font-heading font-extrabold tracking-tight text-[hsl(var(--wsp-navy))] leading-[1.02]" style={{ fontSize: "clamp(2.75rem, 6vw, 4.75rem)" }}>
               Shield your eyes
               <br />
@@ -143,7 +143,7 @@ export default function Hero() {
           {/* Right: real popup mockup + before/after demo */}
           <div className="wsp-reveal relative" style={{ animationDelay: "0.15s" }}>
             {/* soft platform under the popup */}
-            <div className="absolute -inset-6 bg-gradient-to-tr from-[hsl(var(--wsp-accent)/0.15)] to-transparent rounded-[2rem] blur-2xl pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[hsl(var(--wsp-accent)/0.15)] to-transparent rounded-[2rem] blur-2xl pointer-events-none" />
             <div className="relative flex flex-col items-center gap-8">
               <div className="flex justify-center scale-[0.92] sm:scale-100 origin-top">
                 <PopupMockup />

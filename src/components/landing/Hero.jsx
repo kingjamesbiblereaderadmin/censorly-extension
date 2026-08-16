@@ -5,6 +5,7 @@ import ExtensionIcon from "./ExtensionIcon";
 import DesktopOnlyBadge from "./DesktopOnlyBadge";
 import DownloadButtons from "./DownloadButtons";
 import PopupMockup from "./PopupMockup";
+import FirefoxPromo from "./FirefoxPromo";
 
 const HERO_AMBIENT =
   "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/d166ec2eb_generated_image.png";
@@ -138,6 +139,8 @@ export default function Hero() {
                 </span>
               ))}
             </div>
+
+            <FirefoxPromo className="mt-8" />
           </div>
 
           {/* Right: real popup mockup + before/after demo */}

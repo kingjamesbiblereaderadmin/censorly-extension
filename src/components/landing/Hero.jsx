@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Smartphone } from "lucide-react";
 import { Image } from "@/components/ui/image";
 
 import ExtensionIcon from "./ExtensionIcon";
@@ -110,8 +110,12 @@ export default function Hero() {
               total privacy.
             </p>
 
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap items-center gap-2">
               <DesktopOnlyBadge />
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[hsl(var(--wsp-accent)/0.3)] bg-[hsl(var(--wsp-accent)/0.06)] px-3 py-1.5 text-xs font-medium text-[hsl(var(--wsp-navy)/0.75)]">
+                <Smartphone className="w-3.5 h-3.5 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
+                Mobile support is limited
+              </span>
             </div>
 
             <div className="mt-8 flex flex-col gap-4">

@@ -1,4 +1,4 @@
-import { Mail, LifeBuoy, Puzzle, MonitorSmartphone, RefreshCw, ListPlus } from "lucide-react";
+import { Mail, LifeBuoy, Puzzle, MonitorSmartphone, RefreshCw, ListPlus, Smartphone } from "lucide-react";
 import ExtensionIcon from "@/components/landing/ExtensionIcon";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
@@ -24,6 +24,11 @@ const TOPICS = [
     icon: ListPlus,
     title: "Exact vs Wildcard matching",
     body: "Exact matches only that word. Wildcard also matches endings — filtering “spam” also filters “spamming”, “spammer”, and “spammed”.",
+  },
+  {
+    icon: Smartphone,
+    title: "Installing on Titanium (mobile)",
+    body: "For Chrome extensions, navigate to the Chrome Web Store, enable Desktop site using the menu button ⋮ in the top right corner, and proceed as normal.",
   },
 ];
 

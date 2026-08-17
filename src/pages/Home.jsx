@@ -21,6 +21,16 @@ export default function Home() {
         <Installation />
         <FAQ />
       </main>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-4">
+        <a
+          href="https://base44.com/superagents"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-xs text-[hsl(var(--wsp-navy)/0.75)] hover:text-[hsl(var(--wsp-accent))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 rounded"
+        >
+          Made with Superagent AI
+        </a>
+      </div>
       <Footer />
     </div>
   );

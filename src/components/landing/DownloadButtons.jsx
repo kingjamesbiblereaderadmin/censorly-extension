@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { base44 } from "@/api/base44Client";
-import { Puzzle, Smartphone } from "lucide-react";
+import { Puzzle, Smartphone, Chrome } from "lucide-react";
 
 const AMO_BADGE =
   "https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg";
@@ -11,7 +11,7 @@ const DEFAULT_LINKS = [
     label: "Download for Chrome/Brave",
     href:
       "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/dd10a1e71_censorly-v55-chrome.zip",
-    primary: true,
+    primary: false,
     order: 0,
   },
   {
@@ -61,6 +61,28 @@ export default function DownloadButtons({ className = "" }) {
   return (
     <div className={`flex flex-row flex-wrap items-center justify-center gap-3 ${className}`}>
       {links.map((l) => {
+        if (l.key === "chrome") {
+          return (
+            <a
+              key={l.key}
+              href="https://chromewebstore.google.com/detail/censorly/ihebeiliagohkojpchkgafjgndaiagaf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get Censorly on the Chrome Web Store"
+              className="inline-flex items-center gap-3 rounded-2xl border border-[hsl(var(--wsp-navy)/0.15)] bg-white px-5 py-2.5 min-h-[44px] hover:border-[hsl(var(--wsp-accent))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2"
+            >
+              <Chrome className="w-6 h-6 text-[hsl(var(--wsp-navy))]" strokeWidth={2} />
+              <span className="flex flex-col leading-tight text-left">
+                <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-[hsl(var(--wsp-navy)/0.5)]">
+                  Available on
+                </span>
+                <span className="text-sm font-semibold text-[hsl(var(--wsp-navy))]">
+                  Chrome Web Store
+                </span>
+              </span>
+            </a>
+          );
+        }
         if (l.key === "firefox") {
           return (
             <div key={l.key} className="flex flex-col items-center gap-1">

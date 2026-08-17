@@ -81,7 +81,7 @@ export default function DownloadButtons({ className = "" }) {
                 />
               </a>
               <a
-                href="https://chromewebstore.google.com/detail/censorly/ihebeiliagohkojpchkgafjgndaiagaf"
+                href="https://github.com/jqssun/android-titanium-browser"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)] hover:text-[hsl(var(--wsp-accent))] transition-colors"

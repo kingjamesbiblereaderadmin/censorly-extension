@@ -5,7 +5,6 @@ import ExtensionIcon from "./ExtensionIcon";
 import DesktopOnlyBadge from "./DesktopOnlyBadge";
 import DownloadButtons from "./DownloadButtons";
 import PopupMockup from "./PopupMockup";
-import FirefoxPromo from "./FirefoxPromo";
 
 const HERO_AMBIENT =
   "https://media.base44.com/images/public/6a75b2c0fbf3b5ad5e60f45f/d166ec2eb_generated_image.png";
@@ -125,7 +124,6 @@ export default function Hero() {
                 See the demo
                 <ArrowRight className="w-4 h-4 opacity-0 -ml-1 group-hover:opacity-100 group-hover:ml-0 transition-all" />
               </a>
-              <FirefoxPromo />
             </div>
 
             <p className="mt-3 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">

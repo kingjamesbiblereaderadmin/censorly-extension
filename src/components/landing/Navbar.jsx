@@ -14,14 +14,31 @@ export default function Navbar() {
     <header className="sticky top-0 z-50">
       <div className="w-full bg-[hsl(var(--wsp-navy))] text-white/80 text-xs">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-8 flex items-center justify-center">
-          <a
-            href="https://base44.com/superagents"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--wsp-navy))] rounded"
-          >
-            Made with Superagent AI
-          </a>
+          <div className="inline-flex items-center gap-3">
+            <a
+              href="https://base44.com/superagents"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--wsp-navy))] rounded"
+            >
+              Made with Superagent AI
+            </a>
+            <span className="text-white/30">·</span>
+            <a
+              href="https://base44.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--wsp-navy))] rounded"
+            >
+              By
+              <img
+                src="https://base44.com/logo_v2.svg"
+                alt="Base44"
+                className="h-3 w-auto inline-block"
+              />
+              Base44
+            </a>
+          </div>
         </div>
       </div>
       <div className="backdrop-blur-xl bg-[hsl(var(--background))]/75 border-b border-[hsl(var(--wsp-accent)/0.12)]">

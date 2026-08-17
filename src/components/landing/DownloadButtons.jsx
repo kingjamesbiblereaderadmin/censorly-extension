@@ -65,21 +65,26 @@ export default function DownloadButtons({ className = "" }) {
       {links.map((l) => {
         if (l.key === "chrome") {
           return (
-            <a
-              key={l.key}
-              href="https://chromewebstore.google.com/detail/censorly/ihebeiliagohkojpchkgafjgndaiagaf"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get Censorly on the Chrome Web Store"
-              className="inline-flex items-center justify-center rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 min-h-[44px]"
-            >
-              <img
-                src={CHROME_BADGE}
-                alt="Available in the Chrome Web Store"
-                className="h-[44px] sm:h-[52px] w-auto max-w-full rounded-xl"
-                draggable={false}
-              />
-            </a>
+            <div key={l.key} className="flex flex-col items-center gap-1">
+              <a
+                href="https://chromewebstore.google.com/detail/censorly/ihebeiliagohkojpchkgafjgndaiagaf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Censorly on the Chrome Web Store"
+                className="inline-flex items-center justify-center rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 min-h-[44px]"
+              >
+                <img
+                  src={CHROME_BADGE}
+                  alt="Available in the Chrome Web Store"
+                  className="h-[44px] sm:h-[52px] w-auto max-w-full rounded-xl"
+                  draggable={false}
+                />
+              </a>
+              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]">
+                <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
+                Available on Titanium browser (mobile)
+              </span>
+            </div>
           );
         }
         if (l.key === "firefox") {

@@ -80,7 +80,7 @@ export default function DownloadButtons({ className = "" }) {
               </a>
               <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]">
                 <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
-                Mobile support is limited
+                Tested on mobile
               </span>
             </div>
           );

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { base44 } from "@/api/base44Client";
-import { Puzzle } from "lucide-react";
+import { Puzzle, Smartphone } from "lucide-react";
 
 const AMO_BADGE =
   "https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg";
@@ -63,21 +63,26 @@ export default function DownloadButtons({ className = "" }) {
       {links.map((l) => {
         if (l.key === "firefox") {
           return (
-            <a
-              key={l.key}
-              href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get Censorly for Firefox from Firefox Add-ons"
-              className="inline-flex items-center justify-center rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 min-h-[44px]"
-            >
-              <img
-                src={AMO_BADGE}
-                alt="Get the add-on — Firefox Add-ons"
-                className="h-[44px] sm:h-[52px] w-auto max-w-full rounded-xl"
-                draggable={false}
-              />
-            </a>
+            <div key={l.key} className="flex flex-col items-center gap-1">
+              <a
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Censorly for Firefox from Firefox Add-ons"
+                className="inline-flex items-center justify-center rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 min-h-[44px]"
+              >
+                <img
+                  src={AMO_BADGE}
+                  alt="Get the add-on — Firefox Add-ons"
+                  className="h-[44px] sm:h-[52px] w-auto max-w-full rounded-xl"
+                  draggable={false}
+                />
+              </a>
+              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]">
+                <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
+                Mobile support is limited
+              </span>
+            </div>
           );
         }
         const isExternal = l.href.includes("addons.mozilla.org");

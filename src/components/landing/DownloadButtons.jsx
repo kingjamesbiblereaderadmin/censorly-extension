@@ -80,10 +80,15 @@ export default function DownloadButtons({ className = "" }) {
                   draggable={false}
                 />
               </a>
-              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]">
+              <a
+                href="https://chromewebstore.google.com/detail/censorly/ihebeiliagohkojpchkgafjgndaiagaf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)] hover:text-[hsl(var(--wsp-accent))] transition-colors"
+              >
                 <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
                 Available on Titanium browser (mobile)
-              </span>
+              </a>
             </div>
           );
         }

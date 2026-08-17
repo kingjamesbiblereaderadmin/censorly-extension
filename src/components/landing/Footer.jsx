@@ -62,20 +62,6 @@ export default function Footer() {
               Licence
             </Link>
             <a
-              href="https://base44.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-[hsl(var(--wsp-accent))] transition-colors"
-            >
-              Made with
-              <img
-                src="https://base44.com/logo_v2.svg"
-                alt="Base44"
-                className="h-3.5 w-auto inline-block"
-              />
-              Base44
-            </a>
-            <a
               href="https://base44.com/superagents"
               target="_blank"
               rel="noopener noreferrer"

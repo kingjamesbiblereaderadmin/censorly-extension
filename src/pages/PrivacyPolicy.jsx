@@ -1,4 +1,5 @@
-import { Shield as ShieldIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Shield as ShieldIcon, ArrowLeft } from "lucide-react";
 import ExtensionIcon from "@/components/landing/ExtensionIcon";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
@@ -102,7 +103,14 @@ export default function PrivacyPolicy() {
       <Navbar />
       <main className="flex-1 pt-12 pb-24">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
-          <div className="flex items-center gap-3">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--wsp-navy)/0.6)] hover:text-[hsl(var(--wsp-accent))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 rounded"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to home
+          </Link>
+          <div className="mt-6 flex items-center gap-3">
             <ExtensionIcon className="w-10 h-10" />
             <span className="font-mono text-xs uppercase tracking-[0.16em] text-[hsl(var(--wsp-accent))]">
               Censorly

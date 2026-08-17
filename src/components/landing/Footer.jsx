@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="w-full border-t border-[hsl(var(--wsp-navy)/0.06)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[hsl(var(--wsp-navy)/0.5)]">
           <div className="flex items-center gap-5">
             <Link
-              to="/privacy-policy"
+              to="/privacy"
               className="hover:text-[hsl(var(--wsp-accent))] transition-colors"
             >
               Policy

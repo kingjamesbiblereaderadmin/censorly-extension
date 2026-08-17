@@ -48,6 +48,7 @@ const AuthenticatedApp = () => {
     <Routes>
       {/* Add your page Route elements here */}
       <Route path="/" element={<Home />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/support" element={<Support />} />

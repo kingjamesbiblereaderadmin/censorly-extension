@@ -69,6 +69,7 @@ const ENTRIES = [
       { type: "Feature", text: "Export: Download your current word list as censorly-words.txt to back up or move to another browser." },
       { type: "Improvement", text: "Step-by-step instructions shown in the popup for the export → edit → import workflow." },
       { type: "Improvement", text: "Toast notifications confirm how many words were imported or exported." },
+      { type: "Fix", text: "Fixed CSS bug where the native file input was visible instead of hidden." },
     ],
   },
   {
@@ -191,7 +192,7 @@ const ENTRIES = [
     date: "August 4, 2026",
     changes: [
       { type: "Fix", text: "Fixed low-contrast text in dark mode popup." },
-      { type: "Fix", text: "Brightened dark-theme text colors (#b4b4cc / #9797b3 / #a3a3bf / #c8c8dc)." },
+      { type: "Fix", text: "Brightened dark-theme text colors to #b4b4cc / #9797b3 / #a3a3bf / #c8c8dc." },
       { type: "Improvement", text: "All section labels, hint text, and site names now 6:1 to 10:1 contrast ratio." },
     ],
   },

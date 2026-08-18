@@ -77,17 +77,6 @@ export default function Footer() {
           <span className="font-mono">© {new Date().getFullYear()} Censorly</span>
         </div>
 
-        <div className="w-full flex items-center justify-center">
-          <a
-            href="https://base44.com/superagents"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[hsl(var(--wsp-navy)/0.8)] hover:text-[hsl(var(--wsp-accent))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 rounded"
-          >
-            Made with Superagent AI
-          </a>
-        </div>
-
         <a
           href="https://www.reddit.com/r/Base44/comments/1vdkfn8/free_base44_prompt_turn_a_generic_aibuilt_page/"
           target="_blank"

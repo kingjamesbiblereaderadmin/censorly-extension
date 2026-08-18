@@ -37,7 +37,7 @@ censorly/
 
 ## Details
 
-- **Version:** 5.6
+- **Version:** 5.7
 - **License:** MIT
 - **CSS prefix:** \`cs-\`
 - **Contact:** censorlyextension@outlook.sg
@@ -260,7 +260,7 @@ export default async function (req) {
     // 7. Create the commit
     const commitBody = {
       tree: tree.data.sha,
-      message: 'Add Censorly v5.6 source (Chrome/Edge/Brave, Firefox, Opera)',
+      message: 'Add Censorly v5.7 source (Chrome/Edge/Brave, Firefox, Opera)',
     };
     if (parentSha) commitBody.parents = [parentSha];
     const commit = await gh(`/repos/${owner}/${REPO_NAME}/git/commits`, {

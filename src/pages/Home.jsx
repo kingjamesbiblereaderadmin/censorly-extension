@@ -5,6 +5,7 @@ import FilterModes from "@/components/landing/FilterModes";
 import KeyFeatures from "@/components/landing/KeyFeatures";
 import PrivacySection from "@/components/landing/PrivacySection";
 import Installation from "@/components/landing/Installation";
+import Changelog from "@/components/landing/Changelog";
 import FAQ from "@/components/landing/FAQ";
 import Footer from "@/components/landing/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <KeyFeatures />
         <PrivacySection />
         <Installation />
+        <Changelog />
         <FAQ />
       </main>
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-4">

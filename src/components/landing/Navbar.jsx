@@ -7,6 +7,7 @@ const LINKS = [
   { href: "#features", label: "Features" },
   { href: "#privacy", label: "Privacy" },
   { href: "#faq", label: "FAQ" },
+  { href: "changelog", label: "Changelog" },
 ];
 
 export default function Navbar() {

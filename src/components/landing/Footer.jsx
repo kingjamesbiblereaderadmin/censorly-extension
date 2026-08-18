@@ -52,6 +52,12 @@ export default function Footer() {
               Terms
             </Link>
             <Link
+              to="/changelog"
+              className="hover:text-[hsl(var(--wsp-accent))] transition-colors"
+            >
+              Changelog
+            </Link>
+            <Link
               to="/support"
               className="hover:text-[hsl(var(--wsp-accent))] transition-colors"
             >

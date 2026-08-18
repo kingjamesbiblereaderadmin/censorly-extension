@@ -1,6 +1,8 @@
-import { Mail, Heart, ExternalLink } from "lucide-react";
+import { Mail, Heart, ExternalLink, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import ExtensionIcon from "./ExtensionIcon";
+
+const GITHUB_REPO = "https://github.com/kingjamesbiblereaderadmin/censorly";
 
 export default function Footer() {
   return (
@@ -61,6 +63,16 @@ export default function Footer() {
             >
               Licence
             </Link>
+            <a
+              href={GITHUB_REPO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-[hsl(var(--wsp-accent))] transition-colors"
+              aria-label="View Censorly on GitHub"
+            >
+              <Github className="w-3.5 h-3.5" />
+              GitHub
+            </a>
             <a
               href="https://base44.com/superagents"
               target="_blank"

@@ -1,0 +1,308 @@
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
+
+const SOURCE_URL =
+  'https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/d79d39c7d_censorly-source-all-variants.txt';
+
+const REPO_NAME = 'censorly';
+const REPO_DESC =
+  'Censorly — a browser extension that filters, hides, censors, or blurs unwanted words on any web page. 100% client-side, zero API calls.';
+const HOMEPAGE = 'https://censorly-extension.base44.app';
+
+const README = `# Censorly
+
+Censorly is a browser extension that filters, hides, censors, or blurs unwanted words on any web page. Everything runs **100% client-side** — there are **zero API calls**, no network requests, and no tracking of any kind.
+
+## Variants
+
+This repository contains the source for all three supported browser variants. The only file that differs between them is \`manifest.json\`; all other files are shared and identical.
+
+- \`chrome/\` — Chrome, Edge, and Brave (Manifest V3 service worker)
+- \`firefox/\` — Firefox (background scripts + \`browser_specific_settings.gecko\`)
+- \`opera/\` — Opera (Manifest V3 service worker)
+
+## Repository structure
+
+\`\`\`
+censorly/
+  README.md
+  LICENSE
+  chrome/    (manifest.json, background.js, content.js, popup.html, popup.js, icons/)
+  firefox/   (manifest.json, background.js, content.js, popup.html, popup.js, icons/)
+  opera/     (manifest.json, background.js, content.js, popup.html, popup.js, icons/)
+\`\`\`
+
+> Each variant's \`icons/\` directory should contain \`icon16.png\`, \`icon48.png\`, and \`icon128.png\` (referenced by \`manifest.json\`). Add your icon assets there before loading the extension.
+
+## Details
+
+- **Version:** 5.6
+- **License:** MIT
+- **CSS prefix:** \`cs-\`
+- **Contact:** censorlyextension@outlook.sg
+- **Website:** ${HOMEPAGE}
+- **Firefox Add-ons (AMO):** https://addons.mozilla.org/en-GB/android/addon/censorly/
+
+## Install (load unpacked)
+
+1. Download or clone this repository.
+2. Pick the folder for your browser (\`chrome/\`, \`firefox/\`, or \`opera/\`).
+3. Add your icon files to that variant's \`icons/\` directory.
+4. Load it unpacked:
+   - **Chrome / Edge / Brave:** \`chrome://extensions\` → enable Developer mode → Load unpacked.
+   - **Firefox:** \`about:debugging\` → This Firefox → Load temporary add-on (select the folder's \`manifest.json\`).
+   - **Opera:** \`extensions\` page → enable Developer mode → Load unpacked.
+
+Censorly is desktop only and works on Windows, Mac, and Linux.
+`;
+
+const VARIANTS = ['chrome', 'firefox', 'opera'];
+
+function toB64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let bin = '';
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin);
+}
+
+function parseBundle(text) {
+  const headerRe = /\n={50,}\nFILE:\s*([^\n]+)\n={50,}\n/g;
+  const marks = [];
+  let m;
+  while ((m = headerRe.exec(text)) !== null) {
+    marks.push({
+      name: m[1].trim(),
+      blockStart: m.index,
+      contentStart: m.index + m[0].length,
+    });
+  }
+  const files = [];
+  for (let i = 0; i < marks.length; i++) {
+    const end = i + 1 < marks.length ? marks[i + 1].blockStart : text.length;
+    const content =
+      text
+        .slice(marks[i].contentStart, end)
+        .replace(/^[\r\n]+/, '')
+        .replace(/\s+$/, '') + '\n';
+    const name = marks[i].name;
+    if (/^LICENSE\b/i.test(name)) {
+      files.push({ path: 'LICENSE', content });
+    } else if (/^background\.js\b/i.test(name)) {
+      VARIANTS.forEach((v) => files.push({ path: `${v}/background.js`, content }));
+    } else if (/^content\.js\b/i.test(name)) {
+      VARIANTS.forEach((v) => files.push({ path: `${v}/content.js`, content }));
+    } else if (/^popup\.js\b/i.test(name)) {
+      VARIANTS.forEach((v) => files.push({ path: `${v}/popup.js`, content }));
+    } else if (/^popup\.html\b/i.test(name)) {
+      VARIANTS.forEach((v) => files.push({ path: `${v}/popup.html`, content }));
+    } else if (/manifest\.json/i.test(name) && /CHROME|EDGE|BRAVE/i.test(name)) {
+      files.push({ path: 'chrome/manifest.json', content });
+    } else if (/manifest\.json/i.test(name) && /FIREFOX/i.test(name)) {
+      files.push({ path: 'firefox/manifest.json', content });
+    } else if (/manifest\.json/i.test(name) && /OPERA/i.test(name)) {
+      files.push({ path: 'opera/manifest.json', content });
+    }
+  }
+  return files;
+}
+
+export default async function (req) {
+  try {
+    const base44 = createClientFromRequest(req);
+    const user = await base44.auth.me();
+    if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 });
+    if (user.role !== 'admin')
+      return Response.json({ error: 'Forbidden' }, { status: 403 });
+
+    const conn = await base44.asServiceRole.connectors.getConnection('github');
+    const accessToken = conn && conn.accessToken;
+    if (!accessToken)
+      return Response.json(
+        { error: 'No GitHub access token', connKeys: conn ? Object.keys(conn) : null },
+        { status: 500 }
+      );
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+      'Content-Type': 'application/json',
+      'User-Agent': 'Censorly-Base44-App',
+    };
+    const gh = async (path, opts = {}) => {
+      const res = await fetch('https://api.github.com' + path, {
+        headers,
+        ...opts,
+      });
+      const text = await res.text();
+      let data = null;
+      try {
+        data = text ? JSON.parse(text) : null;
+      } catch (e) {
+        data = { raw: text };
+      }
+      return { ok: res.ok, status: res.status, data };
+    };
+
+    // 1. Resolve the authenticated GitHub user (repo owner)
+    const me = await gh('/user');
+    if (!me.ok)
+      return Response.json(
+        { error: 'GitHub /user failed', status: me.status, detail: me.data },
+        { status: 502 }
+      );
+    const owner = me.data.login;
+
+    // 2. Fetch + parse the source bundle
+    const bundleRes = await fetch(SOURCE_URL);
+    if (!bundleRes.ok)
+      return Response.json(
+        { error: 'Could not fetch source bundle', status: bundleRes.status },
+        { status: 502 }
+      );
+    const bundle = await bundleRes.text();
+    const files = parseBundle(bundle);
+    if (!files.some((f) => f.path === 'LICENSE'))
+      return Response.json({ error: 'LICENSE not found in bundle' }, { status: 500 });
+
+    // 3. Ensure the repo exists
+    const existing = await gh(`/repos/${owner}/${REPO_NAME}`);
+    if (!existing.ok) {
+      const created = await gh('/user/repos', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: REPO_NAME,
+          description: REPO_DESC,
+          homepage: HOMEPAGE,
+          private: false,
+          auto_init: false,
+        }),
+      });
+      if (!created.ok && created.status !== 422)
+        return Response.json(
+          { error: 'Repo creation failed', detail: created.data },
+          { status: 502 }
+        );
+    }
+
+    // 4. Locate the default branch + base commit (if any)
+    let branchName = 'main';
+    let ref = await gh(`/repos/${owner}/${REPO_NAME}/git/refs/heads/main`);
+    if (!ref.ok) {
+      ref = await gh(`/repos/${owner}/${REPO_NAME}/git/refs/heads/master`);
+      if (ref.ok) branchName = 'master';
+    }
+    let parentSha = null;
+    let baseTreeSha = null;
+    if (ref.ok) {
+      parentSha = ref.data.object.sha;
+      const commit = await gh(
+        `/repos/${owner}/${REPO_NAME}/git/commits/${parentSha}`
+      );
+      if (commit.ok) baseTreeSha = commit.data.tree.sha;
+    }
+
+    // 4b. Empty repos reject the Git Data API (409 "Git Repository is empty").
+    // Seed an initial commit with README via the contents API, then re-resolve.
+    if (!parentSha) {
+      const seed = await gh(`/repos/${owner}/${REPO_NAME}/contents/README.md`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          message: 'Initial commit',
+          content: toB64(README),
+        }),
+      });
+      if (!seed.ok)
+        return Response.json(
+          { error: 'Seed commit failed', detail: seed.data },
+          { status: 502 }
+        );
+      ref = await gh(`/repos/${owner}/${REPO_NAME}/git/refs/heads/main`);
+      if (ref.ok) {
+        parentSha = ref.data.object.sha;
+        branchName = 'main';
+        const commit = await gh(
+          `/repos/${owner}/${REPO_NAME}/git/commits/${parentSha}`
+        );
+        if (commit.ok) baseTreeSha = commit.data.tree.sha;
+      }
+    }
+
+    // 5. Create a blob for every file
+    const treeEntries = [];
+    for (const f of files) {
+      const blob = await gh(`/repos/${owner}/${REPO_NAME}/git/blobs`, {
+        method: 'POST',
+        body: JSON.stringify({ content: f.content, encoding: 'utf-8' }),
+      });
+      if (!blob.ok)
+        return Response.json(
+          { error: `Blob failed for ${f.path}`, detail: blob.data },
+          { status: 502 }
+        );
+      treeEntries.push({ path: f.path, mode: '100644', type: 'blob', sha: blob.data.sha });
+    }
+
+    // 6. Build a tree (on top of the existing one if present)
+    const treeBody = { tree: treeEntries };
+    if (baseTreeSha) treeBody.base_tree = baseTreeSha;
+    const tree = await gh(`/repos/${owner}/${REPO_NAME}/git/trees`, {
+      method: 'POST',
+      body: JSON.stringify(treeBody),
+    });
+    if (!tree.ok)
+      return Response.json(
+        { error: 'Tree creation failed', detail: tree.data },
+        { status: 502 }
+      );
+
+    // 7. Create the commit
+    const commitBody = {
+      tree: tree.data.sha,
+      message: 'Add Censorly v5.6 source (Chrome/Edge/Brave, Firefox, Opera)',
+    };
+    if (parentSha) commitBody.parents = [parentSha];
+    const commit = await gh(`/repos/${owner}/${REPO_NAME}/git/commits`, {
+      method: 'POST',
+      body: JSON.stringify(commitBody),
+    });
+    if (!commit.ok)
+      return Response.json(
+        { error: 'Commit creation failed', detail: commit.data },
+        { status: 502 }
+      );
+
+    // 8. Point the branch at the new commit
+    if (parentSha) {
+      const upd = await gh(
+        `/repos/${owner}/${REPO_NAME}/git/refs/heads/${branchName}`,
+        { method: 'PATCH', body: JSON.stringify({ sha: commit.data.sha, force: true }) }
+      );
+      if (!upd.ok)
+        return Response.json(
+          { error: 'Ref update failed', detail: upd.data },
+          { status: 502 }
+        );
+    } else {
+      const newRef = await gh(`/repos/${owner}/${REPO_NAME}/git/refs`, {
+        method: 'POST',
+        body: JSON.stringify({ ref: 'refs/heads/main', sha: commit.data.sha }),
+      });
+      if (!newRef.ok && !(newRef.data && newRef.data.message && /already exists/i.test(newRef.data.message)))
+        return Response.json(
+          { error: 'Ref creation failed', detail: newRef.data },
+          { status: 502 }
+        );
+    }
+
+    return Response.json({
+      repo: `https://github.com/${owner}/${REPO_NAME}`,
+      owner,
+      files: files.map((f) => f.path),
+      commit: commit.data.sha,
+    });
+  } catch (error) {
+    return Response.json(
+      { error: error.message, stack: error.stack },
+      { status: 500 }
+    );
+  }
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { base44 } from "@/api/base44Client";
-import { Puzzle, Smartphone } from "lucide-react";
+import { Puzzle, Smartphone, ShieldCheck } from "lucide-react";
 
 const AMO_BADGE =
   "https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg";
@@ -80,6 +80,10 @@ export default function DownloadButtons({ className = "" }) {
                   draggable={false}
                 />
               </a>
+              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]">
+                <ShieldCheck className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
+                Also works on Brave
+              </span>
               <a
                 href="https://github.com/jqssun/android-titanium-browser"
                 target="_blank"

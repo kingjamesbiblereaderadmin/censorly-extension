@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "Does it work on mobile?",
-    a: "No — browser extensions don't run on mobile browsers. Censorly is desktop only and works in Chrome, Edge, and Brave on Windows, Mac, and Linux.",
+    a: "Mobile support is limited — Censorly is built for desktop browsers (Chrome, Edge, Brave, Firefox, and Opera on Windows, Mac, and Linux). A Firefox for Android build is available on AMO.",
   },
 ];
 

@@ -79,7 +79,7 @@ export default function Footer() {
 
         <div className="w-full flex items-center justify-center">
           <a
-            href="https://app.base44.com/superagent/6a7554db139ec155f84e28de"
+            href="https://base44.com/superagents"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-[hsl(var(--wsp-navy)/0.8)] hover:text-[hsl(var(--wsp-accent))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 rounded"

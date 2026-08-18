@@ -12,7 +12,7 @@ const DEFAULT_LINKS = [
     key: "chrome",
     label: "Download for Chrome/Brave",
     href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/bdc5e59e2_censorly-v57.zip",
+      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/381882d7d_censorly-v57.zip",
     primary: false,
     order: 0,
   },
@@ -27,7 +27,7 @@ const DEFAULT_LINKS = [
     key: "opera",
     label: "Download for Opera",
     href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/aa81b5162_censorly-v57-opera.zip",
+      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/a676171eb_censorly-v57-opera.zip",
     primary: false,
     order: 2,
   },

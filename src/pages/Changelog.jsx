@@ -73,7 +73,7 @@ const ENTRIES = [
     changes: [
       { type: "Fix", text: "Fixed CSS bug where the native file input was visible instead of hidden in the import/export row." },
       { type: "Improvement", text: "Import accepts any .txt or .csv filename — no need to match the exported filename." },
-      { type: "Other", text: "Version number bumped to 5.8 across all manifests and popup display." },
+      { type: "Improvement", text: "Updated footer links to use remote website URLs for Terms and Privacy." },
     ],
   },
   {

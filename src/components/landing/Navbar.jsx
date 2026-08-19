@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import ExtensionIcon from "./ExtensionIcon";
 
 const LINKS = [
@@ -11,6 +13,14 @@ const LINKS = [
 ];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const mobileLinks = [
+    ...LINKS.map((l) => ({ to: `/${l.href}`, label: l.label })),
+    { to: "/privacy", label: "Policy" },
+    { to: "/terms", label: "Terms" },
+    { to: "/support", label: "Support" },
+    { to: "/licence", label: "Licence" },
+  ];
   return (
     <header className="sticky top-0 z-50">
       <div className="w-full bg-[hsl(var(--wsp-navy))] text-white/80 text-xs">
@@ -89,8 +99,35 @@ export default function Navbar() {
               Licence
             </Link>
           </nav>
+
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 -mr-2 rounded-xl text-[hsl(var(--wsp-navy))] hover:bg-[hsl(var(--wsp-navy)/0.05)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))]"
+          >
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
+
+      {open && (
+        <div className="md:hidden border-t border-[hsl(var(--wsp-accent)/0.12)] bg-[hsl(var(--background))]/95 backdrop-blur-xl">
+          <nav className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex flex-col">
+            {mobileLinks.map((l) => (
+              <Link
+                key={l.to + l.label}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="py-2.5 text-sm font-medium text-[hsl(var(--wsp-navy)/0.8)] hover:text-[hsl(var(--wsp-accent))] transition-colors border-b border-[hsl(var(--wsp-navy)/0.05)] last:border-b-0"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

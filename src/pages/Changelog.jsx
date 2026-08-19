@@ -152,10 +152,8 @@ const ENTRIES = [
   {
     version: "v4.1",
     date: "August 10, 2026",
-    removedNote:
-      "Replaced in v5.0 (August 12, 2026) — this teal censor-bar icon is no longer used.",
     changes: [
-      { type: "Design", text: 'Refined "censor bar" icon design with teal theme.' },
+      { type: "Design", text: 'Refined "censor bar" icon design with teal theme.', removedNote: "Replaced in v5.0 (August 12, 2026)." },
       { type: "Fix", text: "Bug-fixed filtering engine." },
     ],
   },
@@ -184,10 +182,8 @@ const ENTRIES = [
   {
     version: "v3.6",
     date: "August 6, 2026",
-    removedNote:
-      "Replaced in v4.0 (August 9, 2026) — this shield-emoji icon is no longer used.",
     changes: [
-      { type: "Design", text: "Shield emoji (🛡️) icon design introduced." },
+      { type: "Design", text: "Shield emoji (🛡️) icon design introduced.", removedNote: "Replaced in v4.0 (August 9, 2026)." },
     ],
   },
   {
@@ -249,13 +245,11 @@ const ENTRIES = [
   {
     version: "v2.5",
     date: "July 28, 2026",
-    removedNote:
-      "Removed in v3.0 (July 31, 2026) — these PDF and OCR features are no longer available. Censorly is now a web-page text filter only.",
     changes: [
-      { type: "Feature", text: "Full client-side PDF editor with auto-redaction, auto-highlighting, manual redaction/highlighting." },
-      { type: "Feature", text: "Text annotations, shape drawing, page manipulation (rotation/reordering/deletion/cropping)." },
-      { type: "Feature", text: "Merging, watermarking, and password protection." },
-      { type: "Other", text: "Used pdf.js, pdf-lib, and Tesseract.js for OCR." },
+      { type: "Feature", text: "Full client-side PDF editor with auto-redaction, auto-highlighting, manual redaction/highlighting.", removedNote: "Removed in v3.0 (July 31, 2026)." },
+      { type: "Feature", text: "Text annotations, shape drawing, page manipulation (rotation/reordering/deletion/cropping).", removedNote: "Removed in v3.0 (July 31, 2026)." },
+      { type: "Feature", text: "Merging, watermarking, and password protection.", removedNote: "Removed in v3.0 (July 31, 2026)." },
+      { type: "Other", text: "Used pdf.js, pdf-lib, and Tesseract.js for OCR.", removedNote: "Removed in v3.0 (July 31, 2026)." },
     ],
   },
 ];
@@ -265,7 +259,7 @@ function groupByType(changes) {
   const groups = {};
   for (const c of changes) {
     if (!groups[c.type]) groups[c.type] = [];
-    groups[c.type].push(c.text);
+    groups[c.type].push(c);
   }
   return TYPE_ORDER.filter((t) => groups[t]).map((t) => ({ type: t, items: groups[t] }));
 }
@@ -333,13 +327,6 @@ export default function ChangelogPage() {
                         </span>
                       </div>
 
-                      {entry.removedNote && (
-                        <p className="mt-3 inline-flex items-center gap-2 text-sm italic text-rose-500">
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-400" aria-hidden="true" />
-                          {entry.removedNote}
-                        </p>
-                      )}
-
                       {entry.note && (
                         <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50/70 p-4 sm:p-5">
                           <div className="flex items-center gap-2 text-amber-700">
@@ -364,10 +351,18 @@ export default function ChangelogPage() {
                                 </span>
                               </div>
                               <ul className="flex flex-col gap-2.5">
-                                {g.items.map((text, i) => (
+                                {g.items.map((c, i) => (
                                   <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed text-[hsl(var(--wsp-navy)/0.72)]">
                                     <span className={`mt-2.5 shrink-0 w-1.5 h-1.5 rounded-full ${T.dot}`} aria-hidden="true" />
-                                    <span>{text}</span>
+                                    <div className="flex flex-col">
+                                      <span>{c.text}</span>
+                                      {c.removedNote && (
+                                        <span className="mt-1 inline-flex items-center gap-1.5 text-xs italic text-rose-500">
+                                          <span className="w-1 h-1 rounded-full bg-rose-400" aria-hidden="true" />
+                                          {c.removedNote}
+                                        </span>
+                                      )}
+                                    </div>
                                   </li>
                                 ))}
                               </ul>

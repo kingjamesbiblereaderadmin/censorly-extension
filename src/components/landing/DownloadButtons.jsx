@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { base44 } from "@/api/base44Client";
 import { Puzzle, Smartphone, ShieldCheck } from "lucide-react";
 
 const AMO_BADGE =
@@ -18,7 +16,7 @@ const DEFAULT_LINKS = [
   {
     key: "firefox",
     label: "Download for Firefox",
-    href: "https://addons.mozilla.org/en-GB/android/addon/censorly/",
+    href: "https://addons.mozilla.org/en-US/firefox/addon/censorly/",
     primary: false,
     order: 1,
   },
@@ -33,31 +31,7 @@ const DEFAULT_LINKS = [
 ];
 
 export default function DownloadButtons({ className = "" }) {
-  const [links, setLinks] = useState(DEFAULT_LINKS);
-
-  useEffect(() => {
-    let active = true;
-    base44.entities.DownloadLink.list("order", 50)
-      .then((rows) => {
-        if (!active || !rows || rows.length === 0) return;
-        const sorted = [...rows].sort(
-          (a, b) => (a.order || 0) - (b.order || 0)
-        );
-        setLinks(
-          sorted.map((r) => ({
-            key: r.key,
-            label: r.label,
-            href: r.href,
-            primary: !!r.primary,
-            order: r.order || 0,
-          }))
-        );
-      })
-      .catch(() => {});
-    return () => {
-      active = false;
-    };
-  }, []);
+  const links = DEFAULT_LINKS;
 
   return (
     <div className={`flex flex-row flex-wrap items-center justify-center gap-3 ${className}`}>

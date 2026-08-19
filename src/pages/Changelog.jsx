@@ -152,6 +152,8 @@ const ENTRIES = [
   {
     version: "v4.1",
     date: "August 10, 2026",
+    removedNote:
+      "Replaced in v5.0 (August 12, 2026) — this teal censor-bar icon is no longer used.",
     changes: [
       { type: "Design", text: 'Refined "censor bar" icon design with teal theme.' },
       { type: "Fix", text: "Bug-fixed filtering engine." },
@@ -182,6 +184,8 @@ const ENTRIES = [
   {
     version: "v3.6",
     date: "August 6, 2026",
+    removedNote:
+      "Replaced in v4.0 (August 9, 2026) — this shield-emoji icon is no longer used.",
     changes: [
       { type: "Design", text: "Shield emoji (🛡️) icon design introduced." },
     ],

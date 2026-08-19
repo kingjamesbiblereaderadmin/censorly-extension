@@ -10,10 +10,9 @@ const CHROME_BADGE =
 const DEFAULT_LINKS = [
   {
     key: "chrome",
-    label: "Download for Chrome/Edge/Brave",
-    href:
-      "https://base44.app/api/apps/6a7554db139ec155f84e28de/files/mp/public/6a7554db139ec155f84e28de/4c2687160_censorly-v59.zip",
-    primary: true,
+    label: "Get on Chrome Web Store",
+    href: "https://chromewebstore.google.com/detail/censorly/ihebeiliagohkojpchkgafjgndaiagaf",
+    primary: false,
     order: 0,
   },
   {
@@ -67,13 +66,18 @@ export default function DownloadButtons({ className = "" }) {
           return (
             <div key={l.key} className="flex flex-col items-center gap-1">
               <a
-                href={l.href}
-                download
-                aria-label={l.label}
-                className="wsp-glow inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[hsl(var(--wsp-primary))] px-5 py-3 text-sm sm:text-base font-semibold text-white hover:bg-[hsl(var(--wsp-primary-hover))] transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2"
+                href="https://chromewebstore.google.com/detail/censorly/ihebeiliagohkojpchkgafjgndaiagaf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Censorly on the Chrome Web Store"
+                className="inline-flex items-center justify-center rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 min-h-[44px]"
               >
-                <Puzzle className="w-5 h-5" />
-                {l.label}
+                <img
+                  src={CHROME_BADGE}
+                  alt="Available in the Chrome Web Store"
+                  className="h-[44px] sm:h-[52px] w-auto max-w-full rounded-xl"
+                  draggable={false}
+                />
               </a>
               <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]">
                 <ShieldCheck className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />

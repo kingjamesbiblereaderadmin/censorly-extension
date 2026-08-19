@@ -3,7 +3,6 @@ import Footer from "@/components/landing/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Sparkles, Wrench, Gauge, Palette, RefreshCw, FileText, MoreHorizontal } from "lucide-react";
 import ScrollReveal from "@/components/landing/ScrollReveal";
-import { StaggerGroup, RevealItem } from "@/components/landing/Reveal";
 
 // Change categories — each gets a label, icon, and badge color
 const TYPES = {
@@ -310,12 +309,12 @@ export default function ChangelogPage() {
         </section>
 
         <section className="max-w-4xl mx-auto px-6 lg:px-10 pb-24">
-          <StaggerGroup className="relative flex flex-col gap-6">
+          <div className="relative flex flex-col gap-6">
             <span className="absolute left-[7px] top-2 bottom-2 w-px bg-[hsl(var(--wsp-accent)/0.2)]" aria-hidden="true" />
             {ENTRIES.map((entry) => {
               const groups = groupByType(entry.changes);
               return (
-                <RevealItem key={entry.version}>
+                <ScrollReveal key={entry.version}>
                   <article className="relative pl-10">
                     <span className="absolute left-0 top-2 w-4 h-4 rounded-full bg-[hsl(var(--wsp-accent))] ring-4 ring-[hsl(var(--wsp-bg-accent))]" aria-hidden="true" />
                     <div className="rounded-3xl border border-[hsl(var(--wsp-accent)/0.18)] bg-white p-7 sm:p-8 shadow-sm">
@@ -365,10 +364,10 @@ export default function ChangelogPage() {
                       </div>
                     </div>
                   </article>
-                </RevealItem>
+                </ScrollReveal>
               );
             })}
-          </StaggerGroup>
+          </div>
         </section>
       </main>
       <Footer />

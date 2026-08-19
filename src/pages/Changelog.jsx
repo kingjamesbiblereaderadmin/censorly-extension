@@ -245,6 +245,8 @@ const ENTRIES = [
   {
     version: "v2.5",
     date: "July 28, 2026",
+    removedNote:
+      "Removed in v3.0 (July 31, 2026) — these PDF and OCR features are no longer available. Censorly is now a web-page text filter only.",
     changes: [
       { type: "Feature", text: "Full client-side PDF editor with auto-redaction, auto-highlighting, manual redaction/highlighting." },
       { type: "Feature", text: "Text annotations, shape drawing, page manipulation (rotation/reordering/deletion/cropping)." },
@@ -326,6 +328,13 @@ export default function ChangelogPage() {
                           {entry.date}
                         </span>
                       </div>
+
+                      {entry.removedNote && (
+                        <p className="mt-3 inline-flex items-center gap-2 text-sm italic text-rose-500">
+                          <span className="w-1.5 h-1.5 rounded-full bg-rose-400" aria-hidden="true" />
+                          {entry.removedNote}
+                        </p>
+                      )}
 
                       {entry.note && (
                         <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50/70 p-4 sm:p-5">

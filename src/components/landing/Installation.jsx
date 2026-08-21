@@ -1,6 +1,7 @@
 import { Download, FolderArchive, Puzzle, Upload } from "lucide-react";
 import ExtensionIcon from "./ExtensionIcon";
 import DownloadButtons from "./DownloadButtons";
+import DesktopOnlyBadge from "./DesktopOnlyBadge";
 import { SectionLabel } from "./HowItWorks";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerGroup, RevealItem } from "./Reveal";
@@ -62,8 +63,9 @@ export default function Installation() {
             </code>
           </div>
 
-          <div className="mt-8 flex flex-col gap-4">
+          <div className="mt-8 flex flex-col items-center gap-4">
             <DownloadButtons />
+            <DesktopOnlyBadge />
             <span className="inline-flex items-center gap-2 text-sm text-[hsl(var(--wsp-navy)/0.5)] font-mono">
               <ExtensionIcon className="w-4 h-4" />
               v5.9 · ~36KB · open source · Chrome/Edge: chrome://extensions · Firefox: addons.mozilla.org · Opera: extensions page

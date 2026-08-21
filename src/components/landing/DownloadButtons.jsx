@@ -66,15 +66,6 @@ export default function DownloadButtons({ className = "" }) {
                 <ShieldCheck className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
                 Also works on Brave
               </span>
-              <a
-                href="https://github.com/jqssun/android-titanium-browser"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)] hover:text-[hsl(var(--wsp-accent))] transition-colors"
-              >
-                <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
-                Available on Titanium browser (mobile)
-              </a>
             </div>
           );
         }
@@ -95,10 +86,6 @@ export default function DownloadButtons({ className = "" }) {
                   draggable={false}
                 />
               </a>
-              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]">
-                <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
-                Works on mobile
-              </span>
             </div>
           );
         }
@@ -119,10 +106,6 @@ export default function DownloadButtons({ className = "" }) {
                   draggable={false}
                 />
               </a>
-              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]">
-                <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
-                Tested on mobile
-              </span>
             </div>
           );
         }

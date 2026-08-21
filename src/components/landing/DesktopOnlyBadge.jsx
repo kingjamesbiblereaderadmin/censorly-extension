@@ -10,7 +10,7 @@ export default function DesktopOnlyBadge({ className = "" }) {
         Works on Chrome, Edge, Brave, Firefox &amp; Opera for Windows, Mac &amp; Linux desktop
       </span>
       <span className="w-10 h-px sm:w-px sm:h-3.5 bg-[hsl(var(--wsp-navy)/0.15)]" aria-hidden="true" />
-      <span className="inline-flex items-center gap-1.5 text-center sm:text-left text-[hsl(var(--wsp-navy)/0.55)]">
+      <span className="inline-flex items-center gap-1.5 text-center sm:text-left">
         <Smartphone className="w-3.5 h-3.5 shrink-0 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
         Works on Mobile — Titanium, Edge, and Firefox
       </span>

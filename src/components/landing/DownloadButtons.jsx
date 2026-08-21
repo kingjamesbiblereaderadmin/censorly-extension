@@ -43,7 +43,7 @@ export default function DownloadButtons({ className = "" }) {
   const links = DEFAULT_LINKS;
 
   return (
-    <div className={`flex flex-row flex-wrap items-center justify-center gap-3 ${className}`}>
+    <div className={`flex flex-row flex-wrap items-start justify-center gap-3 ${className}`}>
       {links.map((l) => {
         if (l.key === "chrome") {
           return (
@@ -95,6 +95,10 @@ export default function DownloadButtons({ className = "" }) {
                   draggable={false}
                 />
               </a>
+              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]">
+                <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
+                Works on mobile
+              </span>
             </div>
           );
         }

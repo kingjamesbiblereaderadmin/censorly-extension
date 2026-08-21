@@ -3,6 +3,7 @@ import ExtensionIcon from "@/components/landing/ExtensionIcon";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import DownloadButtons from "@/components/landing/DownloadButtons";
+import DesktopOnlyBadge from "@/components/landing/DesktopOnlyBadge";
 
 const TOPICS = [
   {
@@ -105,8 +106,9 @@ export default function Support() {
             <div className="text-center text-xs font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-navy)/0.45)] mb-5">
               Get Censorly
             </div>
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center gap-4">
               <DownloadButtons />
+              <DesktopOnlyBadge />
             </div>
           </section>
         </div>

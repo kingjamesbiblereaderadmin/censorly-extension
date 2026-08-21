@@ -1,4 +1,4 @@
-import { Puzzle, Smartphone, ShieldCheck } from "lucide-react";
+import { Puzzle, ShieldCheck } from "lucide-react";
 
 const AMO_BADGE =
   "https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg";

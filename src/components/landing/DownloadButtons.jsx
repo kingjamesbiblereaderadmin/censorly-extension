@@ -14,6 +14,13 @@ const DEFAULT_LINKS = [
     order: 0,
   },
   {
+    key: "edge",
+    label: "Download for Microsoft Edge",
+    href: "https://microsoftedge.microsoft.com/addons/detail/censorly/hjgcibedhdconlmmmpdfljdlmdiagdmg",
+    primary: false,
+    order: 1,
+  },
+  {
     key: "firefox",
     label: "Download for Firefox",
     href: "https://addons.mozilla.org/en-US/firefox/addon/censorly/",
@@ -93,7 +100,7 @@ export default function DownloadButtons({ className = "" }) {
             </div>
           );
         }
-        const isExternal = l.href.includes("addons.mozilla.org");
+        const isExternal = !l.href.includes("base44.app");
         return (
           <a
             key={l.key}

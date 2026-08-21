@@ -4,6 +4,8 @@ const AMO_BADGE =
   "https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg";
 const CHROME_BADGE =
   "https://developer.chrome.com/static/docs/webstore/branding/image/HRs9MPufa1J1h5glNhut.png";
+const EDGE_BADGE =
+  "https://learn.microsoft.com/en-us/microsoft-edge/extensions/publish/add-ons-badge-images/microsoft-edge-add-ons-badge.png";
 
 const DEFAULT_LINKS = [
   {
@@ -72,6 +74,26 @@ export default function DownloadButtons({ className = "" }) {
               >
                 <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
                 Available on Titanium browser (mobile)
+              </a>
+            </div>
+          );
+        }
+        if (l.key === "edge") {
+          return (
+            <div key={l.key} className="flex flex-col items-center gap-1">
+              <a
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Censorly from Microsoft Edge Add-ons"
+                className="inline-flex items-center justify-center rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 min-h-[44px]"
+              >
+                <img
+                  src={EDGE_BADGE}
+                  alt="Get it from Microsoft Edge Add-ons"
+                  className="h-[44px] sm:h-[52px] w-auto max-w-full rounded-xl"
+                  draggable={false}
+                />
               </a>
             </div>
           );

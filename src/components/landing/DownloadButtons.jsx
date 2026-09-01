@@ -1,7 +1,6 @@
 import { Puzzle, ShieldCheck } from "lucide-react";
+import AMO_BADGE from "@/assets/firefox-amo-badge.svg";
 
-const AMO_BADGE =
-  "https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg";
 const CHROME_BADGE =
   "https://developer.chrome.com/static/docs/webstore/branding/image/HRs9MPufa1J1h5glNhut.png";
 const EDGE_BADGE =

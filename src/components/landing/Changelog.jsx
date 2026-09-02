@@ -1,17 +1,14 @@
-import { Upload, Download, ListChecks, Bell } from "lucide-react";
+import { Wrench } from "lucide-react";
 import { SectionLabel } from "./HowItWorks";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerGroup, RevealItem } from "./Reveal";
 
 const ENTRIES = [
   {
-    version: "v5.7",
-    date: "August 18, 2026",
+    version: "v5.10",
+    date: "September 2, 2026",
     changes: [
-      { icon: Upload, text: "Import: Upload a .txt or .csv file to bulk-add words (one word per line, or comma/semicolon separated). Duplicates are automatically skipped." },
-      { icon: Download, text: "Export: Download your current word list as censorly-words.txt to back up or move to another browser." },
-      { icon: ListChecks, text: "Step-by-step instructions shown in the popup for the export → edit → import workflow." },
-      { icon: Bell, text: "Toast notifications confirm how many words were imported or exported." },
+      { icon: Wrench, text: "Firefox: fixed the popup opening with a mis-sized window (visible resize/reposition, leaving unused space beside the content). It now renders fully hidden and reveals only once loaded, so it opens already at its final size." },
     ],
   },
 ];

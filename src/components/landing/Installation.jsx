@@ -68,7 +68,7 @@ export default function Installation() {
             <DesktopOnlyBadge />
             <span className="inline-flex items-center gap-2 text-sm text-[hsl(var(--wsp-navy)/0.5)] font-mono">
               <ExtensionIcon className="w-4 h-4" />
-              v6.0 · ~36KB · open source · Chrome/Edge: chrome://extensions · Firefox: addons.mozilla.org · Opera: extensions page
+              v6.1 · ~36KB · open source · Chrome/Edge: chrome://extensions · Firefox: addons.mozilla.org · Opera: extensions page
             </span>
           </div>
         </ScrollReveal>

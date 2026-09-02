@@ -64,7 +64,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[hsl(var(--wsp-navy)/0.65)]">
+          <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[hsl(var(--wsp-navy)/0.65)] whitespace-nowrap">
             {LINKS.map((l) => (
               <Link
                 key={l.href}

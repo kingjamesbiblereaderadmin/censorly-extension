@@ -5,7 +5,7 @@ import { StaggerGroup, RevealItem } from "./Reveal";
 
 const ENTRIES = [
   {
-    version: "v6.0",
+    version: "v6.1",
     date: "September 2, 2026",
     changes: [
       { icon: Wrench, text: "Firefox: fixed the popup opening with a mis-sized window (visible resize/reposition, leaving unused space beside the content). It now renders fully hidden and reveals only once loaded, so it opens already at its final size." },

@@ -61,6 +61,13 @@ const TYPE_ORDER = ["Rebrand", "Feature", "Improvement", "Fix", "Design", "Docs"
 
 const ENTRIES = [
   {
+    version: "v5.10",
+    date: "September 2, 2026",
+    changes: [
+      { type: "Fix", text: "Firefox: fixed popup opening with a mis-sized window (visible resize/reposition on open, leaving unused space beside the content). Popup now renders fully hidden and reveals only once state has loaded and all sections have finished drawing, so it opens already at its final size." },
+    ],
+  },
+  {
     version: "v5.9",
     date: "August 19, 2026",
     changes: [

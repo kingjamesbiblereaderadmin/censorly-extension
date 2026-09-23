@@ -1,35 +1,29 @@
-import { Mail, LifeBuoy, Puzzle, MonitorSmartphone, RefreshCw, ListPlus, Smartphone } from "lucide-react";
+import { Mail, LifeBuoy, Smartphone, Settings, RefreshCw, ListPlus } from "lucide-react";
 import ExtensionIcon from "@/components/landing/ExtensionIcon";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
-import DownloadButtons from "@/components/landing/DownloadButtons";
-import DesktopOnlyBadge from "@/components/landing/DesktopOnlyBadge";
+import IOSAvailabilityCard from "@/components/landing/IOSAvailabilityCard";
 
 const TOPICS = [
   {
-    icon: MonitorSmartphone,
-    title: "Supported browsers",
-    body: "Censorly runs on desktop Chromium browsers — Chrome, Edge, and Brave — plus Firefox and Opera on Windows, Mac, and Linux. It does not run on mobile browsers.",
+    icon: Smartphone,
+    title: "Built for iPhone & iPad",
+    body: "Censorly is built as a Safari Web Extension for iPhone and iPad, running on iOS and iPadOS. It is not available for desktop browsers, Android, or other mobile browsers.",
   },
   {
-    icon: Puzzle,
-    title: "Installing the extension",
-    body: "Download the zip for your browser, unzip it, then load it unpacked: chrome://extensions (Chrome/Edge/Brave), about:debugging → This Firefox (Firefox), or the extensions page (Opera). Enable developer mode first.",
+    icon: Settings,
+    title: "Installing on iPhone & iPad",
+    body: "Censorly is coming to the App Store. Once it's live: install the app, then open Settings → Safari → Extensions and turn Censorly on. Safari will ask you to grant permission on each website you want filtered.",
   },
   {
     icon: RefreshCw,
     title: "Filters not showing up",
-    body: "If a page was already open, click “Refresh page to apply” in the popup or reload the tab. New pages are filtered automatically as they load.",
+    body: "If a page was already open, reload the tab. New pages are filtered automatically as they load.",
   },
   {
     icon: ListPlus,
     title: "Exact vs Wildcard matching",
     body: "Exact matches only that word. Wildcard also matches endings — filtering “spam” also filters “spamming”, “spammer”, and “spammed”.",
-  },
-  {
-    icon: Smartphone,
-    title: "Installing on Titanium (mobile)",
-    body: "For Chrome extensions, navigate to the Chrome Web Store, enable Desktop site using the menu button ⋮ in the top right corner, and proceed as normal.",
   },
 ];
 
@@ -49,8 +43,9 @@ export default function Support() {
             Support
           </h1>
           <p className="mt-4 text-base text-[hsl(var(--wsp-navy)/0.7)] leading-relaxed">
-            Censorly is a free, local-only extension. Here’s how to install it,
-            troubleshoot common issues, and reach me — no account required.
+            Censorly is a free, local-only Safari Web Extension for iPhone and
+            iPad. Here’s what to expect, how to troubleshoot common issues, and
+            how to reach me — no account required.
           </p>
 
           <div className="mt-10 grid sm:grid-cols-2 gap-5">
@@ -107,8 +102,7 @@ export default function Support() {
               Get Censorly
             </div>
             <div className="flex flex-col items-center gap-4">
-              <DownloadButtons />
-              <DesktopOnlyBadge />
+              <IOSAvailabilityCard />
             </div>
           </section>
         </div>

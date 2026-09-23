@@ -2,8 +2,8 @@ import { ArrowRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
 
 import ExtensionIcon from "./ExtensionIcon";
-import DesktopOnlyBadge from "./DesktopOnlyBadge";
-import DownloadButtons from "./DownloadButtons";
+import IOSAvailabilityBadge from "./IOSAvailabilityBadge";
+import IOSAvailabilityCard from "./IOSAvailabilityCard";
 import PopupMockup from "./PopupMockup";
 
 const HERO_AMBIENT =
@@ -111,11 +111,11 @@ export default function Hero() {
             </p>
 
             <div className="mt-5">
-              <DesktopOnlyBadge />
+              <IOSAvailabilityBadge />
             </div>
 
             <div className="mt-8 flex flex-col gap-4">
-              <DownloadButtons />
+              <IOSAvailabilityCard />
               <a
                 href="#modes"
                 className="group inline-flex items-center justify-center gap-2 rounded-2xl border border-[hsl(var(--wsp-navy)/0.15)] bg-white/70 backdrop-blur px-7 py-4 text-base font-semibold text-[hsl(var(--wsp-navy))] hover:border-[hsl(var(--wsp-accent))] transition-colors"
@@ -127,7 +127,7 @@ export default function Hero() {
             </div>
 
             <p className="mt-3 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
-              Download, unzip, and load unpacked in chrome://extensions · v6.1 · ~36KB
+              Coming to iPhone and iPad · Safari Web Extension for iOS &amp; iPadOS
             </p>
 
             <div className="mt-7 flex flex-wrap gap-2.5">

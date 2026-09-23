@@ -1,6 +1,6 @@
 import { ListPlus, SlidersHorizontal, Globe, Shuffle } from "lucide-react";
 import { Image } from "@/components/ui/image";
-import DesktopOnlyBadge from "./DesktopOnlyBadge";
+import IOSAvailabilityBadge from "./IOSAvailabilityBadge";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerGroup, RevealItem } from "./Reveal";
 
@@ -44,7 +44,7 @@ export default function HowItWorks() {
                 No account, no setup wizard. Define your words, pick a mode, and the shield does the rest — instantly, on every site.
               </p>
               <div className="mt-5">
-                <DesktopOnlyBadge />
+                <IOSAvailabilityBadge />
               </div>
 
               <div className="mt-8 relative rounded-3xl overflow-hidden border border-[hsl(var(--wsp-navy)/0.08)] shadow-xl shadow-[hsl(var(--wsp-accent)/0.1)]">

@@ -60,8 +60,8 @@ export default function PopupMockup() {
       <div style={{ background: c.bg, padding: "16px 18px" }} className="space-y-3.5">
         {/* Desktop note */}
         <div className="rounded-[10px] flex items-center gap-1.5" style={{ background: "rgba(20,184,166,0.15)", border: `1px solid ${c.borderSubtle}`, padding: "8px 12px", fontSize: 11, color: c.dim }}>
-          <span className="font-bold" style={{ color: c.accent }}>💻 Desktop only</span>
-          <span>— Chrome, Edge &amp; Brave on Windows, Mac &amp; Linux</span>
+          <span className="font-bold" style={{ color: c.accent }}>📱 iPhone &amp; iPad</span>
+          <span>— Safari Web Extension for iOS &amp; iPadOS</span>
         </div>
 
         {/* Toggle row */}

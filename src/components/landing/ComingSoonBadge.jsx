@@ -9,7 +9,7 @@ export default function ComingSoonBadge({ className = "" }) {
       }
     >
       <Sparkles className="w-3 h-3" strokeWidth={2} />
-      Coming Soon to Chrome Web Store
+      Coming to iPhone &amp; iPad
     </span>
   );
 }

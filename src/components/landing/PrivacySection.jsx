@@ -9,7 +9,7 @@ const VAULT_IMG =
 
 const PILLARS = [
   { icon: WifiOff, label: "Zero network requests", body: "The extension literally cannot reach the internet." },
-  { icon: CloudOff, label: "No cloud, no sync server", body: "Your word list lives in Chrome's local storage only." },
+  { icon: CloudOff, label: "No cloud, no sync server", body: "Your word list lives on your device only." },
   { icon: BarChart3, label: "No analytics or telemetry", body: "The extension ships no trackers, counters, or reporting — ever." },
   { icon: ShieldOff, label: "No tracking of any kind", body: "Nothing about you or your reading leaves the browser via the extension." },
 ];
@@ -37,8 +37,8 @@ export default function PrivacySection() {
               </h2>
 
               <p className="mt-7 text-lg lg:text-xl text-white/70 max-w-xl leading-relaxed">
-                The Censorly extension is a local-only fortress. It uses Chrome's local
-                storage, makes zero network requests, and runs no analytics, tracking, or
+                The Censorly extension is a local-only fortress. It stores everything on
+                your device, makes zero network requests, and runs no analytics, tracking, or
                 telemetry — it <span className="text-white font-medium">literally cannot send your data anywhere</span>.
                 This marketing site is hosted on the Base44 platform, which logs basic, aggregate
                 visit analytics; the extension itself collects nothing.

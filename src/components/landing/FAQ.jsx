@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import { SectionLabel } from "./HowItWorks";
-import DesktopOnlyBadge from "./DesktopOnlyBadge";
+import IOSAvailabilityBadge from "./IOSAvailabilityBadge";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerGroup, RevealItem } from "./Reveal";
 
 const FAQS = [
   {
     q: "Does it work on PDFs?",
-    a: "No — Chrome's built-in PDF viewer is off-limits to extensions. Use a desktop tool for documents.",
+    a: "No — Safari's built-in PDF viewer is off-limits to web extensions. Use a separate document tool for PDFs.",
   },
   {
     q: "Does it work on Google Docs?",
@@ -27,8 +27,8 @@ const FAQS = [
     a: "Yes — open source, no subscriptions, no premium tier.",
   },
   {
-    q: "Does it work on mobile?",
-    a: "Mobile support is limited — Censorly is built for desktop browsers (Chrome, Edge, Brave, Firefox, and Opera on Windows, Mac, and Linux). A Firefox for Android build is available on AMO.",
+    q: "Which devices does it support?",
+    a: "Censorly is built as a Safari Web Extension for iPhone and iPad (iOS and iPadOS). It is not available for desktop browsers or Android.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function FAQ() {
                 Questions, answered
               </h2>
               <div className="mt-5">
-                <DesktopOnlyBadge />
+                <IOSAvailabilityBadge />
               </div>
             </ScrollReveal>
           </div>

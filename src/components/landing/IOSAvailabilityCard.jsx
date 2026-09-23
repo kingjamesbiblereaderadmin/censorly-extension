@@ -11,12 +11,12 @@ export default function IOSAvailabilityCard({ className = "" }) {
       </span>
       <div>
         <p className="font-heading font-semibold text-base text-[hsl(var(--wsp-navy))]">
-          Coming to iPhone and iPad
+          Coming soon to iPhone, iPad &amp; Mac
         </p>
         <p className="mt-1.5 text-sm leading-relaxed text-[hsl(var(--wsp-navy)/0.65)]">
-          Censorly is being built as a Safari Web Extension for iOS and iPadOS.
-          It is not on the App Store yet — the download link will appear here the
-          moment it goes live. Follow the{" "}
+          Censorly is being built as a Safari Web Extension for iOS, iPadOS, and
+          macOS. It is not on the App Store yet — the download link will appear
+          here the moment it goes live. Follow the{" "}
           <Link
             to="/changelog"
             className="font-medium text-[hsl(var(--wsp-accent))] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 rounded"

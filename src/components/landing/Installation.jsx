@@ -65,7 +65,7 @@ export default function Installation() {
           <div className="mt-8 flex flex-col items-center gap-4">
             <IOSAvailabilityCard />
             <span className="inline-flex items-center gap-2 text-center text-sm text-[hsl(var(--wsp-navy)/0.5)] font-mono">
-              100% client-side · Safari on iOS &amp; iPadOS · Coming soon to the App Store
+              100% client-side · Safari on iOS, iPadOS &amp; macOS · Coming soon to the App Store
             </span>
           </div>
         </ScrollReveal>

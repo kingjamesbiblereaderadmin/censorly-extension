@@ -8,7 +8,7 @@ const TOPICS = [
   {
     icon: Smartphone,
     title: "Built for iPhone & iPad",
-    body: "Censorly is built as a Safari Web Extension for iPhone and iPad, running on iOS and iPadOS. It is not available for desktop browsers, Android, or other mobile browsers.",
+    body: "Censorly is built as a Safari Web Extension for iPhone and iPad, running on iOS and iPadOS — and it's coming soon to Mac (macOS Safari) as well. It is not available for other browsers or Android.",
   },
   {
     icon: Settings,

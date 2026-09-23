@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "Which devices does it support?",
-    a: "Censorly is built as a Safari Web Extension for iPhone and iPad (iOS and iPadOS). It is not available for desktop browsers or Android.",
+    a: "Censorly is built as a Safari Web Extension for iPhone and iPad (iOS and iPadOS), and it is also coming soon to Mac (macOS Safari). It is not available for other browsers or Android.",
   },
 ];
 

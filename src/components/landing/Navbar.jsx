@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import ExtensionIcon from "./ExtensionIcon";
 
 const LINKS = [
-  { href: "#install", label: "Install" },
+  { href: "#install", label: "Download" },
   { href: "#how", label: "How it works" },
   { href: "#features", label: "Features" },
   { href: "#privacy", label: "Privacy" },

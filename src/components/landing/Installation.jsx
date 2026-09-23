@@ -1,14 +1,15 @@
-import { Download, Settings, ShieldCheck, Globe } from "lucide-react";
-import IOSAvailabilityCard from "./IOSAvailabilityCard";
+import { Download, FolderArchive, Puzzle, Upload } from "lucide-react";
+import ExtensionIcon from "./ExtensionIcon";
+import DownloadButtons from "./DownloadButtons";
 import { SectionLabel } from "./HowItWorks";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerGroup, RevealItem } from "./Reveal";
 
 const STEPS = [
-  { icon: Download, title: "Install from the App Store", body: "When Censorly goes live, install it like any iPhone or iPad app." },
-  { icon: Settings, title: "Enable it in Safari", body: "Open Settings → Safari → Extensions and turn Censorly on." },
-  { icon: ShieldCheck, title: "Grant site permission", body: "Safari asks once per website — tap Allow and you're shielded." },
-  { icon: Globe, title: "Browse freely", body: "Pages are filtered automatically as they load. No setup wizard." },
+  { icon: Download, title: "Download the ZIP", body: "Grab the latest build from the link below." },
+  { icon: FolderArchive, title: "Unzip the folder", body: "Extract it anywhere on your computer." },
+  { icon: Puzzle, title: "Open chrome://extensions", body: "Enable Developer mode in the top-right corner." },
+  { icon: Upload, title: "Click \"Load unpacked\"", body: "Select the unzipped folder. Done — you're shielded." },
 ];
 
 export default function Installation() {
@@ -19,11 +20,10 @@ export default function Installation() {
           <div className="max-w-2xl">
             <SectionLabel>Installation</SectionLabel>
             <h2 className="mt-4 font-heading font-bold text-[hsl(var(--wsp-navy))] tracking-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              Getting Censorly on iPhone &amp; iPad
+              Up and running in under a minute
             </h2>
             <p className="mt-4 text-lg text-[hsl(var(--wsp-navy)/0.65)]">
-              Censorly arrives as a Safari Web Extension — a small app you
-              install once and enable in Safari's settings.
+              No Chrome Web Store detour. Load it directly and you're ready.
             </p>
           </div>
         </ScrollReveal>
@@ -51,21 +51,22 @@ export default function Installation() {
               <span className="w-3 h-3 rounded-full bg-white/15" />
               <span className="w-3 h-3 rounded-full bg-white/15" />
               <span className="w-3 h-3 rounded-full bg-white/15" />
-              <span className="ml-2">iPhone · Settings</span>
+              <span className="ml-2">terminal</span>
             </div>
             <code className="block">
-              <span className="text-[hsl(var(--wsp-accent))]">→</span> App Store <span className="text-white/40"># install Censorly (coming soon)</span><br />
-              <span className="text-[hsl(var(--wsp-accent))]">→</span> Settings <span className="text-white/40"># Apps → Safari → Extensions</span><br />
-              <span className="text-[hsl(var(--wsp-accent))]">→</span> Censorly <span className="text-white/40"># turn on</span><br />
-              <span className="text-[hsl(var(--wsp-accent))]">→</span> Safari prompt <span className="text-white/40"># tap "Allow" per website</span><br />
+              <span className="text-[hsl(var(--wsp-accent))]">$</span> download censorly.zip<br />
+              <span className="text-[hsl(var(--wsp-accent))]">$</span> unzip censorly.zip<br />
+              <span className="text-[hsl(var(--wsp-accent))]">$</span> open chrome://extensions <span className="text-white/40"># enable Developer mode</span><br />
+              <span className="text-[hsl(var(--wsp-accent))]">$</span> click "Load unpacked" <span className="text-white/40"># select the folder</span><br />
               <span className="text-green-400">✓</span> shielded.
             </code>
           </div>
 
-          <div className="mt-8 flex flex-col items-center gap-4">
-            <IOSAvailabilityCard />
+          <div className="mt-8 flex flex-col gap-4">
+            <DownloadButtons />
             <span className="inline-flex items-center gap-2 text-center text-sm text-[hsl(var(--wsp-navy)/0.5)] font-mono">
-              100% client-side · Safari on iOS, iPadOS &amp; macOS · Coming soon to the App Store
+              <ExtensionIcon className="w-4 h-4" />
+              v5.9 · ~36KB · open source · Chrome/Edge: chrome://extensions · Firefox: addons.mozilla.org · Opera: extensions page · Safari on iPhone, iPad &amp; Mac: coming soon
             </span>
           </div>
         </ScrollReveal>

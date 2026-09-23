@@ -8,7 +8,7 @@ import { StaggerGroup, RevealItem } from "./Reveal";
 const FAQS = [
   {
     q: "Does it work on PDFs?",
-    a: "No — Safari's built-in PDF viewer is off-limits to web extensions. Use a separate document tool for PDFs.",
+    a: "No — the browser's built-in PDF viewer is off-limits to extensions. Use a separate document tool for PDFs.",
   },
   {
     q: "Does it work on Google Docs?",
@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "Which devices does it support?",
-    a: "Censorly is built as a Safari Web Extension for iPhone and iPad (iOS and iPadOS), and it is also coming soon to Mac (macOS Safari). It is not available for other browsers or Android.",
+    a: "Censorly runs on desktop browsers — Chrome, Edge, Brave, Firefox, and Opera on Windows, Mac, and Linux — plus mobile via the Titanium browser. A Safari Web Extension for iPhone, iPad, and Mac is coming soon.",
   },
 ];
 

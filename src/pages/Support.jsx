@@ -28,8 +28,8 @@ const TOPICS = [
   },
   {
     icon: Smartphone,
-    title: "Installing on Titanium (mobile)",
-    body: "For Chrome extensions, navigate to the Chrome Web Store, enable Desktop site using the menu button ⋮ in the top right corner, and proceed as normal.",
+    title: "Installing on Chromium-based browsers (mobile)",
+    body: "On Chromium-based mobile browsers (such as Titanium and other Chromium-based Android browsers that support extensions), navigate to the Chrome Web Store, enable Desktop site using the menu button ⋮ in the top right corner, and proceed as normal.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Support() {
             {TOPICS.map((t) => (
               <div
                 key={t.title}
-                className="rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-6"
+                className="flex flex-col rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-6 h-full"
               >
                 <div className="w-11 h-11 rounded-2xl bg-[hsl(var(--wsp-accent)/0.08)] text-[hsl(var(--wsp-accent))] flex items-center justify-center">
                   <t.icon className="w-5 h-5" strokeWidth={1.8} />
@@ -107,7 +107,7 @@ export default function Support() {
               Get Censorly
             </div>
             <div className="flex flex-col items-center gap-4">
-              <DownloadButtons />
+              <DownloadButtons mobileBadgeLabel="Available on Chromium-based browsers (mobile)" />
               <IOSAvailabilityBadge />
             </div>
           </section>

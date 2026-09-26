@@ -38,7 +38,7 @@ const DEFAULT_LINKS = [
   },
 ];
 
-export default function DownloadButtons({ className = "" }) {
+export default function DownloadButtons({ className = "", mobileBadgeLabel = "Available on Titanium browser (mobile)" }) {
   const links = DEFAULT_LINKS;
 
   return (
@@ -72,7 +72,7 @@ export default function DownloadButtons({ className = "" }) {
                 className="inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)] hover:text-[hsl(var(--wsp-accent))] transition-colors"
               >
                 <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
-                Available on Titanium browser (mobile)
+                {mobileBadgeLabel}
               </a>
             </div>
           );

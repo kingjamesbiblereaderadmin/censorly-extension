@@ -53,11 +53,11 @@ export default function Support() {
             troubleshoot common issues, and reach me — no account required.
           </p>
 
-          <div className="mt-10 grid sm:grid-cols-2 gap-5">
-            {TOPICS.map((t) => (
+          <div className="mt-10 grid sm:grid-cols-2 auto-rows-fr gap-5">
+            {TOPICS.map((t, i) => (
               <div
                 key={t.title}
-                className="flex flex-col rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-6 h-full"
+                className={`flex flex-col h-full rounded-2xl border border-[hsl(var(--wsp-navy)/0.08)] bg-white p-6 ${i === TOPICS.length - 1 ? "sm:col-span-2" : ""}`}
               >
                 <div className="w-11 h-11 rounded-2xl bg-[hsl(var(--wsp-accent)/0.08)] text-[hsl(var(--wsp-accent))] flex items-center justify-center">
                   <t.icon className="w-5 h-5" strokeWidth={1.8} />

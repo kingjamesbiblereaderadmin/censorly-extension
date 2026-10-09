@@ -61,6 +61,15 @@ const TYPE_ORDER = ["Rebrand", "Feature", "Improvement", "Fix", "Design", "Docs"
 
 const ENTRIES = [
   {
+    version: "v6.3",
+    date: "October 9, 2026",
+    changes: [
+      { type: "Fix", text: "Fixed rich text editor crashes: Censorly no longer touches editable surfaces at all, so compose boxes and comment fields on Discord, Facebook, Instagram, and other rich-editor sites work normally — typing, backspace, caret placement, and Enter all work with filtering active." },
+      { type: "Other", text: "Read-only page text is still filtered in all three modes (Hide, Censor, Blur)." },
+      { type: "Other", text: "No other behavior changes. Fully local, as always." },
+    ],
+  },
+  {
     version: "v6.2",
     date: "September 23, 2026",
     changes: [

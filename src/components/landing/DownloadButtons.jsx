@@ -1,4 +1,4 @@
-import { Puzzle, ShieldCheck, Smartphone } from "lucide-react";
+import { Puzzle, Smartphone } from "lucide-react";
 import AMO_BADGE from "@/assets/firefox-amo-badge.svg";
 import AppStoreBadge from "./AppStoreBadge";
 
@@ -21,23 +21,23 @@ const TITANIUM_URL = "https://github.com/jqssun/android-titanium-browser";
 const badgeLinkClass =
   "inline-flex items-center justify-center rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2 min-h-[44px]";
 const badgeImgClass = "h-[44px] sm:h-[52px] w-auto rounded-xl";
-const subBadgeClass =
-  "inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)]";
-const subLinkClass =
-  "inline-flex items-center gap-1 text-[10px] font-medium text-[hsl(var(--wsp-navy)/0.55)] hover:text-[hsl(var(--wsp-accent))] transition-colors";
-const operaButtonClass =
+const textButtonClass =
   "inline-flex items-center justify-center gap-2 rounded-xl border border-[hsl(var(--wsp-navy)/0.15)] bg-white px-5 text-sm sm:text-base font-semibold text-[hsl(var(--wsp-navy))] hover:border-[hsl(var(--wsp-accent))] hover:text-[hsl(var(--wsp-accent))] transition-colors h-[44px] sm:h-[52px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--wsp-accent))] focus-visible:ring-offset-2";
+const bulletClass =
+  "flex items-start gap-2.5 text-xs leading-relaxed text-[hsl(var(--wsp-navy)/0.6)]";
+const bulletDotClass =
+  "mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-[hsl(var(--wsp-accent))]";
+const groupLabelClass =
+  "text-[10px] font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-navy)/0.45)] sm:w-20 shrink-0 text-center sm:text-left";
 
-function Cell({ children }) {
-  return <div className="flex flex-col items-center gap-1.5">{children}</div>;
-}
-
-function MobileBadgeLink({ label }) {
+function Group({ label, children }) {
   return (
-    <a href={TITANIUM_URL} target="_blank" rel="noopener noreferrer" className={subLinkClass}>
-      <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
-      {label}
-    </a>
+    <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+      <span className={groupLabelClass}>{label}</span>
+      <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-5 gap-y-3">
+        {children}
+      </div>
+    </div>
   );
 }
 
@@ -52,9 +52,36 @@ export default function DownloadButtons({
       <div className="text-center text-xs font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-navy)/0.45)]">
         Get Censorly
       </div>
-      <div className="mt-6 flex flex-wrap items-start justify-center gap-x-6 gap-y-5">
-        {/* Chrome */}
-        <Cell>
+
+      {/* One consolidated compatibility list */}
+      <ul className="mt-4 mx-auto max-w-md flex flex-col gap-1.5">
+        <li className={bulletClass}>
+          <span className={bulletDotClass} aria-hidden="true" />
+          <span>Also works on Brave (Chromium)</span>
+        </li>
+        <li className={bulletClass}>
+          <span className={bulletDotClass} aria-hidden="true" />
+          <span>Firefox: tested on mobile</span>
+        </li>
+        <li className={bulletClass}>
+          <span className={bulletDotClass} aria-hidden="true" />
+          <span>
+            Mobile:{" "}
+            <a
+              href={TITANIUM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium underline decoration-dotted hover:text-[hsl(var(--wsp-accent))] transition-colors"
+            >
+              {mobileBadgeLabel}
+            </a>
+          </span>
+        </li>
+      </ul>
+
+      {/* Platform groups */}
+      <div className="mt-6 flex flex-col gap-5 border-t border-[hsl(var(--wsp-navy)/0.06)] pt-6">
+        <Group label="PC">
           <a
             href={CHROME_URL}
             target="_blank"
@@ -69,15 +96,6 @@ export default function DownloadButtons({
               draggable={false}
             />
           </a>
-          <span className={subBadgeClass}>
-            <ShieldCheck className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
-            Also works on Brave
-          </span>
-          <MobileBadgeLink label={mobileBadgeLabel} />
-        </Cell>
-
-        {/* Edge */}
-        <Cell>
           <a
             href={EDGE_URL}
             target="_blank"
@@ -92,11 +110,6 @@ export default function DownloadButtons({
               draggable={false}
             />
           </a>
-          <MobileBadgeLink label={mobileBadgeLabel} />
-        </Cell>
-
-        {/* Firefox */}
-        <Cell>
           <a
             href={FIREFOX_URL}
             target="_blank"
@@ -111,24 +124,28 @@ export default function DownloadButtons({
               draggable={false}
             />
           </a>
-          <span className={subBadgeClass}>
-            <Smartphone className="w-3 h-3 text-[hsl(var(--wsp-accent))]" strokeWidth={2} />
-            Tested on mobile
-          </span>
-        </Cell>
-
-        {/* Opera */}
-        <Cell>
-          <a href={OPERA_URL} download aria-label="Download Censorly for Opera" className={operaButtonClass}>
+          <a href={OPERA_URL} download aria-label="Download Censorly for Opera" className={textButtonClass}>
             <Puzzle className="w-5 h-5" />
             Download for Opera
           </a>
-        </Cell>
+        </Group>
 
-        {/* App Store */}
-        <Cell>
+        <Group label="Apple">
           <AppStoreBadge />
-        </Cell>
+        </Group>
+
+        <Group label="Android">
+          <a
+            href={TITANIUM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Get Censorly on the Titanium browser for Android"
+            className={textButtonClass}
+          >
+            <Smartphone className="w-5 h-5" />
+            Titanium browser
+          </a>
+        </Group>
       </div>
     </div>
   );

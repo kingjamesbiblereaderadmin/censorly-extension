@@ -121,10 +121,6 @@ export default function Hero() {
               </a>
             </div>
 
-            <p className="mt-3 text-xs font-mono text-[hsl(var(--wsp-navy)/0.5)]">
-              iPhone, iPad &amp; Mac · Safari on iOS, iPadOS &amp; macOS
-            </p>
-
             <div className="mt-7 flex flex-wrap gap-2.5">
               {BADGES.map((b) => (
                 <span key={b} className="inline-flex items-center gap-1.5 rounded-full bg-[hsl(var(--wsp-navy)/0.04)] px-3 py-1.5 text-xs font-medium text-[hsl(var(--wsp-navy)/0.7)]">

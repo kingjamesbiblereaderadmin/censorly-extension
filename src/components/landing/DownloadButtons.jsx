@@ -96,7 +96,12 @@ export default function DownloadButtons({
           <Puzzle className="w-5 h-5" />
           Download for Opera
         </a>
-        <AppStoreBadge />
+        <div className="flex flex-col items-center gap-1.5">
+          <AppStoreBadge />
+          <span className="text-[10px] font-mono text-[hsl(var(--wsp-navy)/0.5)]">
+            iPhone, iPad &amp; Mac · Safari on iOS, iPadOS &amp; macOS
+          </span>
+        </div>
       </div>
     </div>
   );

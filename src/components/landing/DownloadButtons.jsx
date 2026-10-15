@@ -21,7 +21,7 @@ const badgeLinkClass =
 const badgeImgClass = "h-[44px] sm:h-[52px] w-auto rounded-xl";
 
 const sectionLabelClass =
-  "text-center text-xs font-mono uppercase tracking-[0.18em] text-neutral-400";
+  "text-center text-xs font-mono uppercase tracking-[0.18em] text-neutral-900";
 
 function BadgeWithCaption({ href, ariaLabel, alt, src, caption, className = "" }) {
   return (
@@ -35,7 +35,7 @@ function BadgeWithCaption({ href, ariaLabel, alt, src, caption, className = "" }
       >
         <img src={src} alt={alt} className={badgeImgClass} draggable={false} />
       </a>
-      <span className="text-[10px] font-mono text-neutral-500">
+      <span className="text-[10px] font-mono text-neutral-700">
         {caption}
       </span>
     </div>
@@ -48,17 +48,17 @@ export default function DownloadButtons({
 }) {
   return (
     <div
-      className={`rounded-3xl border border-neutral-800 bg-neutral-950 shadow-sm overflow-hidden ${className}`}
+      className={`rounded-3xl border border-[hsl(var(--wsp-navy)/0.1)] bg-white/80 shadow-sm overflow-hidden ${className}`}
     >
       {/* Header */}
       <div className="px-6 pt-6 pb-5">
         <div className="text-center text-xs font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-accent))] font-semibold">
           Get Censorly
         </div>
-        <p className="mt-2 text-center text-sm sm:text-base font-medium text-white">
+        <p className="mt-2 text-center text-sm sm:text-base font-medium text-neutral-900">
           Filter, hide, or blur unwanted words on any website — 100% locally.
         </p>
-        <p className="mt-2 text-center text-xs leading-relaxed text-neutral-400">
+        <p className="mt-2 text-center text-xs leading-relaxed text-neutral-700">
           Desktop + limited mobile support: Chrome, Edge, Brave, Firefox, and
           Opera on desktop, and{" "}
           <a
@@ -73,7 +73,7 @@ export default function DownloadButtons({
       </div>
 
       {/* Browser extensions */}
-      <div className="border-t border-neutral-800 px-6 py-6">
+      <div className="border-t border-[hsl(var(--wsp-navy)/0.1)] px-6 py-6">
         <div className={sectionLabelClass}>Browser Extension</div>
         <div className="mt-4 flex flex-wrap items-start justify-center gap-x-5 gap-y-4">
           <div className="flex flex-col items-center">
@@ -121,10 +121,10 @@ export default function DownloadButtons({
       </div>
 
       {/* Apple */}
-      <div className="border-t border-neutral-800 px-6 py-6">
+      <div className="border-t border-[hsl(var(--wsp-navy)/0.1)] px-6 py-6">
         <div className={sectionLabelClass}>Apple — iPhone · iPad · Mac</div>
         <div className="mt-4 flex justify-center">
-          <AppStoreBadge className="ring-1 ring-white/25 rounded-xl" />
+          <AppStoreBadge />
         </div>
       </div>
     </div>

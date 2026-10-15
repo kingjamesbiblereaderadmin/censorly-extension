@@ -2,7 +2,6 @@ import { ArrowRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
 
 import ExtensionIcon from "./ExtensionIcon";
-import IOSAvailabilityBadge from "./IOSAvailabilityBadge";
 import DownloadButtons from "./DownloadButtons";
 import PopupMockup from "./PopupMockup";
 
@@ -109,10 +108,6 @@ export default function Hero() {
               web page. Everything runs locally in your browser — zero network requests,
               total privacy.
             </p>
-
-            <div className="mt-5">
-              <IOSAvailabilityBadge />
-            </div>
 
             <div className="mt-8 flex flex-col gap-4">
               <DownloadButtons />

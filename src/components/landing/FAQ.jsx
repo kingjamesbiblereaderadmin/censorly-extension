@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import { SectionLabel } from "./HowItWorks";
-import IOSAvailabilityBadge from "./IOSAvailabilityBadge";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerGroup, RevealItem } from "./Reveal";
 
@@ -45,10 +44,7 @@ export default function FAQ() {
               <h2 className="mt-4 font-heading font-bold text-[hsl(var(--wsp-navy))] tracking-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
                 Questions, answered
               </h2>
-              <div className="mt-5">
-                <IOSAvailabilityBadge />
-              </div>
-            </ScrollReveal>
+</ScrollReveal>
           </div>
 
           {/* Right: accordion */}

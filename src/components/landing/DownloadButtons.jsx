@@ -55,7 +55,7 @@ export default function DownloadButtons({
         <div className="text-center text-xs font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-accent))] font-semibold">
           Get Censorly
         </div>
-        <p className="mt-2 text-center text-sm sm:text-base font-medium text-[hsl(var(--wsp-navy))]">
+        <p className="mt-2 text-center text-sm sm:text-base font-medium text-neutral-900">
           Filter, hide, or blur unwanted words on any website — 100% locally.
         </p>
         <p className="mt-2 text-center text-xs leading-relaxed text-[hsl(var(--wsp-navy)/0.6)]">

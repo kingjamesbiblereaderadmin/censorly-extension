@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "Which devices does it support?",
-    a: "Censorly runs on desktop browsers — Chrome, Edge, Brave, Firefox, and Opera on Windows, Mac, and Linux — plus mobile via the Titanium browser. A Safari Web Extension for iPhone, iPad, and Mac is coming soon.",
+    a: "Censorly runs on desktop browsers — Chrome, Edge, Brave, Firefox, and Opera on Windows, Mac, and Linux — plus mobile via the Titanium browser. Censorly is also available for iPhone, iPad, and Mac on the App Store.",
   },
 ];
 

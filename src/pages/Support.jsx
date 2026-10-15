@@ -3,7 +3,6 @@ import ExtensionIcon from "@/components/landing/ExtensionIcon";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import DownloadButtons from "@/components/landing/DownloadButtons";
-import IOSAvailabilityBadge from "@/components/landing/IOSAvailabilityBadge";
 
 const TOPICS = [
   {
@@ -12,7 +11,7 @@ const TOPICS = [
     bullets: [
       "Desktop Chromium browsers — Chrome, Edge, and Brave — plus Firefox and Opera on Windows, Mac, and Linux.",
       "Chromium-based mobile browsers (such as Titanium) that support extensions.",
-      "A Safari Web Extension for iPhone, iPad, and Mac is coming soon.",
+      "Censorly is also available for iPhone, iPad, and Mac on the App Store.",
     ],
   },
   {
@@ -118,13 +117,7 @@ export default function Support() {
           </section>
 
           <section className="mt-10">
-            <div className="text-center text-xs font-mono uppercase tracking-[0.18em] text-[hsl(var(--wsp-navy)/0.45)] mb-5">
-              Get Censorly
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <DownloadButtons mobileBadgeLabel="Available on Chromium-based browsers (mobile)" />
-              <IOSAvailabilityBadge />
-            </div>
+            <DownloadButtons mobileBadgeLabel="Available on Chromium-based browsers (mobile)" />
           </section>
         </div>
       </main>

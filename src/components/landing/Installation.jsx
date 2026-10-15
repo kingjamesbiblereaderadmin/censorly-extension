@@ -66,7 +66,7 @@ export default function Installation() {
             <DownloadButtons />
             <span className="inline-flex items-center gap-2 text-center text-sm text-[hsl(var(--wsp-navy)/0.5)] font-mono">
               <ExtensionIcon className="w-4 h-4" />
-              v5.9 · ~36KB · open source · Chrome/Edge: chrome://extensions · Firefox: addons.mozilla.org · Opera: extensions page · Safari on iPhone, iPad &amp; Mac: coming soon
+              v5.9 · ~36KB · open source · Chrome/Edge: chrome://extensions · Firefox: addons.mozilla.org · Opera: extensions page · Safari on iPhone, iPad &amp; Mac: App Store
             </span>
           </div>
         </ScrollReveal>

@@ -132,4 +132,13 @@
       linear-gradient(90deg, hsl(var(--wsp-accent) / 0.06) 1px, transparent 1px);
     background-size: 48px 48px;
   }
+
+  /* Mobile-only iOS safe-area fix: pushes the header row below the
+     status bar / dynamic island. Desktop (md+) is untouched. */
+  @media (max-width: 767.98px) {
+    .safe-area-header {
+      padding-top: max(16px, constant(safe-area-inset-top));
+      padding-top: max(16px, env(safe-area-inset-top, 0px));
+    }
+  }
 }

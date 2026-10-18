@@ -23,7 +23,7 @@ export default function Navbar() {
   ];
   return (
     <header className="sticky top-0 z-50">
-      <div className="w-full bg-[hsl(var(--wsp-navy))] text-white/80 text-xs">
+      <div className="safe-area-header w-full bg-[hsl(var(--wsp-navy))] text-white/80 text-xs">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-8 flex items-center justify-center">
           <div className="inline-flex items-center gap-3">
             <a

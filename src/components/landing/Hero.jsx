@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { Image } from "@/components/ui/image";
 
 import ExtensionIcon from "./ExtensionIcon";
@@ -108,6 +108,16 @@ export default function Hero() {
               web page. Everything runs locally in your browser — zero network requests,
               total privacy.
             </p>
+
+            <a
+              href="https://chromewebstore.google.com/detail/censorly/ihebeiliagohkojpchkgafjgndaiagaf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-[#0d9488] px-8 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/20 hover:bg-[#0f766e] transition-colors"
+            >
+              <Download className="w-5 h-5" />
+              Install Now
+            </a>
 
             <div className="mt-8 flex flex-col gap-4">
               <DownloadButtons />
